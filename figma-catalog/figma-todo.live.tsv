@@ -1,9 +1,29 @@
 section	nodeId	change	title	why	implFiles
-home-2	16327-202234	ADDED	Skai > Home > AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16332-203659	ADDED	Skai > Home > AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16326-194586	ADDED	Skai > Trade > Spot 1VH with AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16326-198902	ADDED	Skai > Trade > Spot 1VH with AI pop-up 2 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16326-200191	ADDED	Skai > Trade > Spot 1VH with AI pop-up 3 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16326-201480	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16332-208455	ADDED	AI assistant toggle show/hide	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-home-2	16137-102267	RETITLED	Skai > Home > AI pop-up ALT 1VH (375 x 812px)	was: Skai > Home > AI pop-up 1VH (375 x 812px)	src/components/dashboard/AICopilotBubble.tsx
+collectibles	-	NEW-SECTION	-	44 frames on a page with no catalog section at all	
+social-v2	-	NEW-SECTION	-	127 frames on a page with no catalog section at all	
+home	16505-91157	ADDED	Skai > Home > Portfolio > Vault - withdraw 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home	16505-189716	ADDED	Skai > Home > Portfolio > Vault - withdraw > confirm withdrawal 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home	16509-193517	ADDED	Skai > Home > Portfolio > Vault - withdraw > confirm withdrawal >successful 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home	16505-90828	ADDED	dropdown-token	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home	16505-90855	ADDED	dropdown-networks	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home	16505-92069	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+trade	16515-200151	ADDED	Time	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16505-190800	ADDED	Skai > Wallet > continue on web > home > account > security 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16505-191490	ADDED	Skai > Wallet > continue on web > home > notifications - sample notification (badges) 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16506-191733	ADDED	Skai > Wallet > continue on web > home > notifications - sample notification (rewards) 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16506-192046	ADDED	Skai > Wallet > continue on web > home > notifications - sample notification (transaction) 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16507-192186	ADDED	Skai > Wallet > continue on web > home > notifications - sample notification (transaction) 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16515-196749	ADDED	Skai > Wallet > continue on web > home > swap > review swap 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16509-194269	ADDED	Skai > Wallet > continue on web > home > request from user - step 2 > share request 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16512-195168	ADDED	Skai > Wallet > continue on web > home > request with QR - step 2 > share request 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16515-196357	ADDED	Skai > Wallet > continue on web > home > request with QR - step 2 > share request 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16515-196696	ADDED	modal - sending	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16508-192346	ADDED	Skai > Wallet > continue on web > home > send - step 3 > confirm 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16509-194206	ADDED	Confirm transaction ALT	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16486-90486	ADDED	Skai > Wallet > continue on web > home > send - processing > Deposit received 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16505-191025	ADDED	Skai > Wallet > continue on web > home > account > security 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16505-191270	ADDED	Skai > Wallet > continue on web > home > account 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16515-195671	ADDED	Skai > Wallet > continue on web > home > request with QR - step 2 > share request 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16510-194584	ADDED	Skai > Wallet > continue on web > home > request from user - step 2 > share request 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16515-196023	ADDED	Skai > Wallet > continue on web > home > request with QR - step 2 > share request 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	16512-194903	ADDED	Skai > Wallet > continue on web > home > request from user - step 2 > share request 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	

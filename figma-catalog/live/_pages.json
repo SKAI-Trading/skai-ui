@@ -116,7 +116,7 @@
     "it rather than trusting it if the date matters.",
     "2026-09-11: Skai-Web-App and Skai-Web-App-2 were verified UNCHANGED page by page (FNV-1a hash over every top-level row in the harvest format, 20 of 20 pages equal to live/) and stamped harvested without re-ingesting; Skai-Games was re-ingested in full (31 pages)."
   ],
-  "harvestedAt": "2026-11-16",
+  "harvestedAt": "2026-11-23",
   "method": "harvest.mjs: one use_figma call per chunk (see `node harvest.mjs plan`); PageNode.loadAsync per page, top-level children only, full names; every chunk carries the page's own children.length and ingest refuses a page whose chunks do not reconcile to it",
   "fileAliases": {
     "_why": "Report `figma_link`s do not all carry a tracked fileKey. An untracked key resolves to no page and so to no scope, and an unscoped citation is worse than a retired one: nobody can tell whether to build it. Record the mapping here rather than letting each lane rediscover it.",
@@ -153,6 +153,20 @@
         "bfd3eb29-5ad6-429c-a21e-2107c1265496",
         "6159c035-fd25-4589-b508-bbdf026ef449"
       ]
+    },
+    "kaUnLTKalFjyyNzlKxPQkX": {
+      "fileName": "Skai-Web-App-3",
+      "tracked": "2026-11-23",
+      "note": "Tracked as the catalog's fourth file from 2026-11-23 (Casey, round 183). Not an alias of another file: it shares no node-id space except one copied page. Its node ids collide with the other files only on that page.",
+      "pageCopies": {
+        "4914:113562": {
+          "copyOf": "3sSzw1KewMtUbeLAv7uW0r 4914:113562",
+          "pageName": "✅ Social (18 Sept, 2026)",
+          "sharedIdSpace": true,
+          "checkedAt": "2026-11-23: 442 of 442 top-level rows equal (whitespace-folded names), page hash 437bd160 in both files",
+          "resolve": "A bug report citing this page's node ids resolves against the Skai-Web-App ✅ Social page; the frame is counted there."
+        }
+      }
     }
   },
   "scopeLegend": {
@@ -173,7 +187,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -183,7 +197,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -193,7 +207,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -203,7 +217,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -213,7 +227,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built)."
     },
     {
@@ -224,7 +238,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -234,7 +248,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -244,7 +258,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -254,7 +268,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -264,7 +278,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -274,7 +288,7 @@
       "n": 441,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -284,12 +298,12 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -305,15 +319,15 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "pageName": "✅ Home 1",
       "readiness": "ready",
-      "n": 280,
+      "n": 286,
       "nVerifiedAt": "2026-09-08",
       "openReports": 87,
       "scope": "in-scope",
@@ -322,7 +336,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 270,
@@ -338,7 +352,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
@@ -346,26 +360,26 @@
       "pageId": "13008:26951",
       "pageName": "✅ Wallet 2",
       "readiness": "ready",
-      "n": 191,
+      "n": 210,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "3:3",
       "pageName": "✅ Trade 1",
       "readiness": "ready",
-      "n": 441,
+      "n": 442,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -381,7 +395,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -391,7 +405,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -399,7 +413,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -413,7 +427,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -423,7 +437,7 @@
       "n": 28,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -433,7 +447,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -443,7 +457,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -451,7 +465,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 19,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 0,
       "scope": "in-scope"
     },
@@ -461,7 +475,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 3,
       "scope": "in-scope"
     },
@@ -473,7 +487,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -483,7 +497,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -493,7 +507,7 @@
       "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -503,7 +517,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -513,7 +527,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -523,7 +537,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -533,7 +547,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -543,7 +557,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -553,7 +567,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -563,7 +577,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -573,7 +587,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -583,7 +597,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -593,7 +607,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -603,7 +617,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -613,7 +627,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -623,7 +637,7 @@
       "n": 53,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed."
     },
     {
@@ -634,7 +648,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-16"
+      "harvestedAt": "2026-11-23"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -642,7 +656,7 @@
       "pageName": "✅ Untamed - Skai originals",
       "readiness": "ready",
       "n": 72,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
@@ -653,7 +667,7 @@
       "pageName": "✅ Starbound - Skai originals",
       "readiness": "ready",
       "n": 62,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2."
@@ -664,7 +678,7 @@
       "pageName": "✅ Vegas fortune - Skai originals",
       "readiness": "ready",
       "n": 96,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 1,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
@@ -675,7 +689,7 @@
       "pageName": "✅ Sugar Rush - Skai originals",
       "readiness": "ready",
       "n": 66,
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
@@ -688,7 +702,7 @@
       "n": 79,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page."
     },
     {
@@ -699,7 +713,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Added by harvest.mjs ingest 2026-10-09. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it."
     },
     {
@@ -710,7 +724,7 @@
       "n": 9,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it."
     },
     {
@@ -721,8 +735,52 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-16",
+      "harvestedAt": "2026-11-23",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it."
+    },
+    {
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "pageId": "15003:57847",
+      "pageName": "🚧 Social v2",
+      "readiness": "wip",
+      "n": 127,
+      "openReports": 0,
+      "scope": "excluded",
+      "harvestedAt": "2026-11-23",
+      "note": "Excluded 2026-11-23 on Casey's round 46 (2026-11-03): the four \"Skai Social v2 Layout Tests\" on this page (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) are parked, \"Build nothing from these boards\" and \"Do not catalogue Skai-Web-App-3 as in scope\"; round 183 (2026-11-23) keeps them excluded. The page also holds two later layout tests round 46 does not name (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide; the designer's 2026-11-23 note says Social work has started again. Round 46 liked the feed, composer and right rail but holds building until a final design. Re-scope only on a ruling. Section `social-v2`."
+    },
+    {
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "pageId": "15003:57848",
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "n": 1,
+      "openReports": 0,
+      "scope": "meta",
+      "harvestedAt": "2026-11-23",
+      "note": "Added 2026-11-23 with Skai-Web-App-3 (the catalog's fourth file). The file's cover thumbnail, one 1600x960 board; never a build target."
+    },
+    {
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "pageId": "15355:72871",
+      "pageName": "🚧 Collectibles",
+      "readiness": "wip",
+      "n": 44,
+      "openReports": 0,
+      "scope": "unscoped",
+      "harvestedAt": "2026-11-23",
+      "note": "Added 2026-11-23 (Casey, 11:55 MST: catalogue Skai-Web-App-3's Collectables; round 183). Scope `unscoped` until the orchestrator rules: reported, not counted. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`."
+    },
+    {
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "pageId": "4914:113562",
+      "pageName": "✅ Social (18 Sept, 2026)",
+      "readiness": "ready",
+      "n": 442,
+      "openReports": 0,
+      "scope": "unscoped",
+      "harvestedAt": "2026-11-23",
+      "note": "A COPY, not new design. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). Its frames are counted on the Skai-Web-App page and must never be counted again here: it has no section (pages.json outOfScope) and scope `unscoped` until the orchestrator rules. If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19T22:48:08.765Z",
+  "generated": "2026-11-23T19:42:49.115Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -223,9 +223,12 @@
     "home/Portfolio > Vault": {
       "section": "home",
       "family": "Portfolio > Vault",
-      "frameCount": 8,
+      "frameCount": 11,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2899-15797",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-91157",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-189716",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16509-193517",
         "mhF3BkzlTaGiLzJ7kvpmVc:2760-9935",
         "mhF3BkzlTaGiLzJ7kvpmVc:6828-38811",
         "mhF3BkzlTaGiLzJ7kvpmVc:6899-54796",
@@ -240,6 +243,9 @@
         "mobile"
       ],
       "variants": [
+        "withdraw",
+        "withdraw > confirm withdrawal",
+        "withdraw > confirm withdrawal >successful",
         "deposit",
         "deposit - portfolio vault 1440 [main 1382x1943]"
       ],
@@ -11042,11 +11048,12 @@
     "wallet-2/continue on web > home > account": {
       "section": "wallet-2",
       "family": "continue on web > home > account",
-      "frameCount": 7,
+      "frameCount": 8,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-27689",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-43059",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-44120",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-191270",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-27743",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-43100",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-44161",
@@ -11077,6 +11084,24 @@
         "modules/skai-wallet/src/shell"
       ],
       "proposedStatus": "likely-done"
+    },
+    "wallet-2/continue on web > home > account > security": {
+      "section": "wallet-2",
+      "family": "continue on web > home > account > security",
+      "frameCount": 2,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-190800",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-191025"
+      ],
+      "devices": [
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet-2/continue on web > home > account > logout": {
       "section": "wallet-2",
@@ -11125,11 +11150,15 @@
     "wallet-2/continue on web > home > notifications": {
       "section": "wallet-2",
       "family": "continue on web > home > notifications",
-      "frameCount": 9,
+      "frameCount": 13,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-27989",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-28216",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-28402",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16505-191490",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16506-191733",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16506-192046",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16507-192186",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-42806",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-43020",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-43295",
@@ -11144,7 +11173,10 @@
       ],
       "variants": [
         "settings",
-        "sample notification"
+        "sample notification",
+        "sample notification (badges)",
+        "sample notification (rewards)",
+        "sample notification (transaction)"
       ],
       "citedFileCount": 2,
       "citedFiles": [
@@ -11223,6 +11255,22 @@
         "modules/skai-wallet/src/components"
       ],
       "proposedStatus": "partial"
+    },
+    "wallet-2/continue on web > home > swap > review swap": {
+      "section": "wallet-2",
+      "family": "continue on web > home > swap > review swap",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16515-196749"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet-2/continue on web > home > chart": {
       "section": "wallet-2",
@@ -11473,14 +11521,18 @@
     "wallet-2/continue on web > home > request with QR": {
       "section": "wallet-2",
       "family": "continue on web > home > request with QR",
-      "frameCount": 6,
+      "frameCount": 10,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-36562",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37523",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16512-195168",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16515-196357",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45196",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45303",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16515-195671",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-50999",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-51102"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-51102",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16515-196023"
       ],
       "devices": [
         "desktop",
@@ -11489,7 +11541,8 @@
       ],
       "variants": [
         "step 1",
-        "step 2"
+        "step 2",
+        "step 2 > share request"
       ],
       "citedFileCount": 2,
       "citedFiles": [
@@ -11557,16 +11610,19 @@
     "wallet-2/continue on web > home > request from user": {
       "section": "wallet-2",
       "family": "continue on web > home > request from user",
-      "frameCount": 8,
+      "frameCount": 11,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37430",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37621",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16509-194269",
         "mhF3BkzlTaGiLzJ7kvpmVc:15382-180724",
         "mhF3BkzlTaGiLzJ7kvpmVc:15382-180505",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45389",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45470",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16510-194584",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-51185",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-51266"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-51266",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16512-194903"
       ],
       "devices": [
         "desktop",
@@ -11576,6 +11632,7 @@
       "variants": [
         "step 1",
         "step 2",
+        "step 2 > share request",
         "step 2 > select token ALT",
         "step 2 > select token"
       ],
@@ -11592,13 +11649,15 @@
     "wallet-2/continue on web > home > send": {
       "section": "wallet-2",
       "family": "continue on web > home > send",
-      "frameCount": 16,
+      "frameCount": 18,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37942",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-38514",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-38622",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-38964",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-39066",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16508-192346",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16486-90486",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-39705",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-39805",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-39950",
@@ -11622,6 +11681,8 @@
         "step 2 > Address lookup",
         "step 3",
         "processing",
+        "step 3 > confirm",
+        "processing > Deposit received",
         "step 1 - alternative view for steps"
       ],
       "citedFileCount": 4,
@@ -14064,6 +14125,693 @@
         "Load screen ALT - mobile",
         "1VH"
       ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables": {
+      "section": "collectibles",
+      "family": "Collectables",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15368-72983"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home": {
+      "section": "collectibles",
+      "family": "Collectables > Home",
+      "frameCount": 9,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15375-78805",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-35100",
+        "kaUnLTKalFjyyNzlKxPQkX:15375-81229",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-38112",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-47132",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-50249",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-51754",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-41152",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-44118"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "not signed in",
+        "not signed in > Login",
+        "not signed in > Sign up",
+        "not signed in > Sign up - referral open",
+        "not signed in > Sign up - referral open > with external wallet - Phantom",
+        "not signed in > Login > Email verification",
+        "not signed in > Login > Email verification - with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15450-23474"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Share position": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Share position",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15450-23922"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Signed in": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Signed in",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15455-53373",
+        "kaUnLTKalFjyyNzlKxPQkX:15455-54758"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "old user",
+        "new user"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets": {
+      "section": "collectibles",
+      "family": "Collectables > Markets",
+      "frameCount": 3,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15456-56373",
+        "kaUnLTKalFjyyNzlKxPQkX:15457-72495",
+        "kaUnLTKalFjyyNzlKxPQkX:15456-57424"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 1": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 1",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15004-58524",
+        "kaUnLTKalFjyyNzlKxPQkX:15211-8705"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2",
+      "frameCount": 7,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15072-70375",
+        "kaUnLTKalFjyyNzlKxPQkX:15211-9780",
+        "kaUnLTKalFjyyNzlKxPQkX:15089-87811",
+        "kaUnLTKalFjyyNzlKxPQkX:15105-122407",
+        "kaUnLTKalFjyyNzlKxPQkX:15080-71838",
+        "kaUnLTKalFjyyNzlKxPQkX:15211-10847",
+        "kaUnLTKalFjyyNzlKxPQkX:15309-68566"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > discover > preview community": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > discover > preview community",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15121-125789"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > discover > preview community > Tokens": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > discover > preview community > Tokens",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15254-76223",
+        "kaUnLTKalFjyyNzlKxPQkX:15255-79921"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > discover": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > discover",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15105-121327",
+        "kaUnLTKalFjyyNzlKxPQkX:15105-123752"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > discover > list": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > discover > list",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15250-68275"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15090-97378",
+        "kaUnLTKalFjyyNzlKxPQkX:15090-99040"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation",
+      "frameCount": 3,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15090-99688",
+        "kaUnLTKalFjyyNzlKxPQkX:15090-102129",
+        "kaUnLTKalFjyyNzlKxPQkX:15090-101254"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "scroll effect"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > Dropdown options": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > Dropdown options",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15097-107962"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > unread messages": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > unread messages",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15097-108701"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > chat settings": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > chat settings",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-112219"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > groups": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > groups",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15097-110657"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > Personal notes": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > Personal notes",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-117709"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > message requests": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > message requests",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-111449"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > message requests > sample message": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > message requests > sample message",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-112853"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15091-103842"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile ALT": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile ALT",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-113370"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15096-106249"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options ALT": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options ALT",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-114616"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15096-107131"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots ALT": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots ALT",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15098-116153"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > messages > sample conversation > attachment": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > messages > sample conversation > attachment",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15090-103106"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > create post > empty": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > create post > empty",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15082-76829"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > create post": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > create post",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15082-81776",
+        "kaUnLTKalFjyyNzlKxPQkX:15082-83287"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "with attached image"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > create post > drafts": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > create post > drafts",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15082-84766"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > create post > drafts > edit drafts": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > create post > drafts > edit drafts",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15082-86284"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 2 > Type post": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 2 > Type post",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15082-75395"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2": {
+      "section": "social-v2",
+      "family": "Social v2",
+      "frameCount": 5,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15064-628",
+        "kaUnLTKalFjyyNzlKxPQkX:15011-59796",
+        "kaUnLTKalFjyyNzlKxPQkX:15211-11915",
+        "kaUnLTKalFjyyNzlKxPQkX:15064-1257",
+        "kaUnLTKalFjyyNzlKxPQkX:15004-59157"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social > Discover": {
+      "section": "social-v2",
+      "family": "Social > Discover",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15102-119874"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "search"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 3": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 3",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15309-69900"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 5a": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 5a",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15350-11878"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 5b": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 5b",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15350-13670"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 3B": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 3B",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15309-75287"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social-v2/Social v2 ALT 4": {
+      "section": "social-v2",
+      "family": "Social v2 ALT 4",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15309-74004"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],

@@ -36,6 +36,10 @@ const FILE_KEYS = {
   "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
   "mhF3BkzlTaGiLzJ7kvpmVc": "Skai-Web-App-2",
   "M6r9FEn042UWTQD1zvy6GM": "Skai-Games",
+  // 2026-11-23: the fourth file (Casey: catalogue its Collectables). Its ✅ Social (18 Sept, 2026)
+  // page is a copy of Skai-Web-App's Social page, ids and all, so it has no section here: see
+  // fileAliases in live/_pages.json and outOfScope in pages.json.
+  "kaUnLTKalFjyyNzlKxPQkX": "Skai-Web-App-3",
 };
 // Which Figma file each section's nodes come from.
 const SECTION_FILE = {
@@ -163,6 +167,11 @@ const SECTION_FILE = {
   darts: "M6r9FEn042UWTQD1zvy6GM",
   chicken: "M6r9FEn042UWTQD1zvy6GM",
   hilo: "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-11-23: Skai-Web-App-3's two design pages, scaffolded with `harvest.mjs section`. Neither is
+  // counted yet: Collectibles is `unscoped` pending a ruling, and Social v2 is `excluded` on Casey's
+  // round 46 (its layout tests are parked). Both scopes live in live/_pages.json.
+  collectibles: "kaUnLTKalFjyyNzlKxPQkX",
+  "social-v2": "kaUnLTKalFjyyNzlKxPQkX",
 };
 // NOTE (2026-07-27): `trench` and `trade-bugrefs` are RETIRED as sections. The
 // "Trade (7/27 update)" list in figma.txt (692 links) is now the sole approved
@@ -205,6 +214,8 @@ const SECTIONS = [
   "limbo", "slide", "baccarat", "roulette", "price-grid",
   // 2026-09-09: the four 🚧 slots pages. See SECTION_FILE.
   "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots", "fisherman-slots",
+  // 2026-11-23: Skai-Web-App-3. See SECTION_FILE.
+  "collectibles", "social-v2",
 ];
 
 // The list above is an ORDERING hint, not the source of truth.

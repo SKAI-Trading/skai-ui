@@ -1,0 +1,127 @@
+15003:58510	Directory	FRAME	9350	352	1
+15309:68559	Directory	FRAME	4958	352	1
+15099:118502	Directory	FRAME	9350	352	1
+15089:87804	Directory	FRAME	9350	352	1
+15003:58515	Breakpoint	FRAME	1450	164	1
+15309:68564	Breakpoint	FRAME	1450	164	1
+15099:118507	Breakpoint	FRAME	1450	164	1
+15089:89233	Breakpoint	FRAME	1450	164	1
+15003:58517	Breakpoint	FRAME	1450	164	1
+15099:118509	Breakpoint	FRAME	1450	164	1
+15089:89235	Breakpoint	FRAME	1450	164	1
+15003:58519	Breakpoint	FRAME	1450	164	1
+15099:118511	Breakpoint	FRAME	1450	164	1
+15089:89237	Breakpoint	FRAME	1450	164	1
+15003:58521	Rectangle 155	RECTANGLE	720	720	1
+15099:118513	Rectangle 166	RECTANGLE	720	720	1
+15089:87809	Rectangle 164	RECTANGLE	720	720	1
+15003:58522	Rectangle 163	RECTANGLE	151	720	1
+15099:118514	Rectangle 167	RECTANGLE	151	720	1
+15089:87810	Rectangle 165	RECTANGLE	151	720	1
+15004:58524	Skai > Social v2 ALT 1 1VH (1440 x 900px)	FRAME	1440	900	1
+15211:8705	Skai > Social v2 ALT 1 1VH (1440 x 900px)	FRAME	1440	900	1
+15072:70375	Skai > Social v2 ALT 2 1VH (1440 x 900px)	FRAME	1440	900	1
+15211:9780	Skai > Social v2 ALT 2 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:118308	To-do	FRAME	274	750	1
+15089:87811	Skai > Social v2 ALT 2 1VH (1440 x 900px)	FRAME	1440	900	1
+15105:122407	Skai > Social v2 ALT 2 1VH (1440 x 900px)	FRAME	1440	900	1
+15121:125789	Skai > Social v2 ALT 2 > discover > preview community 1VH (1440 x 900px)	FRAME	1440	900	1
+15254:76223	Skai > Social v2 ALT 2 > discover > preview community > Tokens 1VH (1440 x 900px)	FRAME	1440	900	1
+15255:79921	Skai > Social v2 ALT 2 > discover > preview community > Tokens (1440 x 900px)	FRAME	1440	1586	1
+15250:67869	Right panel - Community	FRAME	356	1352	1
+15105:121327	Skai > Social v2 ALT 2 > discover 1VH (1440 x 900px)	FRAME	1440	900	1
+15250:68275	Skai > Social v2 ALT 2 > discover > list 1VH (1440 x 900px)	FRAME	1440	1261	1
+15105:123752	Skai > Social v2 ALT 2 > discover (1440 x 900px)	FRAME	1440	1853	1
+15090:97378	Skai > Social v2 ALT 2 > messages - empty 1VH (1440 x 900px)	FRAME	1440	900	1
+15090:99040	Skai > Social v2 ALT 2 > messages 1VH (1440 x 900px)	FRAME	1440	900	1
+15090:99688	Skai > Social v2 ALT 2 > messages > sample conversation 1VH (1440 x 900px)	FRAME	1440	900	1
+15097:107962	Skai > Social v2 ALT 2 > messages > sample conversation > Dropdown options 1VH (1440 x 900px)	FRAME	1440	900	1
+15097:108701	Skai > Social v2 ALT 2 > messages > sample conversation > unread messages 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:112219	Skai > Social v2 ALT 2 > messages > sample conversation > chat settings 1VH (1440 x 900px)	FRAME	1440	900	1
+15097:110657	Skai > Social v2 ALT 2 > messages > sample conversation > groups 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:117709	Skai > Social v2 ALT 2 > messages > sample conversation > Personal notes 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:111449	Skai > Social v2 ALT 2 > messages > sample conversation > message requests 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:112853	Skai > Social v2 ALT 2 > messages > sample conversation > message requests > sample message 1VH (1440 x 900px)	FRAME	1440	900	1
+15091:103842	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:113370	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile ALT 1VH (1440 x 900px)	FRAME	1440	900	1
+15096:106249	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:114616	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile > disappearing message options ALT 1VH (1440 x 900px)	FRAME	1440	900	1
+15096:107131	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:116153	Skai > Social v2 ALT 2 > messages > sample conversation > multi-select / profile > block screenshots ALT 1VH (1440 x 900px)	FRAME	1440	900	1
+15098:113939	Profile - Not following and blocked	FRAME	564	534	1
+15090:103106	Skai > Social v2 ALT 2 > messages > sample conversation > attachment 1VH (1440 x 900px)	FRAME	1440	900	1
+15090:102129	Skai > Social v2 ALT 2 > messages > sample conversation (1440 x 900px)	FRAME	1440	1842	1
+15090:101254	Skai > Social v2 ALT 2 > messages > sample conversation - scroll effect 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:76829	Skai > Social v2 ALT 2 > create post > empty 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:81776	Skai > Social v2 ALT 2 > create post 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:83287	Skai > Social v2 ALT 2 > create post - with attached image 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:84766	Skai > Social v2 ALT 2 > create post > drafts 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:86284	Skai > Social v2 ALT 2 > create post > drafts > edit drafts 1VH (1440 x 900px)	FRAME	1440	900	1
+15082:75395	Skai > Social v2 ALT 2 > Type post 1VH (1440 x 900px)	FRAME	1440	900	1
+15080:71838	Skai > Social v2 ALT 2 (1440 x 900px)	FRAME	1440	2459	1
+15211:10847	Skai > Social v2 ALT 2 (1440 x 900px)	FRAME	1440	2459	1
+15064:628	Skai > Social v2 1VH (1440 x 900px)	FRAME	1440	900	1
+15011:59796	Skai > Social v2 1VH (1440 x 900px)	FRAME	1440	900	1
+15211:11915	Skai > Social v2 1VH (1440 x 900px)	FRAME	1440	900	1
+15066:61099	right	FRAME	356	866	1
+15096:105280	Multi-panel - your position ALT	FRAME	356	330	1
+15064:1257	Skai > Social v2 1VH (1440 x 900px)	FRAME	1440	900	1
+15004:59157	Skai > Social v2 1VH (1440 x 900px)	FRAME	1440	900	1
+15004:59789	Screenshot 2026-09-18 at 14.49.06 1	RECTANGLE	629	411	1
+15006:59790	Screenshot 2026-09-18 at 14.58.58 1	RECTANGLE	629	487	1
+15007:59791	Screenshot 2026-09-18 at 15.04.17 1	RECTANGLE	622	373	1
+15007:59792	Screenshot 2026-09-18 at 15.06.55 1	RECTANGLE	1440	845	1
+15009:59793	Screenshot 2026-09-18 at 15.14.15 1	RECTANGLE	636	417	1
+15009:59794	Screenshot 2026-09-18 at 15.15.29 1	RECTANGLE	630	478	1
+15011:59795	Screen Shot 2026-09-18 at 17.15.06 1	RECTANGLE	1440	900	1
+15020:65784	image 1	RECTANGLE	1405	1292	1
+15020:65786	Screenshot 2026-09-18 at 20.34.01 1	RECTANGLE	1405	825	1
+15021:58438	image 2	RECTANGLE	1693	1295	1
+15020:65789	Iteration B	FRAME	1969	1245	1
+15037:66191	Iteration B	FRAME	1969	1245	1
+15028:65984	Iteration A	FRAME	1969	1245	1
+15029:58444	image 3	RECTANGLE	381	929	1
+15029:58448	image 4	RECTANGLE	1371	1293	1
+15028:65903	image 5	RECTANGLE	334	1207	1
+15028:65921	Notes	WIDGET	342	256	1
+15028:66058	image 6	RECTANGLE	379	330	1
+15028:66066	Screenshot 2026-09-18 at 22.09.23 1	RECTANGLE	1652	995	1
+15028:66146	image 7	RECTANGLE	687	349	1
+15028:66149	image 8	RECTANGLE	262	456	1
+15066:60732	Skai sUSD	FRAME	96	96	1
+15090:90974	dropdown - tridots	FRAME	163	130	1
+15090:90985	dropdown - tridots - reply	FRAME	218	206	1
+15098:112188	dropdown - right click	FRAME	218	206	1
+15090:91319	Reply from another.	FRAME	374	96	1
+15090:94616	Notes	WIDGET	342	230	1
+15090:94640	Notes	WIDGET	342	249	1
+15090:94688	Notes	WIDGET	342	363	1
+15096:105278	image 9	RECTANGLE	1684	1275	1
+15097:111424	Notes	WIDGET	342	293	1
+15102:119874	Skai > Social > Discover - search 1VH (1440 x 900px)	FRAME	1440	900	1
+15255:81433	Simple Chart line	FRAME	729	412	1
+15309:68566	Skai > Social v2 ALT 2 1VH (1440 x 900px)	FRAME	1440	900	1
+15309:69900	Skai > Social v2 ALT 3 1VH (1440 x 900px)	FRAME	1440	900	1
+15350:11878	Skai > Social v2 ALT 5a 1VH (1440 x 900px)	FRAME	1440	900	1
+15350:13670	Skai > Social v2 ALT 5b 1VH (1440 x 900px)	FRAME	1440	900	1
+15309:75287	Skai > Social v2 ALT 3B 1VH (1440 x 900px)	FRAME	1440	900	1
+15309:74004	Skai > Social v2 ALT 4 1VH (1440 x 900px)	FRAME	1440	900	1
+15309:69895	Original design	TEXT	409	206	1
+15309:69896	Potential Update ( I )	TEXT	559	206	1
+15350:11876	Potential Update ( III )	TEXT	605	206	1
+15309:74986	Potential Update ( II )	TEXT	582	206	1
+15309:69897	Vector 1271	VECTOR	992	0	1
+15309:69898	Vector 1272	VECTOR	992	0	1
+15350:11877	Vector 1280	VECTOR	992	0	1
+15309:74987	Vector 1273	VECTOR	992	0	1
+15309:78190	Features original platform consistent left sidebar.	TEXT	401	55	1
+15309:78197	Features multi-level Discord and Twitter (X) style left sidebar.	TEXT	401	87	1
+15309:78199	Channels/communities are shown using original “Predict” style multi-level header.	TEXT	401	87	1
+15309:78193	Communities/channels are linearly arranged with 16px icons, which can be navigated through easily. Less vertical space claimed.	TEXT	401	151	1
+15309:78195	Communities/channels are linearly arranged with 36px icons, which can be navigated through. More vertical space claimed.	TEXT	401	151	1
+15309:78191	Vector 1275	VECTOR	232	0	1
+15309:78198	Vector 1278	VECTOR	232	0	1
+15309:78200	Vector 1279	VECTOR	232	0	1
+15309:78194	Vector 1276	VECTOR	232	0	1
+15309:78196	Vector 1277	VECTOR	232	0	1
+15355:72967	Ellipse 50	ELLIPSE	106	106	1
