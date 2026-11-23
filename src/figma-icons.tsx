@@ -2002,6 +2002,57 @@ export const FigmaActionEditIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
+// Three more icons/action glyphs, from the Learn create header row and the
+// Explorer Holdings 375 board, copied byte for byte from each instance's SVG
+// export as Figma returned it on 2026-11-23. Arrow-up, Delete and Right
+// Chevron, which the same boards draw, are the exports above.
+
+/** icons/action Type=Add (instance 11343:142838, the first glyph of the Learn
+ *  create header row, Frame 907 11343:142659): a plus with arms 1 wide, one
+ *  filled union 14 x 14 at 1, 1. White on the board. FigmaPlusIcon is the
+ *  same cross exported on its own 14 box (this path moved by 1.00098, 1, to
+ *  within 0.00002); it stays as it is for its callers, and a frame that names
+ *  this component takes this one. 16. */
+export const FigmaActionAddIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M8.50098 7.5H15.001V8.5H8.5V15H7.5V8.5H1.00098V7.5H7.50098V1H8.50098V7.5Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+/** icons/action Type=Information (instance 12137:444246, beside 'Net worth
+ *  (USD)' in the Explorer Holdings 375 body): a question mark cut out of a
+ *  solid disc 13.33 across, one filled shape. Grey #878787 on that board. The
+ *  Rewards leaderboard head draws the same component beside 'Users referred'
+ *  (5531:77729, Ash #95A09F); its export sits 0.004 away. FigmaInfoIcon and
+ *  FigmaQuestionCircleIcon are older stroked drawings, kept for their
+ *  callers. 16. */
+export const FigmaActionInformationIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M7.96537 11.9997C8.1987 11.9997 8.39603 11.919 8.55737 11.7577C8.7187 11.5963 8.79914 11.3992 8.7987 11.1663C8.79825 10.9335 8.71781 10.7361 8.55737 10.5743C8.39692 10.4126 8.19959 10.3321 7.96537 10.333C7.73114 10.3339 7.53403 10.4146 7.37403 10.575C7.21403 10.7355 7.13337 10.9326 7.13203 11.1663C7.1307 11.4001 7.21137 11.5975 7.37403 11.7583C7.5367 11.9192 7.73381 11.9997 7.96537 11.9997ZM7.36537 9.43301H8.5987C8.5987 9.06634 8.64048 8.77746 8.72403 8.56634C8.80759 8.35523 9.04359 8.06634 9.43203 7.69968C9.72092 7.41079 9.9487 7.13568 10.1154 6.87434C10.282 6.61301 10.3654 6.29923 10.3654 5.93301C10.3654 5.31079 10.1376 4.83301 9.68203 4.49968C9.22648 4.16634 8.68759 3.99968 8.06537 3.99968C7.43203 3.99968 6.91825 4.16634 6.52403 4.49968C6.12981 4.83301 5.8547 5.23301 5.6987 5.69968L6.7987 6.13301C6.85425 5.93301 6.97936 5.71634 7.17403 5.48301C7.3687 5.24968 7.66581 5.13301 8.06537 5.13301C8.42092 5.13301 8.68759 5.23034 8.86537 5.42501C9.04314 5.61968 9.13203 5.83346 9.13203 6.06635C9.13203 6.28857 9.06537 6.49701 8.93203 6.69168C8.7987 6.88634 8.63203 7.06679 8.43203 7.23301C7.94314 7.66634 7.64314 7.99412 7.53203 8.21634C7.42092 8.43857 7.36537 8.84412 7.36537 9.43301ZM7.9987 14.6663C7.07648 14.6663 6.20981 14.4915 5.3987 14.1417C4.58759 13.7919 3.88203 13.3168 3.28203 12.7163C2.68203 12.1159 2.20714 11.4103 1.85737 10.5997C1.50759 9.78901 1.33248 8.92234 1.33203 7.99968C1.33159 7.07701 1.5067 6.21034 1.85737 5.39968C2.20803 4.58901 2.68292 3.88346 3.28203 3.28301C3.88114 2.68257 4.5867 2.20768 5.3987 1.85834C6.2107 1.50901 7.07737 1.3339 7.9987 1.33301C8.92003 1.33212 9.7867 1.50723 10.5987 1.85834C11.4107 2.20946 12.1163 2.68434 12.7154 3.28301C13.3145 3.88168 13.7896 4.58723 14.1407 5.39968C14.4918 6.21212 14.6667 7.07879 14.6654 7.99968C14.664 8.92057 14.4889 9.78723 14.14 10.5997C13.7911 11.4121 13.3163 12.1177 12.7154 12.7163C12.1145 13.315 11.4089 13.7901 10.5987 14.1417C9.78848 14.4932 8.92181 14.6681 7.9987 14.6663Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+/** icons/action Type=Left Chevron (instance 11998:341647, the Explorer
+ *  Holdings 375 pager; its other two, 11998:341648 and 11998:341649, export
+ *  the same): a chevron pointing left, one filled union 7 x 12.5 at 4, 1.5.
+ *  Ash #95A09F on the board. The auth modal's private BackIcon draws the same
+ *  path; FigmaChevronLeftIcon is an older drawing on its own 5.3 x 9.5 box.
+ *  16. */
+export const FigmaActionLeftChevronIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M11.0605 2.35352L5.41406 8L11.0605 13.6465L10.3535 14.3535L4 8L10.3535 1.64648L11.0605 2.35352Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 /** icons/message, the bubble with three dots (10216:182449, the right-click
  *  'Mark as unread' row; the message menu's 'Reply' row draws the same). On
  *  the boards this is a FRAME named icons/message, not an instance of a
@@ -2256,6 +2307,21 @@ export const FigmaGraphicalCandlesticksIcon: React.FC<IconProps> = (props) => (
       fill="currentColor"
     />
     <path d="M8.57146 3.42847H9.4286V6.42847H8.57146V3.42847ZM8.57146 17.5713H9.4286V20.5713H8.57146V17.5713Z" fill="currentColor" />
+  </svg>
+);
+
+/** icons/graphical Type=Reward (instance 5532:90860, the Rewards 1440
+ *  header's 'How it works' button, Frame 512 5532:90859): a trophy in line
+ *  art, a cup with two handles on a stem and foot, one filled path about
+ *  17.5 x 16.5 at 3, 4. White on the board. Its path is the instance's SVG
+ *  export of 2026-11-23, byte for byte. FigmaTrophyIcon is an older 16
+ *  stroked drawing of the idea, kept for its callers. 24. */
+export const FigmaGraphicalRewardIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M14.8066 19.667V18.123H14.0352V17.123H15.8066V20.667H7.63184V17.123H9.40332V18.123H8.63184V19.667H14.8066ZM19.4385 8.85938V6.5918H16.3506V5H7.08789V6.5918H4V8.85938C4 10.8085 5.45824 12.4092 7.33789 12.667C7.60728 13.4564 8.08445 14.1588 8.71973 14.6992C9.35502 15.2397 10.1249 15.5979 10.9473 15.7373V16.5791L10.9395 16.7314C10.9044 17.0849 10.7485 17.4175 10.4951 17.6709L10.3818 17.7734C10.1463 17.9664 9.85868 18.0852 9.55566 18.1152L9.40332 18.123V17.123C9.54748 17.123 9.68611 17.0658 9.78809 16.9639C9.89004 16.8619 9.94723 16.7233 9.94727 16.5791V16.5127C9.26321 16.2855 8.62535 15.9314 8.07227 15.4609C7.45094 14.9324 6.95648 14.2749 6.61523 13.5391C4.54364 12.9896 3 11.1145 3 8.85938V5.5918H6.08789V4H17.3506V5.5918H20.4385V8.85938C20.4385 11.1146 18.8949 12.9896 16.8232 13.5391C16.482 14.2749 15.9875 14.9324 15.3662 15.4609C14.8131 15.9314 14.1753 16.2855 13.4912 16.5127V16.5791C13.4913 16.7233 13.5484 16.8619 13.6504 16.9639C13.7524 17.0658 13.891 17.123 14.0352 17.123V18.123L13.8828 18.1152C13.5798 18.0852 13.2922 17.9664 13.0566 17.7734L12.9434 17.6709C12.69 17.4175 12.5341 17.0849 12.499 16.7314L12.4912 16.5791V15.7373C13.2107 15.6154 13.8895 15.3252 14.4736 14.8926L14.7188 14.6992C15.354 14.1588 15.8312 13.4563 16.1006 12.667C17.9802 12.4092 19.4385 10.8085 19.4385 8.85938ZM7.08789 8.13574V11.043C6.63644 10.8834 6.24523 10.5872 5.96875 10.1963C5.69236 9.80538 5.54401 9.33813 5.54395 8.85938V8.13574H7.08789ZM17.8945 8.85938C17.8935 9.33808 17.7451 9.8054 17.4688 10.1963L17.3594 10.3379C17.0934 10.6586 16.7451 10.9024 16.3506 11.043V8.13574H17.8945V8.85938Z"
+      fill="currentColor"
+    />
   </svg>
 );
 
