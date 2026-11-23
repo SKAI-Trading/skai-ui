@@ -23,8 +23,8 @@ This file carries no run date, so it is byte-identical whenever its inputs are. 
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 2453 | 75.4% |
-| `partial` | 626 | 19.2% |
+| `done` | 2452 | 75.4% |
+| `partial` | 627 | 19.3% |
 | `not-started` | 2 | 0.1% |
 | `blocked-on-backend` | 146 | 4.5% |
 | `frame-defect` | 0 | 0.0% |
@@ -51,7 +51,7 @@ That is 17.8% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**2453 of 3254 in-scope genuine frames (75.4%) are covered by a row marked `done`.**
+**2452 of 3254 in-scope genuine frames (75.4%) are covered by a row marked `done`.**
 
 Read the caveat section before quoting that. It is not 75.4% measured parity.
 
@@ -59,7 +59,7 @@ Read the caveat section before quoting that. It is not 75.4% measured parity.
 
 **306 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3560 and the figure reads 68.9%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
 
-**2183 of those 2453 (67.1% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 270 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 109 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
+**2182 of those 2452 (67.1% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 270 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 109 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
 
 ## Out of the roll-up
 
@@ -79,7 +79,7 @@ Read the caveat section before quoting that. It is not 75.4% measured parity.
 | ✅ Governance and Utilities | in-scope | 725 | 67 | 578 | 578 | 411 | 144 | 0 | 23 | 0 | 100.0% |
 | ✅ Trade 1 | in-scope | 441 | 60 | 325 | 315 | 265 | 38 | 0 | 12 | 10 | 96.9% |
 | ✅ Social | in-scope | 442 | 41 | 319 | 319 | 231 | 56 | 0 | 32 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 420 | 43 | 294 | 294 | 191 | 89 | 0 | 14 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 420 | 43 | 294 | 294 | 190 | 90 | 0 | 14 | 0 | 100.0% |
 | ✅ Play | in-scope | 441 | 78 | 269 | 260 | 223 | 33 | 2 | 1 | 9 | 96.7% |
 | ✅ Home 1 | in-scope | 280 | 44 | 219 | 219 | 215 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Home 2 | in-scope | 270 | 48 | 205 | 205 | 160 | 25 | 0 | 20 | 0 | 100.0% |
@@ -506,7 +506,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **5178 rows currently carry `done`**, and only **2948** of them (56.9%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 2230 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **5177 rows currently carry `done`**, and only **2947** of them (56.9%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 2230 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
@@ -516,7 +516,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 93158 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 93164 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **80 of the 3232 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 106/106, ✅ Trade 1 80/315 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
