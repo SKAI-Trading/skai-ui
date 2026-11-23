@@ -2177,6 +2177,20 @@ export const FigmaWarningsSuccessIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
+/** icons/warnings Type=Info (instances 11216:148617 at 768 and 11144:190000
+ *  at 375, the quick-bet notice's title row): an exclamation mark inside a
+ *  1px ring, one filled shape. The component paints it Sky Blue #56C7F3, so
+ *  the call site's text colour sets it. The export's clip to the 16 box is
+ *  left out, as above. 16. */
+export const FigmaWarningsInfoIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM9 12H7V10.3115H9V12ZM9 9.25H7V4H9V9.25Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 /** icons/wallet Type=Chart (1556:782): two candles on their wicks, one filled
  *  outline, the Trench order panel's chart CTA. FigmaCandlestickIcon is a
  *  stroked drawing of a similar idea. 24. */

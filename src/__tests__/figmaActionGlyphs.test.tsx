@@ -1,12 +1,15 @@
 /**
  * The icons/action glyphs, the two icons/message bubbles and the rank star the
- * wave 90 boards draw (HQ-604), added beside FigmaActionLinkOutIcon.
+ * wave 90 boards draw (HQ-604), added beside FigmaActionLinkOutIcon, and the
+ * quick-bet notice's icons/warnings Info.
  *
  * Two oracles, neither of them the constant under test:
  *  - OPENINGS: each path's opening move as the read lane's log prints it
- *    (wave80 lanes/L220/LOG-L220.md, 2026-11-23), typed here by hand;
+ *    (wave80 lanes/L220/LOG-L220.md, 2026-11-23; Info from L223's saved read,
+ *    lanes/L223/figma/r1-result.txt line 27), typed here by hand;
  *  - EXPORTS: each instance's SVG export, pasted as the read returned it
- *    (lanes/L220/figma/<tag>-result.txt, the lines named beside each).
+ *    (lanes/L220/figma/<tag>-result.txt or lanes/L223/figma/r1-result.txt,
+ *    the lines named beside each).
  * The star's export was cut after its filter box, so its oracle is the path,
  * the paints and the effect the same log records for it.
  */
@@ -28,6 +31,7 @@ import {
   FigmaMessageBarIcon,
   FigmaMessageDotsIcon,
   FigmaRankStarIcon,
+  FigmaWarningsInfoIcon,
   type FigmaRankStarTier,
 } from "../figma-icons";
 import * as icons from "../icons";
@@ -44,6 +48,7 @@ const GLYPHS = {
   FigmaActionEditIcon,
   FigmaMessageDotsIcon,
   FigmaMessageBarIcon,
+  FigmaWarningsInfoIcon,
 } as const;
 
 type GlyphName = keyof typeof GLYPHS;
@@ -61,6 +66,7 @@ const OPENINGS: Record<GlyphName, string[]> = {
   FigmaActionEditIcon: ["M12.3096 1.5"],
   FigmaMessageDotsIcon: ["M9.28906 0.831055"],
   FigmaMessageBarIcon: ["M9.28906 0.831055", "M5 6.5"],
+  FigmaWarningsInfoIcon: ["M8 0"],
 };
 
 const EXPORTS: Record<GlyphName, string> = {
@@ -108,6 +114,17 @@ const EXPORTS: Record<GlyphName, string> = {
   FigmaMessageBarIcon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.28906 0.831055C10.7899 0.831055 12.2298 1.42703 13.291 2.48828C14.3521 3.54951 14.9482 4.98949 14.9482 6.49023C14.948 7.99065 14.3519 9.43017 13.291 10.4912C12.3483 11.4337 11.1064 12.0082 9.78906 12.125V15.168L9.10352 14.8945C7.4723 14.242 5.47969 13.2806 3.8877 11.9297C2.29287 10.5762 1.05105 8.786 1.05078 6.49023C1.05078 4.98958 1.647 3.54949 2.70801 2.48828C3.76919 1.4271 5.20924 0.831133 6.70996 0.831055H9.28906ZM6.70996 1.83105C5.47445 1.83113 4.28868 2.32167 3.41504 3.19531C2.54156 4.06899 2.05078 5.2548 2.05078 6.49023C2.05105 8.38536 3.0663 9.92121 4.53418 11.167C5.79851 12.24 7.36314 13.0644 8.78906 13.6797V11.1484H9.28906C10.5244 11.1484 11.7093 10.6575 12.583 9.78418C13.4565 8.91064 13.948 7.72558 13.9482 6.49023C13.9482 5.25466 13.4567 4.06902 12.583 3.19531C11.7093 2.32184 10.5245 1.83105 9.28906 1.83105H6.70996Z" fill="white"/>
 <path d="M5 6.5H11" stroke="white"/>
+</svg>`,
+  // lanes/L223/figma/r1-result.txt lines 25-34 (11216:148617; 11144:190000 compared SAME)
+  FigmaWarningsInfoIcon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_11216_148617)">
+<path d="M8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM9 12H7V10.3115H9V12ZM9 9.25H7V4H9V9.25Z" fill="#56C7F3"/>
+</g>
+<defs>
+<clipPath id="clip0_11216_148617">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
 </svg>`,
 };
 
