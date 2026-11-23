@@ -506,6 +506,7 @@ mhF3BkzlTaGiLzJ7kvpmVc	9059-238612	ui	The NEW tag is built and shows on markets 
 mhF3BkzlTaGiLzJ7kvpmVc	9059-238855	ui	On phone, with Spot chosen and a quote picked, the pair search boxes the Favorites tab and moves Spot 16px right, where this design draws Favorites bare; the NEW tag on new pairs does not show yet.	862da1ddf16d	2026-11-22
 mhF3BkzlTaGiLzJ7kvpmVc	9061-240109	backend	Waiting on backend work.	f7d27205c99b	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9069-263248	ui	On phones the holder filters (1 hour ago, All related) show greyed out and do not work yet, and keyboard focus visits the token details before the filters drawn above them.	9d3c2689a7be	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	9081-267604	ui	On phone the link icon at the end of each news row is a different drawing from the design's, and grey where the design draws it white.	a9a5d11f74ed	2026-11-23
 mhF3BkzlTaGiLzJ7kvpmVc	9081-267988	ui	On phone the type and colours inside the whale activity rows are not yet compared with the design; the tab strip and the table's layout match it.	6bca349b3519	2026-11-23
 mhF3BkzlTaGiLzJ7kvpmVc	9135-80712	ui	On tablet the signed-out perps page and its signed-out header do not appear: the app asks you to log in before it shows perps.	6efc08b111b8	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9152-81278	backend	Waiting on backend work.	ec2c2631aa02	2026-11-17
@@ -583,7 +584,7 @@ mhF3BkzlTaGiLzJ7kvpmVc	13006-272489	ui	On tablet the ticket's wallet chip and st
 mhF3BkzlTaGiLzJ7kvpmVc	13006-273876	backend	Waiting on backend work.	c491b9a20a07	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13006-275283	ui	On tablet the four sell buttons are disabled, the wallet chip, the token holdings and the stat bar show a dash where the design shows figures, and the wallet chip has no dropdown caret.	fc9e668f94d3	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-276671	ui	On tablet the tile pictures lack the design's dark tint and soft shadow, and the first token tile lacks its blue outline.	56837939f364	2026-11-23
-mhF3BkzlTaGiLzJ7kvpmVc	13006-277256	ui	On phone the live tag on the card is 1.5px wider than drawn, so the viewer count sits 1.5px to the right of where the design puts it.	8bbd1df70674	2026-11-23
+mhF3BkzlTaGiLzJ7kvpmVc	13006-277256	ui	On phone the live tag on the card is 1.5px wider than drawn, so the viewer count sits 1.5px to the right of where the design puts it.	19d2530516d3	2026-11-23
 mhF3BkzlTaGiLzJ7kvpmVc	13006-277276	ui	On tablet the tile pictures lack the design's dark tint and soft shadow, and the first token tile lacks its blue outline.	c6f3487f290b	2026-11-23
 mhF3BkzlTaGiLzJ7kvpmVc	13006-277844	ui	On phone the tile pictures lack the design's dark tint and soft shadow, the first token tile lacks its blue outline, and the live tag on the card is 1.5px wider than drawn.	b4b9b98a3832	2026-11-23
 mhF3BkzlTaGiLzJ7kvpmVc	13006-278391	ui	On phone the tile pictures lack the design's dark tint and soft shadow, the first token tile lacks its blue outline, and the live tag on the card is 1.5px wider than drawn.	d5f50266e800	2026-11-23

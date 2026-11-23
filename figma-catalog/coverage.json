@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T16:17:54.281Z",
+  "generated": "2026-11-23T16:38:00.664Z",
   "harvestedAt": "2026-11-16",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3560,
     "frameDefectUncited": [],
     "matched": 3232,
-    "done": 2452,
-    "verified": 2182,
+    "done": 2451,
+    "verified": 2181,
     "visuallyDowngraded": 109,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 627,
+    "partial": 628,
     "notStarted": 2,
     "blocked": 146,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 27
   },
   "doneRows": {
-    "total": 5177,
-    "withBreakpointProvenance": 2947,
-    "namingANodeId": 4952,
+    "total": 5176,
+    "withBreakpointProvenance": 2946,
+    "namingANodeId": 4951,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 27091,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 93164
+    "unrecognisedTokens": 93166
   },
   "statusFiles": [
     {
@@ -9324,11 +9324,11 @@
       "defaultNamed": 32,
       "ambiguous": 80,
       "conflicts": 0,
-      "verified": 263,
+      "verified": 262,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 265,
-        "partial": 38,
+        "done": 264,
+        "partial": 39,
         "blocked-on-backend": 12
       },
       "liveOnly": [
@@ -36810,9 +36810,9 @@
       "id": "9081-267604",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9081-267988",
@@ -38828,7 +38828,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "13006-277275",
