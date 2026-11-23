@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T19:43:04.534Z",
+  "generated": "2026-11-23T21:13:35.387Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -1592,7 +1592,7 @@
       {
         "page": "✅ Social (18 Sept, 2026)",
         "live": 442,
-        "reason": "2026-11-23: a COPY of Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562) inside Skai-Web-App-3 (kaUnLTKalFjyyNzlKxPQkX), same page id and node ids. All 442 top-level rows equal the Skai-Web-App page row for row and the page hashes match (437bd160). Its frames are catalogued once, under section `social` on the Skai-Web-App page; a section here would count them twice and split their code citations between two files. Scope `unscoped` in live/_pages.json until ruled. Re-check if its hash ever differs from the Skai-Web-App page: that means the copy is being edited."
+        "reason": "2026-11-23: a COPY of Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562) inside Skai-Web-App-3 (kaUnLTKalFjyyNzlKxPQkX), same page id and node ids. All 442 top-level rows equal the Skai-Web-App page row for row and the page hashes match (437bd160). Its frames are catalogued once, under section `social` on the Skai-Web-App page; a section here would count them twice and split their code citations between two files. Scope `tombstone` in live/_pages.json (Casey, round 184). Re-check if its hash ever differs from the Skai-Web-App page: that means the copy is being edited."
       }
     ],
     "driftingPages": []

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-23T19:43:08.909Z",
+  "generated": "2026-11-23T21:13:45.938Z",
   "harvestedAt": "2026-11-23",
   "rollup": {
-    "pages": 39,
-    "live": 4779,
-    "furniture": 847,
-    "genuine": 3279,
+    "pages": 40,
+    "live": 4823,
+    "furniture": 869,
+    "genuine": 3301,
     "ruledOut": 347,
-    "genuineWithRuledOut": 3626,
+    "genuineWithRuledOut": 3648,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -17,7 +17,7 @@
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
     "frameDefectsOut": 306,
-    "genuineWithFrameDefects": 3585,
+    "genuineWithFrameDefects": 3607,
     "frameDefectUncited": [],
     "matched": 3232,
     "done": 2451,
@@ -49,7 +49,7 @@
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 47,
+    "liveOnly": 69,
     "rollupOnly": 1,
     "defaultNamed": 145,
     "ambiguous": 399,
@@ -11136,9 +11136,9 @@
       "readiness": "wip",
       "n": 127,
       "openReports": 0,
-      "scope": "excluded",
+      "scope": "wip",
       "harvestedAt": "2026-11-23",
-      "note": "Excluded 2026-11-23 on Casey's round 46 (2026-11-03): the four \"Skai Social v2 Layout Tests\" on this page (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) are parked, \"Build nothing from these boards\" and \"Do not catalogue Skai-Web-App-3 as in scope\"; round 183 (2026-11-23) keeps them excluded. The page also holds two later layout tests round 46 does not name (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide; the designer's 2026-11-23 note says Social work has started again. Round 46 liked the feed, composer and right rail but holds building until a final design. Re-scope only on a ruling. Section `social-v2`.",
+      "note": "WIP from 2026-11-23 (Casey, round 184 chose WIP over excluded): catalogued and reported as in progress, not counted. Round 46's \"Build nothing from these boards\" for the Social v2 layout tests (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) and Casey's 2026-11-03 keep-today's-menus ruling (no second left column) still hold until a final design. The page also holds two later layout tests (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide. Section `social-v2`.",
       "live": 127,
       "furniture": 62,
       "furnitureWhy": {
@@ -11659,9 +11659,9 @@
       "readiness": "wip",
       "n": 44,
       "openReports": 0,
-      "scope": "unscoped",
+      "scope": "in-scope",
       "harvestedAt": "2026-11-23",
-      "note": "Added 2026-11-23 (Casey, 11:55 MST: catalogue Skai-Web-App-3's Collectables; round 183). Scope `unscoped` until the orchestrator rules: reported, not counted. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`.",
+      "note": "In scope from 2026-11-23 (Casey, round 184): counted from today. Markets is still moving, so it is built last; Home, sign-in and sign-up, and Leaderboard go first. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`.",
       "live": 44,
       "furniture": 22,
       "furnitureWhy": {
@@ -11844,9 +11844,9 @@
       "readiness": "ready",
       "n": 442,
       "openReports": 0,
-      "scope": "unscoped",
+      "scope": "tombstone",
       "harvestedAt": "2026-11-23",
-      "note": "A COPY, not new design. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). Its frames are counted on the Skai-Web-App page and must never be counted again here: it has no section (pages.json outOfScope) and scope `unscoped` until the orchestrator rules. If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it.",
+      "note": "A COPY, not new design: tombstone from 2026-11-23 (Casey, round 184), counted once, on Skai-Web-App's original. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). It has no section (pages.json outOfScope). If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it.",
       "live": 442,
       "furniture": 40,
       "furnitureWhy": {
@@ -44482,7 +44482,7 @@
     {
       "id": "5110-187509",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44490,7 +44490,7 @@
     {
       "id": "10302-184748",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44498,7 +44498,7 @@
     {
       "id": "5100-183573",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44506,7 +44506,7 @@
     {
       "id": "10232-201644",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44514,7 +44514,7 @@
     {
       "id": "10324-107023",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44522,7 +44522,7 @@
     {
       "id": "10335-235331",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44530,7 +44530,7 @@
     {
       "id": "10335-236189",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44538,7 +44538,7 @@
     {
       "id": "10328-215524",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44546,7 +44546,7 @@
     {
       "id": "10335-233638",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44554,7 +44554,7 @@
     {
       "id": "10335-234351",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44562,7 +44562,7 @@
     {
       "id": "11442-169953",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44570,7 +44570,7 @@
     {
       "id": "10335-236021",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44578,7 +44578,7 @@
     {
       "id": "10328-199155",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44586,7 +44586,7 @@
     {
       "id": "10324-107730",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44594,7 +44594,7 @@
     {
       "id": "11407-106086",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44602,7 +44602,7 @@
     {
       "id": "11407-107575",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44610,7 +44610,7 @@
     {
       "id": "11407-148353",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44618,7 +44618,7 @@
     {
       "id": "10327-199048",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44626,7 +44626,7 @@
     {
       "id": "10324-198967",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44634,7 +44634,7 @@
     {
       "id": "10256-150766",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44642,7 +44642,7 @@
     {
       "id": "5101-186045",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44650,7 +44650,7 @@
     {
       "id": "5194-271601",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44658,7 +44658,7 @@
     {
       "id": "4948-143477",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44666,7 +44666,7 @@
     {
       "id": "9640-213001",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44674,7 +44674,7 @@
     {
       "id": "5118-200749",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44682,7 +44682,7 @@
     {
       "id": "9640-214177",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44690,7 +44690,7 @@
     {
       "id": "5120-201706",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44698,7 +44698,7 @@
     {
       "id": "4954-147061",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44706,7 +44706,7 @@
     {
       "id": "4966-147666",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44714,7 +44714,7 @@
     {
       "id": "4972-150250",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44722,7 +44722,7 @@
     {
       "id": "4979-154471",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44730,7 +44730,7 @@
     {
       "id": "5124-203728",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44738,7 +44738,7 @@
     {
       "id": "9653-215184",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -44746,7 +44746,7 @@
     {
       "id": "4997-155172",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44754,7 +44754,7 @@
     {
       "id": "5110-188367",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44762,7 +44762,7 @@
     {
       "id": "10302-184763",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44770,7 +44770,7 @@
     {
       "id": "5111-189292",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -44778,7 +44778,7 @@
     {
       "id": "5111-190761",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44786,7 +44786,7 @@
     {
       "id": "5111-192551",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44794,7 +44794,7 @@
     {
       "id": "5111-190017",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44802,7 +44802,7 @@
     {
       "id": "4998-155882",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44810,7 +44810,7 @@
     {
       "id": "5153-205032",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44818,7 +44818,7 @@
     {
       "id": "10216-138151",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44826,7 +44826,7 @@
     {
       "id": "10215-137087",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44834,7 +44834,7 @@
     {
       "id": "5162-265801",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44842,7 +44842,7 @@
     {
       "id": "10213-136686",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44850,7 +44850,7 @@
     {
       "id": "11530-303299",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44858,7 +44858,7 @@
     {
       "id": "11530-303318",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44866,7 +44866,7 @@
     {
       "id": "10215-137653",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44874,7 +44874,7 @@
     {
       "id": "11530-303337",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44882,7 +44882,7 @@
     {
       "id": "11530-303366",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44890,7 +44890,7 @@
     {
       "id": "10216-182394",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44898,7 +44898,7 @@
     {
       "id": "11380-24252",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44906,7 +44906,7 @@
     {
       "id": "11387-73530",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44914,7 +44914,7 @@
     {
       "id": "5164-266351",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44922,7 +44922,7 @@
     {
       "id": "10216-182243",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44930,7 +44930,7 @@
     {
       "id": "5165-269440",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44938,7 +44938,7 @@
     {
       "id": "5164-266951",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44946,7 +44946,7 @@
     {
       "id": "5164-267630",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44954,7 +44954,7 @@
     {
       "id": "5171-270124",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44962,7 +44962,7 @@
     {
       "id": "5160-207895",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44970,7 +44970,7 @@
     {
       "id": "5161-209418",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44978,7 +44978,7 @@
     {
       "id": "5154-206768",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -44986,7 +44986,7 @@
     {
       "id": "4998-157146",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -44994,7 +44994,7 @@
     {
       "id": "5443-82417",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "furniture",
       "claimed": "furniture",
       "verdict": null
@@ -45002,7 +45002,7 @@
     {
       "id": "4943-129014",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45010,7 +45010,7 @@
     {
       "id": "4948-141994",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45018,7 +45018,7 @@
     {
       "id": "5114-194778",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45026,7 +45026,7 @@
     {
       "id": "5116-199727",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45034,7 +45034,7 @@
     {
       "id": "9640-211967",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -45042,7 +45042,7 @@
     {
       "id": "9658-217019",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -45050,7 +45050,7 @@
     {
       "id": "5222-11064",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45058,7 +45058,7 @@
     {
       "id": "5222-11708",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45066,7 +45066,7 @@
     {
       "id": "5115-197431",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45074,7 +45074,7 @@
     {
       "id": "9636-211487",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45082,7 +45082,7 @@
     {
       "id": "5115-198181",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45090,7 +45090,7 @@
     {
       "id": "5116-198982",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45098,7 +45098,7 @@
     {
       "id": "5116-199550",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45106,7 +45106,7 @@
     {
       "id": "4948-142325",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45114,7 +45114,7 @@
     {
       "id": "9636-211231",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45122,7 +45122,7 @@
     {
       "id": "5000-158255",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45130,7 +45130,7 @@
     {
       "id": "10094-247131",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45138,7 +45138,7 @@
     {
       "id": "10094-250637",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45146,7 +45146,7 @@
     {
       "id": "10094-253395",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45154,7 +45154,7 @@
     {
       "id": "10102-259223",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45162,7 +45162,7 @@
     {
       "id": "10136-262502",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45170,7 +45170,7 @@
     {
       "id": "10155-268046",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -45178,7 +45178,7 @@
     {
       "id": "10102-261907",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45186,7 +45186,7 @@
     {
       "id": "10094-256369",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45194,7 +45194,7 @@
     {
       "id": "10094-250606",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45202,7 +45202,7 @@
     {
       "id": "10025-225705",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45210,7 +45210,7 @@
     {
       "id": "10025-228194",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45218,7 +45218,7 @@
     {
       "id": "10091-230847",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45226,7 +45226,7 @@
     {
       "id": "5015-179843",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45234,7 +45234,7 @@
     {
       "id": "5025-182851",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45242,7 +45242,7 @@
     {
       "id": "5026-183371",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -45250,7 +45250,7 @@
     {
       "id": "5024-182233",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45258,7 +45258,7 @@
     {
       "id": "5010-179221",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45266,7 +45266,7 @@
     {
       "id": "10094-244396",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45274,7 +45274,7 @@
     {
       "id": "5000-163464",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45282,7 +45282,7 @@
     {
       "id": "5000-162336",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45290,7 +45290,7 @@
     {
       "id": "10018-198650",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45298,7 +45298,7 @@
     {
       "id": "5000-163102",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45306,7 +45306,7 @@
     {
       "id": "10025-230712",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45314,7 +45314,7 @@
     {
       "id": "5000-162965",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45322,7 +45322,7 @@
     {
       "id": "5194-270743",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45330,7 +45330,7 @@
     {
       "id": "10219-182536",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45338,7 +45338,7 @@
     {
       "id": "5198-47891",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45346,7 +45346,7 @@
     {
       "id": "5198-51022",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -45354,7 +45354,7 @@
     {
       "id": "5198-50314",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45362,7 +45362,7 @@
     {
       "id": "5198-47082",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45370,7 +45370,7 @@
     {
       "id": "5198-62746",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45378,7 +45378,7 @@
     {
       "id": "5198-63614",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45386,7 +45386,7 @@
     {
       "id": "5198-63742",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45394,7 +45394,7 @@
     {
       "id": "5202-63932",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45402,7 +45402,7 @@
     {
       "id": "5203-64550",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45410,7 +45410,7 @@
     {
       "id": "5206-31322",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45418,7 +45418,7 @@
     {
       "id": "10227-200546",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45426,7 +45426,7 @@
     {
       "id": "10232-200912",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45434,7 +45434,7 @@
     {
       "id": "5207-42693",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45442,7 +45442,7 @@
     {
       "id": "9626-39285",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45450,7 +45450,7 @@
     {
       "id": "11530-303043",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45458,7 +45458,7 @@
     {
       "id": "11530-303066",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45466,7 +45466,7 @@
     {
       "id": "10256-135335",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45474,7 +45474,7 @@
     {
       "id": "11530-302842",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45482,7 +45482,7 @@
     {
       "id": "11530-302866",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45490,7 +45490,7 @@
     {
       "id": "9626-208767",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45498,7 +45498,7 @@
     {
       "id": "11530-303089",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45506,7 +45506,7 @@
     {
       "id": "11530-303116",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45514,7 +45514,7 @@
     {
       "id": "9636-208873",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45522,7 +45522,7 @@
     {
       "id": "11530-303143",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45530,7 +45530,7 @@
     {
       "id": "11530-303164",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45538,7 +45538,7 @@
     {
       "id": "9640-213620",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45546,7 +45546,7 @@
     {
       "id": "11530-303185",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45554,7 +45554,7 @@
     {
       "id": "11530-303236",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45562,7 +45562,7 @@
     {
       "id": "9640-214077",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45570,7 +45570,7 @@
     {
       "id": "11530-303208",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45578,7 +45578,7 @@
     {
       "id": "11530-303259",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45586,7 +45586,7 @@
     {
       "id": "9646-214871",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45594,7 +45594,7 @@
     {
       "id": "11530-303287",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45602,7 +45602,7 @@
     {
       "id": "11530-303293",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45610,7 +45610,7 @@
     {
       "id": "9657-215247",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45618,7 +45618,7 @@
     {
       "id": "9657-216084",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45626,7 +45626,7 @@
     {
       "id": "10025-225649",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45634,7 +45634,7 @@
     {
       "id": "11529-293029",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45642,7 +45642,7 @@
     {
       "id": "11529-293244",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45650,7 +45650,7 @@
     {
       "id": "10108-262300",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45658,7 +45658,7 @@
     {
       "id": "10213-16819",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45666,7 +45666,7 @@
     {
       "id": "10219-182490",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45674,7 +45674,7 @@
     {
       "id": "11398-85209",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45682,7 +45682,7 @@
     {
       "id": "10221-182894",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45690,7 +45690,7 @@
     {
       "id": "11398-85199",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45698,7 +45698,7 @@
     {
       "id": "10227-200411",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45706,7 +45706,7 @@
     {
       "id": "11398-85189",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45714,7 +45714,7 @@
     {
       "id": "10302-184717",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45722,7 +45722,7 @@
     {
       "id": "11530-302910",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45730,7 +45730,7 @@
     {
       "id": "11530-302923",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45738,7 +45738,7 @@
     {
       "id": "11530-302936",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45746,7 +45746,7 @@
     {
       "id": "11530-302943",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45754,7 +45754,7 @@
     {
       "id": "11341-88388",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45762,7 +45762,7 @@
     {
       "id": "11367-22805",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45770,7 +45770,7 @@
     {
       "id": "11380-23801",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45778,7 +45778,7 @@
     {
       "id": "11380-24302",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45786,7 +45786,7 @@
     {
       "id": "11365-21892",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45794,7 +45794,7 @@
     {
       "id": "11373-23253",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45802,7 +45802,7 @@
     {
       "id": "11365-22320",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45810,7 +45810,7 @@
     {
       "id": "11368-23343",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45818,7 +45818,7 @@
     {
       "id": "11530-303652",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45826,7 +45826,7 @@
     {
       "id": "11373-23529",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45834,7 +45834,7 @@
     {
       "id": "11380-24565",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45842,7 +45842,7 @@
     {
       "id": "11380-24969",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45850,7 +45850,7 @@
     {
       "id": "11373-22600",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45858,7 +45858,7 @@
     {
       "id": "11369-24298",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45866,7 +45866,7 @@
     {
       "id": "11373-22256",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45874,7 +45874,7 @@
     {
       "id": "11341-88224",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45882,7 +45882,7 @@
     {
       "id": "11398-77450",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45890,7 +45890,7 @@
     {
       "id": "11526-290354",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -45898,7 +45898,7 @@
     {
       "id": "11398-79350",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -45906,7 +45906,7 @@
     {
       "id": "11398-79037",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45914,7 +45914,7 @@
     {
       "id": "11526-290070",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45922,7 +45922,7 @@
     {
       "id": "11398-77014",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45930,7 +45930,7 @@
     {
       "id": "11398-81115",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45938,7 +45938,7 @@
     {
       "id": "11398-82297",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45946,7 +45946,7 @@
     {
       "id": "11400-90110",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45954,7 +45954,7 @@
     {
       "id": "11399-89108",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -45962,7 +45962,7 @@
     {
       "id": "11400-90438",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45970,7 +45970,7 @@
     {
       "id": "11400-91695",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45978,7 +45978,7 @@
     {
       "id": "11400-92142",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45986,7 +45986,7 @@
     {
       "id": "11400-91347",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -45994,7 +45994,7 @@
     {
       "id": "11398-83498",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46002,7 +46002,7 @@
     {
       "id": "11526-289885",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46010,7 +46010,7 @@
     {
       "id": "11398-84195",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46018,7 +46018,7 @@
     {
       "id": "11398-84777",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46026,7 +46026,7 @@
     {
       "id": "11398-81312",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46034,7 +46034,7 @@
     {
       "id": "11398-81450",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46042,7 +46042,7 @@
     {
       "id": "11396-76652",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46050,7 +46050,7 @@
     {
       "id": "11526-288877",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46058,7 +46058,7 @@
     {
       "id": "11398-86869",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46066,7 +46066,7 @@
     {
       "id": "11398-87644",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46074,7 +46074,7 @@
     {
       "id": "11398-87282",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46082,7 +46082,7 @@
     {
       "id": "11398-86245",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46090,7 +46090,7 @@
     {
       "id": "11398-88883",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46098,7 +46098,7 @@
     {
       "id": "11398-85878",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46106,7 +46106,7 @@
     {
       "id": "11530-304239",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46114,7 +46114,7 @@
     {
       "id": "11381-26920",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46122,7 +46122,7 @@
     {
       "id": "11387-72789",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46130,7 +46130,7 @@
     {
       "id": "11387-73334",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46138,7 +46138,7 @@
     {
       "id": "11385-27845",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46146,7 +46146,7 @@
     {
       "id": "11387-72046",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46154,7 +46154,7 @@
     {
       "id": "11385-28161",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46162,7 +46162,7 @@
     {
       "id": "11387-29051",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46170,7 +46170,7 @@
     {
       "id": "11530-303909",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46178,7 +46178,7 @@
     {
       "id": "11387-72346",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46186,7 +46186,7 @@
     {
       "id": "11387-73630",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46194,7 +46194,7 @@
     {
       "id": "11387-74043",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46202,7 +46202,7 @@
     {
       "id": "11387-28789",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46210,7 +46210,7 @@
     {
       "id": "11387-70777",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46218,7 +46218,7 @@
     {
       "id": "11387-71039",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46226,7 +46226,7 @@
     {
       "id": "11385-27529",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46234,7 +46234,7 @@
     {
       "id": "11381-26299",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46242,7 +46242,7 @@
     {
       "id": "11341-86906",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46250,7 +46250,7 @@
     {
       "id": "11341-87042",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46258,7 +46258,7 @@
     {
       "id": "11530-301774",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46266,7 +46266,7 @@
     {
       "id": "11530-301872",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46274,7 +46274,7 @@
     {
       "id": "11398-88650",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46282,7 +46282,7 @@
     {
       "id": "11410-138568",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46290,7 +46290,7 @@
     {
       "id": "11526-290681",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46298,7 +46298,7 @@
     {
       "id": "11477-236128",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46306,7 +46306,7 @@
     {
       "id": "11529-298704",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46314,7 +46314,7 @@
     {
       "id": "11529-292610",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46322,7 +46322,7 @@
     {
       "id": "11529-292890",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46330,7 +46330,7 @@
     {
       "id": "11529-292425",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46338,7 +46338,7 @@
     {
       "id": "11477-238522",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46346,7 +46346,7 @@
     {
       "id": "11529-293878",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46354,7 +46354,7 @@
     {
       "id": "11477-254411",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46362,7 +46362,7 @@
     {
       "id": "11477-257758",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46370,7 +46370,7 @@
     {
       "id": "11477-255979",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46378,7 +46378,7 @@
     {
       "id": "11477-245788",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46386,7 +46386,7 @@
     {
       "id": "11481-269077",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46394,7 +46394,7 @@
     {
       "id": "11477-247775",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46402,7 +46402,7 @@
     {
       "id": "11477-249372",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46410,7 +46410,7 @@
     {
       "id": "11477-250868",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46418,7 +46418,7 @@
     {
       "id": "11477-252566",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46426,7 +46426,7 @@
     {
       "id": "11477-254210",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46434,7 +46434,7 @@
     {
       "id": "11477-247744",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46442,7 +46442,7 @@
     {
       "id": "11477-243654",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46450,7 +46450,7 @@
     {
       "id": "11529-292728",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46458,7 +46458,7 @@
     {
       "id": "11477-241691",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46466,7 +46466,7 @@
     {
       "id": "11477-240087",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46474,7 +46474,7 @@
     {
       "id": "11477-243256",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46482,7 +46482,7 @@
     {
       "id": "11442-160938",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46490,7 +46490,7 @@
     {
       "id": "11410-139136",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46498,7 +46498,7 @@
     {
       "id": "11438-159797",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46506,7 +46506,7 @@
     {
       "id": "11442-162043",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46514,7 +46514,7 @@
     {
       "id": "11481-261891",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46522,7 +46522,7 @@
     {
       "id": "11529-297447",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46530,7 +46530,7 @@
     {
       "id": "11529-293126",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46538,7 +46538,7 @@
     {
       "id": "11529-293265",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46546,7 +46546,7 @@
     {
       "id": "11529-293404",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46554,7 +46554,7 @@
     {
       "id": "11481-284085",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46562,7 +46562,7 @@
     {
       "id": "11481-280102",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46570,7 +46570,7 @@
     {
       "id": "11481-282550",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46578,7 +46578,7 @@
     {
       "id": "11481-273266",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46586,7 +46586,7 @@
     {
       "id": "11481-274581",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46594,7 +46594,7 @@
     {
       "id": "11481-275802",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46602,7 +46602,7 @@
     {
       "id": "11481-277023",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46610,7 +46610,7 @@
     {
       "id": "11481-278244",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46618,7 +46618,7 @@
     {
       "id": "11481-279749",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46626,7 +46626,7 @@
     {
       "id": "11481-265530",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46634,7 +46634,7 @@
     {
       "id": "11481-266994",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46642,7 +46642,7 @@
     {
       "id": "11529-293522",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46650,7 +46650,7 @@
     {
       "id": "11481-264273",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46658,7 +46658,7 @@
     {
       "id": "11529-293050",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46666,7 +46666,7 @@
     {
       "id": "11481-262931",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46674,7 +46674,7 @@
     {
       "id": "11529-300393",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46682,7 +46682,7 @@
     {
       "id": "11407-148276",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46690,7 +46690,7 @@
     {
       "id": "11407-148320",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46698,7 +46698,7 @@
     {
       "id": "11530-302963",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46706,7 +46706,7 @@
     {
       "id": "11530-302976",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46714,7 +46714,7 @@
     {
       "id": "11530-303003",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46722,7 +46722,7 @@
     {
       "id": "11530-303016",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46730,7 +46730,7 @@
     {
       "id": "11442-163219",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46738,7 +46738,7 @@
     {
       "id": "11529-291953",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46746,7 +46746,7 @@
     {
       "id": "11442-164766",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46754,7 +46754,7 @@
     {
       "id": "11461-195806",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46762,7 +46762,7 @@
     {
       "id": "11461-197022",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46770,7 +46770,7 @@
     {
       "id": "11461-197684",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46778,7 +46778,7 @@
     {
       "id": "11461-198346",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46786,7 +46786,7 @@
     {
       "id": "11461-199116",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46794,7 +46794,7 @@
     {
       "id": "11474-204840",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46802,7 +46802,7 @@
     {
       "id": "11474-206222",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46810,7 +46810,7 @@
     {
       "id": "11474-207758",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46818,7 +46818,7 @@
     {
       "id": "11474-205859",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46826,7 +46826,7 @@
     {
       "id": "11474-212827",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46834,7 +46834,7 @@
     {
       "id": "11474-215215",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46842,7 +46842,7 @@
     {
       "id": "11474-220999",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46850,7 +46850,7 @@
     {
       "id": "11474-222012",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46858,7 +46858,7 @@
     {
       "id": "11474-224415",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46866,7 +46866,7 @@
     {
       "id": "11474-215821",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46874,7 +46874,7 @@
     {
       "id": "11474-213159",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46882,7 +46882,7 @@
     {
       "id": "11524-286515",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46890,7 +46890,7 @@
     {
       "id": "11474-218523",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46898,7 +46898,7 @@
     {
       "id": "11474-219363",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46906,7 +46906,7 @@
     {
       "id": "11474-218943",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46914,7 +46914,7 @@
     {
       "id": "11474-206406",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46922,7 +46922,7 @@
     {
       "id": "11474-222766",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46930,7 +46930,7 @@
     {
       "id": "11474-223997",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46938,7 +46938,7 @@
     {
       "id": "11442-174134",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46946,7 +46946,7 @@
     {
       "id": "11442-175333",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -46954,7 +46954,7 @@
     {
       "id": "11442-176880",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46962,7 +46962,7 @@
     {
       "id": "11442-175841",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46970,7 +46970,7 @@
     {
       "id": "11442-176349",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -46978,7 +46978,7 @@
     {
       "id": "11442-177647",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -46986,7 +46986,7 @@
     {
       "id": "11527-291862",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -46994,7 +46994,7 @@
     {
       "id": "11442-178053",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47002,7 +47002,7 @@
     {
       "id": "11442-178673",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47010,7 +47010,7 @@
     {
       "id": "11442-179814",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47018,7 +47018,7 @@
     {
       "id": "11442-179297",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47026,7 +47026,7 @@
     {
       "id": "11461-191228",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47034,7 +47034,7 @@
     {
       "id": "11442-174603",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47042,7 +47042,7 @@
     {
       "id": "11527-291792",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47050,7 +47050,7 @@
     {
       "id": "11442-173646",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47058,7 +47058,7 @@
     {
       "id": "11442-163273",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47066,7 +47066,7 @@
     {
       "id": "11442-164397",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47074,7 +47074,7 @@
     {
       "id": "11455-183352",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47082,7 +47082,7 @@
     {
       "id": "11461-187585",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47090,7 +47090,7 @@
     {
       "id": "11461-189346",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47098,7 +47098,7 @@
     {
       "id": "11459-185505",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47106,7 +47106,7 @@
     {
       "id": "11461-189925",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47114,7 +47114,7 @@
     {
       "id": "11442-165902",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47122,7 +47122,7 @@
     {
       "id": "11442-167339",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47130,7 +47130,7 @@
     {
       "id": "11442-168505",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47138,7 +47138,7 @@
     {
       "id": "11442-169153",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47146,7 +47146,7 @@
     {
       "id": "11442-170034",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47154,7 +47154,7 @@
     {
       "id": "11442-170567",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47162,7 +47162,7 @@
     {
       "id": "11442-171056",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47170,7 +47170,7 @@
     {
       "id": "11442-171969",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47178,7 +47178,7 @@
     {
       "id": "11442-172515",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47186,7 +47186,7 @@
     {
       "id": "11442-173004",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47194,7 +47194,7 @@
     {
       "id": "11442-167934",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47202,7 +47202,7 @@
     {
       "id": "11442-166576",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47210,7 +47210,7 @@
     {
       "id": "11442-167200",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47218,7 +47218,7 @@
     {
       "id": "11442-165355",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47226,7 +47226,7 @@
     {
       "id": "11442-167104",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47234,7 +47234,7 @@
     {
       "id": "11442-175111",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47242,7 +47242,7 @@
     {
       "id": "11461-191825",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47250,7 +47250,7 @@
     {
       "id": "11461-192084",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47258,7 +47258,7 @@
     {
       "id": "11461-192352",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47266,7 +47266,7 @@
     {
       "id": "11461-192611",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47274,7 +47274,7 @@
     {
       "id": "11461-192857",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47282,7 +47282,7 @@
     {
       "id": "11461-192912",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47290,7 +47290,7 @@
     {
       "id": "11461-192960",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47298,7 +47298,7 @@
     {
       "id": "11461-193256",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47306,7 +47306,7 @@
     {
       "id": "11461-193561",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47314,7 +47314,7 @@
     {
       "id": "11461-193857",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47322,7 +47322,7 @@
     {
       "id": "11474-201388",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47330,7 +47330,7 @@
     {
       "id": "11474-204230",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47338,7 +47338,7 @@
     {
       "id": "11474-211130",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47346,7 +47346,7 @@
     {
       "id": "11474-214001",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47354,7 +47354,7 @@
     {
       "id": "11474-220336",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47362,7 +47362,7 @@
     {
       "id": "11474-221594",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47370,7 +47370,7 @@
     {
       "id": "11474-224337",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47378,7 +47378,7 @@
     {
       "id": "11474-214610",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47386,7 +47386,7 @@
     {
       "id": "11474-202449",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47394,7 +47394,7 @@
     {
       "id": "11474-213441",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47402,7 +47402,7 @@
     {
       "id": "11520-286072",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47410,7 +47410,7 @@
     {
       "id": "11474-216389",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47418,7 +47418,7 @@
     {
       "id": "11474-217233",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47426,7 +47426,7 @@
     {
       "id": "11474-216811",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47434,7 +47434,7 @@
     {
       "id": "11474-202779",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47442,7 +47442,7 @@
     {
       "id": "11474-207421",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47450,7 +47450,7 @@
     {
       "id": "11474-204464",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47458,7 +47458,7 @@
     {
       "id": "11474-204570",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47466,7 +47466,7 @@
     {
       "id": "11474-202951",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -47474,7 +47474,7 @@
     {
       "id": "11474-204687",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47482,7 +47482,7 @@
     {
       "id": "11474-222950",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -47490,7 +47490,7 @@
     {
       "id": "11474-223492",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47498,7 +47498,7 @@
     {
       "id": "11474-207013",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47506,7 +47506,7 @@
     {
       "id": "11474-207119",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47514,7 +47514,7 @@
     {
       "id": "11474-207236",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47522,7 +47522,7 @@
     {
       "id": "11474-208090",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47530,7 +47530,7 @@
     {
       "id": "11474-224476",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47538,7 +47538,7 @@
     {
       "id": "11474-225924",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47546,7 +47546,7 @@
     {
       "id": "11474-224727",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47554,7 +47554,7 @@
     {
       "id": "11474-225435",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47562,7 +47562,7 @@
     {
       "id": "11474-226906",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47570,7 +47570,7 @@
     {
       "id": "11474-227157",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -47578,7 +47578,7 @@
     {
       "id": "11530-302327",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null
@@ -47586,7 +47586,7 @@
     {
       "id": "11530-302439",
       "page": "✅ Social (18 Sept, 2026)",
-      "scope": "unscoped",
+      "scope": "tombstone",
       "status": "done",
       "claimed": "done",
       "verdict": null

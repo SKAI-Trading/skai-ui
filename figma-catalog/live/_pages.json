@@ -745,9 +745,9 @@
       "readiness": "wip",
       "n": 127,
       "openReports": 0,
-      "scope": "excluded",
+      "scope": "wip",
       "harvestedAt": "2026-11-23",
-      "note": "Excluded 2026-11-23 on Casey's round 46 (2026-11-03): the four \"Skai Social v2 Layout Tests\" on this page (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) are parked, \"Build nothing from these boards\" and \"Do not catalogue Skai-Web-App-3 as in scope\"; round 183 (2026-11-23) keeps them excluded. The page also holds two later layout tests round 46 does not name (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide; the designer's 2026-11-23 note says Social work has started again. Round 46 liked the feed, composer and right rail but holds building until a final design. Re-scope only on a ruling. Section `social-v2`."
+      "note": "WIP from 2026-11-23 (Casey, round 184 chose WIP over excluded): catalogued and reported as in progress, not counted. Round 46's \"Build nothing from these boards\" for the Social v2 layout tests (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) and Casey's 2026-11-03 keep-today's-menus ruling (no second left column) still hold until a final design. The page also holds two later layout tests (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide. Section `social-v2`."
     },
     {
       "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
@@ -767,9 +767,9 @@
       "readiness": "wip",
       "n": 44,
       "openReports": 0,
-      "scope": "unscoped",
+      "scope": "in-scope",
       "harvestedAt": "2026-11-23",
-      "note": "Added 2026-11-23 (Casey, 11:55 MST: catalogue Skai-Web-App-3's Collectables; round 183). Scope `unscoped` until the orchestrator rules: reported, not counted. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`."
+      "note": "In scope from 2026-11-23 (Casey, round 184): counted from today. Markets is still moving, so it is built last; Home, sign-in and sign-up, and Leaderboard go first. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`."
     },
     {
       "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
@@ -778,9 +778,9 @@
       "readiness": "ready",
       "n": 442,
       "openReports": 0,
-      "scope": "unscoped",
+      "scope": "tombstone",
       "harvestedAt": "2026-11-23",
-      "note": "A COPY, not new design. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). Its frames are counted on the Skai-Web-App page and must never be counted again here: it has no section (pages.json outOfScope) and scope `unscoped` until the orchestrator rules. If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it."
+      "note": "A COPY, not new design: tombstone from 2026-11-23 (Casey, round 184), counted once, on Skai-Web-App's original. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). It has no section (pages.json outOfScope). If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it."
     }
   ]
 }

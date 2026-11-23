@@ -167,9 +167,9 @@ const SECTION_FILE = {
   darts: "M6r9FEn042UWTQD1zvy6GM",
   chicken: "M6r9FEn042UWTQD1zvy6GM",
   hilo: "M6r9FEn042UWTQD1zvy6GM",
-  // 2026-11-23: Skai-Web-App-3's two design pages, scaffolded with `harvest.mjs section`. Neither is
-  // counted yet: Collectibles is `unscoped` pending a ruling, and Social v2 is `excluded` on Casey's
-  // round 46 (its layout tests are parked). Both scopes live in live/_pages.json.
+  // 2026-11-23: Skai-Web-App-3's two design pages, scaffolded with `harvest.mjs section`. Collectibles
+  // is in scope from that day; Social v2 is `wip` (reported, not counted) while its layout tests stay
+  // parked. Both scopes, and the reason for each, live in live/_pages.json.
   collectibles: "kaUnLTKalFjyyNzlKxPQkX",
   "social-v2": "kaUnLTKalFjyyNzlKxPQkX",
 };

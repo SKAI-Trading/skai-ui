@@ -662,6 +662,9 @@ for (const p of pages)
     filesPerId.get(n.id).add(p.fileKey);
   }
 const ambiguousIds = new Set([...filesPerId].filter(([, s]) => s.size > 1).map(([id]) => id));
+// id -> the scope of every page that matched a row on it, so caveat 7 can say whether one row is
+// counted on two in-scope pages (it would then count twice in the headline) or on one at most.
+const ambiguousMatchedOn = new Map();
 
 // ---------------------------------------------------------------------------
 // 4b. VISUAL VERDICTS — vverify.<section>.tsv, the only evidence in this
@@ -877,7 +880,11 @@ for (const p of pages) {
       continue;
     }
     matched++;
-    if (ambiguousIds.has(n.id)) ambiguous++;
+    if (ambiguousIds.has(n.id)) {
+      ambiguous++;
+      if (!ambiguousMatchedOn.has(n.id)) ambiguousMatchedOn.set(n.id, []);
+      ambiguousMatchedOn.get(n.id).push(p.scope);
+    }
     if (rows.every((r) => r.ids.size >= 8)) rollupOnly++;
     /*
       ★ THE HEADLINE NUMBER IS TALLIED FROM THE NEWEST GENERATION, NOT FROM ALL
@@ -1379,7 +1386,20 @@ P(`**5. ${doneSayingFurniture} \`done\` rows say FURNITURE in their own reason.*
 P();
 P(`**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** ${unrecognisedTokens} id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — \`points-game/index.ts:5542-5545\` yields \`5542-5545\`, which is indistinguishable by shape from a real node id — plus dates (\`2026-08\`) and file:line refs (\`3:2\`). Sample: ${[...unrecognisedSample].slice(0, 8).map((s) => "`" + s + "`").join(", ")}. ${resolved ? `The ${resolved.candidatesChecked} plausible-shaped unknowns were put to Figma directly (\`getNodeByIdAsync\` in each of the three files); ${resolvedFound.size} resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.` : `They were NOT put to Figma, so Drift B is a lower bound.`}`);
 P();
-P(`**7. A node id is unique only within a Figma file, and status rows do not record one.** ${ambiguousIds.size} live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records \`6330-54594\` as home scaffolding in one file and a dice Breakpoint in another. **${rollup.ambiguous} of the ${rollup.matched} in-scope matches are on such an id**, so the headline number is unaffected. ${(() => { const a = report.filter((r) => r.ambiguous); return a.length ? `Every ambiguous match lands outside the roll-up: ${a.map((r) => `${r.pageName} ${r.ambiguous}/${r.matched}`).join(", ")} — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows.` : "No page is affected."; })()} The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.`);
+P(`**7. A node id is unique only within a Figma file, and status rows do not record one.** ${ambiguousIds.size} live ids exist in more than one of the ${new Set(pages.map((p) => p.fileKey)).size} tracked files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records \`6330-54594\` as home scaffolding in one file and a dice Breakpoint in another. **${rollup.ambiguous} of the ${rollup.matched} in-scope matches are on such an id.** ${(() => {
+  const a = report.filter((r) => r.ambiguous);
+  if (!a.length) return "No page is affected.";
+  const fmt = (r) => `${r.pageName} ${r.ambiguous}/${r.matched}`;
+  const inside = a.filter((r) => r.scope === "in-scope");
+  const outside = a.filter((r) => r.scope !== "in-scope");
+  const twice = [...ambiguousMatchedOn.values()].filter((scopes) => scopes.filter((s) => s === "in-scope").length > 1).length;
+  return (
+    `Inside the roll-up: ${inside.map(fmt).join(", ") || "none"}. Outside it: ${outside.map((r) => `${fmt(r)} (${r.scope})`).join(", ") || "none"}. ` +
+    (twice
+      ? `${twice} such id(s) are matched on two in-scope pages, so their rows count twice in the headline.`
+      : "No such id is matched on two in-scope pages, so no row counts twice in the headline: each page outside the roll-up is credited with the same rows as the in-scope page whose ids it shares, and only that in-scope page is counted.")
+  );
+})()} The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.`);
 P();
 P(`**8. ${rollup.defaultNamed} in-scope genuine frames still carry a default \`Frame N\` / \`Group N\` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.`);
 P();

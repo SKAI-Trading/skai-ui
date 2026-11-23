@@ -12,11 +12,12 @@ surface shares; the app repos read `registry.json` and the generated Markdown.
 | Skai-Games | `M6r9FEn042UWTQD1zvy6GM` | 31 |
 | Skai-Web-App-3 | `kaUnLTKalFjyyNzlKxPQkX` | 4 |
 
-Skai-Web-App-3 joined on 2026-11-23 for its Collectables work (section `collectibles`, scope
-`unscoped` until ruled). Its 🚧 Social v2 page (section `social-v2`) is `excluded` on Casey's
-2026-11-03 ruling that parks the Social v2 layout tests. Its ✅ Social (18 Sept, 2026) page is a copy
-of Skai-Web-App's ✅ Social page, node ids and all, so it has no section: those frames are counted
-once, on the Skai-Web-App page (`fileAliases` in `live/_pages.json`).
+Skai-Web-App-3 joined on 2026-11-23 for its Collectables work (section `collectibles`, in scope
+from that day on Casey's ruling). Its 🚧 Social v2 page (section `social-v2`) is `wip`: reported,
+not counted, and the 2026-11-03 rulings that park the Social v2 layout tests still hold. Its ✅ Social
+(18 Sept, 2026) page is a copy of Skai-Web-App's ✅ Social page, node ids and all, so it is a
+`tombstone` with no section: those frames are counted once, on the Skai-Web-App page (`fileAliases`
+in `live/_pages.json`).
 
 Last complete harvest: **2026-09-21**, 51 pages, 6,052 top-level nodes (`live/_pages.json`).
 Verified the same day by the step-0 hash: all 51 pages of all three files hashed equal to
