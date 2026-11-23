@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-22T09:55:33.237Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-11-23T08:32:42.220Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,22 +10,22 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 212 | 157 | 3 | 0 | 10 |
-| social | ✅ | 444 | 276 | 168 | 50 | 148 | 59 | 31 | 0 | 201 |
-| trade | ✅ | 476 | 263 | 213 | 47 | 170 | 65 | 0 | 7 | 92 |
-| trade-2 | ✅ | 440 | 237 | 203 | 51 | 93 | 102 | 10 | 0 | 76 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 235 | 134 | 3 | 0 | 10 |
+| social | ✅ | 444 | 276 | 168 | 50 | 151 | 56 | 31 | 0 | 201 |
+| trade | ✅ | 476 | 263 | 213 | 47 | 178 | 57 | 0 | 7 | 92 |
+| trade-2 | ✅ | 440 | 237 | 203 | 51 | 100 | 90 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 166 | 21 | 0 | 0 | 102 |
-| play | ✅ | 475 | 176 | 299 | 45 | 109 | 57 | 0 | 7 | 66 |
-| home-2 | ✅ | 277 | 166 | 111 | 26 | 104 | 32 | 0 | 0 | 14 |
+| play | ✅ | 475 | 176 | 299 | 45 | 130 | 36 | 0 | 7 | 66 |
+| home-2 | ✅ | 277 | 166 | 111 | 26 | 106 | 30 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 62 | 83 | 3 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 28 | 105 | 0 | 0 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 121 | 9 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 90 | 14 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 3 | 1 | 0 | 0 |
-| fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 47 | 8 | 0 | 0 | 0 |
-| safari-slots | ✅ | 72 | 62 | 10 | 1 | 28 | 5 | 0 | 0 | 0 |
+| fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 47 | 7 | 0 | 0 | 0 |
+| safari-slots | ✅ | 72 | 62 | 10 | 1 | 31 | 2 | 0 | 0 | 0 |
 | gem-slots | ✅ | 66 | 57 | 9 | 1 | 23 | 30 | 3 | 0 | 0 |
-| cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 36 | 1 | 1 | 0 | 0 |
+| cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 37 | 0 | 1 | 0 | 0 |
 | coinflip | ✅ | 47 | 34 | 13 | 1 | 24 | 2 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 18 | 0 | 0 | 0 | 8 |
 | plinko | ✅ | 28 | 22 | 6 | 1 | 6 | 9 | 0 | 0 | 8 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4958** | **2481** | | | **1593** | **792** | **64** | **32** | **1032** |
+| **all** | | **4958** | **2475** | | | **1661** | **718** | **64** | **32** | **1032** |
 
 ### Drift against live Figma
 
@@ -91,7 +91,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Earn > Sample opportunity | 28 | desktop, tablet, mobile | save; save > Save; save > Save > Confirm save; Lend; Lend > Lend; Lend > Lend > Confirm lend … | partial/done/blocked-on-backend | [11405-100106](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11405-100106&m=dev) |
+| Earn > Sample opportunity | 28 | desktop, tablet, mobile | save; save > Save; save > Save > Confirm save; Lend; Lend > Lend; Lend > Lend > Confirm lend … | done/blocked-on-backend/partial | [11405-100106](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11405-100106&m=dev) |
 | Earn | 15 | desktop, tablet, mobile | with pagination; Liquidity only; Liquidity only - liquidity added | done/partial | [5220-10996](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5220-10996&m=dev) |
 | Airdrop | 12 | desktop, tablet, mobile | not eligible; not eligible > wallets | partial/frame-defect | [5480-32393](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5480-32393&m=dev) |
 | Governance > Proposals > Sample proposal | 11 | desktop, tablet, mobile | view; view - not created by; view - details caollapsed; view - details expanded; view - details expanded - details expanded; view - intro expanded … | done/frame-defect | [5390-80080](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5390-80080&m=dev) |
@@ -104,7 +104,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Rewards > My referrals | 7 | desktop, tablet, mobile | empty; Rewards program > tier progress band [Frame 278 1318x180] | done/frame-defect/partial | [5534-92868](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5534-92868&m=dev) |
 | Governance > Proposals > Delegation | 7 | desktop, tablet, mobile | on chain; off chain | partial | [5383-73349](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5383-73349&m=dev) |
 | Account | 7 | desktop, mobile, tablet | dropdown-3 [dropdown-3 250x384] | partial | [5518-101256](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5518-101256&m=dev) |
-| Explorer > Address > Orders | 6 | desktop, tablet, mobile | - | done/partial | [5662-120139](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-120139&m=dev) |
+| Explorer > Address > Orders | 6 | desktop, tablet, mobile | - | done | [5662-120139](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-120139&m=dev) |
 | Explorer > Tokens | 6 | desktop, tablet, mobile | - | partial | [5675-131659](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5675-131659&m=dev) |
 | Yield vaults | 6 | desktop, tablet, mobile | - | done | [5492-53877](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5492-53877&m=dev) |
 | Yield vaults > Sample vault item | 6 | desktop, tablet, mobile | - | partial/done | [5515-92313](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5515-92313&m=dev) |
@@ -120,7 +120,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Earn > Faucet > Earn more | 5 | desktop, tablet, mobile | - | done | [5370-47867](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5370-47867&m=dev) |
 | Account > Performance overview | 5 | desktop, mobile, tablet | - | done | [5523-103993](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5523-103993&m=dev) |
 | Account > Account settings > Security > 2FA > Auth app | 5 | desktop, mobile, tablet | - | done/not-started | [11271-125083](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11271-125083&m=dev) |
-| Explorer > Address | 4 | desktop, tablet, mobile | - | partial | [5586-110620](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5586-110620&m=dev) |
+| Explorer > Address | 4 | desktop, tablet, mobile | - | done | [5586-110620](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5586-110620&m=dev) |
 | Explorer > Points | 4 | desktop, tablet, mobile | - | done | [5711-148542](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-148542&m=dev) |
 | Leaderboard | 4 | desktop, tablet, mobile | - | done | [5531-76408](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5531-76408&m=dev) |
 | Rewards | 4 | desktop, tablet, mobile | - | partial/done | [5531-77640](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5531-77640&m=dev) |
@@ -130,7 +130,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Leaderboard > Share portfolio | 4 | desktop, tablet, mobile | - | partial | [11302-129708](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11302-129708&m=dev) |
 | Governance | 3 | desktop, tablet, mobile | - | done | [5370-61920](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5370-61920&m=dev) |
 | Learn > Courses | 3 | desktop, tablet, mobile | - | done | [5393-86875](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5393-86875&m=dev) |
-| Explorer > Address > Holdings | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5660-114498](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5660-114498&m=dev) |
+| Explorer > Address > Holdings | 3 | desktop, tablet, mobile | - | done/frame-defect/partial | [5660-114498](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5660-114498&m=dev) |
 | Explorer > Address > Lending | 3 | desktop, tablet, mobile | - | partial | [5664-127101](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5664-127101&m=dev) |
 | Explorer > Address > Perps | 3 | desktop, tablet, mobile | - | partial | [5661-118252](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5661-118252&m=dev) |
 | Explorer > Address > Others | 3 | desktop, tablet, mobile | - | partial | [5664-127738](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5664-127738&m=dev) |
@@ -139,7 +139,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Explorer > Launchpad | 3 | desktop, tablet, mobile | - | done | [5702-143785](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5702-143785&m=dev) |
 | Explorer > Gaming | 3 | desktop, tablet, mobile | - | done | [5702-144185](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5702-144185&m=dev) |
 | Explorer > Governance | 3 | desktop, tablet, mobile | - | done | [5707-145880](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-145880&m=dev) |
-| Explorer > Addresses | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5720-152742](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5720-152742&m=dev) |
+| Explorer > Addresses | 3 | desktop, tablet, mobile | - | done/frame-defect/partial | [5720-152742](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5720-152742&m=dev) |
 | Explorer > DeFi | 3 | desktop, tablet, mobile | - | blocked-on-backend/done/partial | [5711-150322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-150322&m=dev) |
 | Explorer > Lending | 3 | desktop, tablet, mobile | - | partial/done | [5711-147902](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-147902&m=dev) |
 | Explorer > Social | 3 | desktop, tablet, mobile | - | done | [5707-146891](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-146891&m=dev) |
@@ -153,14 +153,14 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Learn | 3 | desktop, tablet, mobile | - | done | [5410-112561](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5410-112561&m=dev) |
 | Governance > Proposals > About | 3 | desktop, tablet, mobile | - | done | [5389-78508](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5389-78508&m=dev) |
 | Learn > Articles > Sample article | 3 | desktop, tablet, mobile | - | partial | [5477-97603](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5477-97603&m=dev) |
-| Earn > My positions > Update position | 3 | desktop, tablet, mobile | - | partial | [11135-77182](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11135-77182&m=dev) |
+| Earn > My positions > Update position | 3 | desktop, tablet, mobile | - | done | [11135-77182](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11135-77182&m=dev) |
 | Earn > Faucet > Tickets | 3 | desktop, tablet, mobile | - | partial | [5315-92101](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5315-92101&m=dev) |
 | Earn > Faucet > Winners | 3 | desktop, tablet, mobile | - | done | [5370-46761](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5370-46761&m=dev) |
 | Earn > Referral | 3 | desktop, tablet, mobile | - | frame-defect | [5370-59619](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5370-59619&m=dev) |
 | Earn > Vault > Trading vault | 3 | desktop, tablet, mobile | - | done | [5280-82910](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5280-82910&m=dev) |
 | Earn > Vault > Trading vault ALT | 3 | desktop, tablet, mobile | - | done | [11151-18953](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11151-18953&m=dev) |
-| Earn > Vault > House vault | 3 | desktop, tablet, mobile | - | done | [5280-86949](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5280-86949&m=dev) |
-| Earn > Vault > House vault ALT | 3 | desktop, tablet, mobile | - | done | [11151-80178](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11151-80178&m=dev) |
+| Earn > Vault > House vault | 3 | desktop, tablet, mobile | - | done/partial | [5280-86949](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5280-86949&m=dev) |
+| Earn > Vault > House vault ALT | 3 | desktop, tablet, mobile | - | done/partial | [11151-80178](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11151-80178&m=dev) |
 | Earn > Stake | 3 | desktop, tablet, mobile | - | done | [5243-74665](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5243-74665&m=dev) |
 | Earn > Stake > confirm stake | 3 | desktop, tablet, mobile | - | done | [5243-76144](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5243-76144&m=dev) |
 | Earn > My positions > View details | 3 | desktop, tablet, mobile | - | partial | [5258-78625](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5258-78625&m=dev) |
@@ -214,7 +214,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Social > Messages > Sample Conversation > attachment | 3 | desktop, mobile, tablet | - | done | [10216-138151](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10216-138151&m=dev) |
 | Social > Messages > Sample Conversation > Dropdown options | 3 | desktop, mobile, tablet | - | done | [5162-265801](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5162-265801&m=dev) |
 | Social > Messages > Sample Conversation > Chat settings | 3 | desktop, mobile, tablet | - | done | [5165-269440](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5165-269440&m=dev) |
-| Social > Messages > Sample Conversation > Groups | 3 | desktop, mobile, tablet | - | done/partial | [5164-266951](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5164-266951&m=dev) |
+| Social > Messages > Sample Conversation > Groups | 3 | desktop, mobile, tablet | - | done | [5164-266951](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5164-266951&m=dev) |
 | Social > Messages > Sample Conversation > Message requests | 3 | desktop, mobile, tablet | - | done | [5164-267630](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5164-267630&m=dev) |
 | Social > Messages > Sample Conversation > Message requests > Sample message | 3 | desktop, mobile, tablet | - | done | [5171-270124](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5171-270124&m=dev) |
 | Social > Messages > Sample Conversation > multi-select / profile | 3 | desktop, mobile, tablet | - | done | [5160-207895](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5160-207895&m=dev) |
@@ -222,7 +222,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Social > Messages > Sample Conversation > multi-select / profile > Block screenshots | 3 | desktop, mobile, tablet | - | frame-defect | [5162-265168](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5162-265168&m=dev) |
 | Social > Live > Stream type modal | 3 | desktop, tablet, mobile | - | partial/done | [4998-157146](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4998-157146&m=dev) |
 | Social > Live > Go live | 3 | desktop, tablet, mobile | - | partial | [10094-247131](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10094-247131&m=dev) |
-| Social > Live > Go live > setup stream | 3 | desktop, tablet, mobile | - | done/partial | [10094-250637](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10094-250637&m=dev) |
+| Social > Live > Go live > setup stream | 3 | desktop, tablet, mobile | - | done | [10094-250637](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10094-250637&m=dev) |
 | Social > Live > Go live > setup stream > Skai studio > select thumbnail | 3 | desktop, tablet, mobile | - | done | [10094-253395](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10094-253395&m=dev) |
 | Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream | 3 | desktop, tablet, mobile | - | done/partial | [10102-259223](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10102-259223&m=dev) |
 | Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager > invite guests | 3 | desktop, tablet, mobile | - | blocked-on-backend | [10155-268046](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10155-268046&m=dev) |
@@ -281,8 +281,8 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Perpetual Futures > Assets | 1 | tablet | - | done | [9152-84122](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-84122&m=dev) |
 | Perpetual Futures > Trade history | 1 | tablet | - | blocked-on-backend | [9152-89103](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-89103&m=dev) |
 | Perpetual Futures > Funding history | 1 | tablet | - | blocked-on-backend | [9152-90527](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-90527&m=dev) |
-| Perpetual Futures > Orders | 1 | tablet | - | done | [9152-81364](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-81364&m=dev) |
-| Spot > Sidebar | 1 | tablet | - | partial | [9002-158964](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9002-158964&m=dev) |
+| Perpetual Futures > Orders | 1 | tablet | - | partial | [9152-81364](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-81364&m=dev) |
+| Spot > Sidebar | 1 | tablet | - | done | [9002-158964](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9002-158964&m=dev) |
 | Perpetual Futures > Positions > Edit running SL/TP | 1 | tablet | - | done | [9152-79912](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-79912&m=dev) |
 | Spot > Order book | 1 | mobile | - | done | [9777-99794](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9777-99794&m=dev) |
 
@@ -291,7 +291,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Trench | 20 | desktop, tablet, mobile | actual; actual + With left float scrollable; actual + With left float ALT; hover; actual - settings collapsed; One-click trade settings - modal sell … | frame-defect/partial/done | [13006-134301](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-134301&m=dev) |
-| Trench > Tables | 18 | tablet, mobile | Positions; Transactions; Holders; Top holders; Dev tokens - full; Bubble maps … | partial/done | [13006-268680](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-268680&m=dev) |
+| Trench > Tables | 18 | tablet, mobile | Positions; Transactions; Holders; Top holders; Dev tokens - full; Bubble maps … | partial/done/blocked-on-backend | [13006-268680](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-268680&m=dev) |
 | Bridge | 15 | desktop, mobile, tablet | with info; with info > Start bridge; with info > Start bridge > Post wallet interaction; with info > Start bridge > Bridge settings | frame-defect | [13006-248523](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-248523&m=dev) |
 | Trench > Chart | 14 | tablet, mobile | Instant trade settings; Instant > AI Bearish; Instant > AI Bullish; Instant - buy; Market; Limit … | partial/blocked-on-backend/done | [13006-263046](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-263046&m=dev) |
 | Launch | 13 | desktop, tablet, mobile | Markets Row [Row 1318x124]; Trending card [card 324x300] | done/frame-defect | [13006-146233](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-146233&m=dev) |
@@ -301,7 +301,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > One-click trade settings | 8 | desktop, mobile, tablet | modal buy > updated new pairs CTA; modal off; modal buy; modal sell | done | [13006-195423](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-195423&m=dev) |
 | Launch > create token | 7 | desktop, mobile, tablet | - | done | [13006-147486](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-147486&m=dev) |
 | Launch > Sample token > Dashboard | 7 | desktop, mobile, tablet | negative; positive; negative - Frame 1260 (Dashboard - negative, 768) [Frame 1260 708x911] | partial | [13006-245903](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-245903&m=dev) |
-| Launch > Live | 6 | desktop, tablet, mobile | - | done/frame-defect/partial | [13006-148857](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-148857&m=dev) |
+| Launch > Live | 6 | desktop, tablet, mobile | - | partial/frame-defect | [13006-148857](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-148857&m=dev) |
 | Trench > Trackers > Live trades | 6 | desktop, mobile, tablet | - | partial | [13006-180340](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-180340&m=dev) |
 | Trench > Alerts | 6 | desktop, mobile, tablet | toggle off; toggle on | done | [13006-185849](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-185849&m=dev) |
 | Trench > Trackers > X accounts | 6 | mobile, tablet | empty; Popular; My list | done/blocked-on-backend | [13006-321483](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-321483&m=dev) |
@@ -313,7 +313,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > Hotkeys | 3 | desktop, mobile, tablet | - | frame-defect/done | [13006-162230](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-162230&m=dev) |
 | Trench > Snipe settings | 3 | desktop, mobile, tablet | - | done | [13006-165152](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-165152&m=dev) |
 | Trench > Filters | 3 | desktop, mobile, tablet | - | done/partial | [13006-176980](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-176980&m=dev) |
-| Trench > Trackers > KOLs | 3 | desktop, mobile, tablet | - | done/partial | [13006-183651](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-183651&m=dev) |
+| Trench > Trackers > KOLs | 3 | desktop, mobile, tablet | - | done | [13006-183651](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-183651&m=dev) |
 | Trench > Blacklist | 3 | desktop, mobile, tablet | - | done | [13006-191789](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-191789&m=dev) |
 | Launch > new token | 3 | desktop, mobile, tablet | - | partial | [13006-243693](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-243693&m=dev) |
 | Nav bar | 3 | mobile, tablet | (768) sidebar [sidebar - open 318x1024] | done | [13006-349299](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-349299&m=dev) |
@@ -323,9 +323,9 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > Trackers | 2 | desktop | empty; empty > Add wallet | done | [13006-184491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-184491&m=dev) |
 | Trench > Trade > Holders | 2 | desktop | full screen | partial | [13006-221940](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-221940&m=dev) |
 | Trench > Trade > Dev tokens | 2 | desktop | Dev tokens 1440 > Token statistics (donut, Token stats, Highlights) [Frame 301 298x474] | done/partial | [13006-230793](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-230793&m=dev) |
-| Trench > Trade > Transactions | 2 | desktop | Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28] | partial/done | [13006-233358](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-233358&m=dev) |
+| Trench > Trade > Transactions | 2 | desktop | Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28] | done | [13006-233358](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-233358&m=dev) |
 | Spot > Sidebar | 2 | tablet, mobile | - | partial | [13006-255386](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-255386&m=dev) |
-| Trench > Token info | 2 | tablet, mobile | - | partial | [13006-271691](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-271691&m=dev) |
+| Trench > Token info | 2 | tablet, mobile | - | blocked-on-backend | [13006-271691](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-271691&m=dev) |
 | Trench > Community | 2 | tablet, mobile | - | partial | [13006-271971](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-271971&m=dev) |
 | Trench > Similar tokens | 2 | tablet, mobile | - | partial | [13006-272165](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-272165&m=dev) |
 | Launch > create token > preview | 2 | mobile, tablet | - | done | [13006-284612](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-284612&m=dev) |
@@ -404,18 +404,18 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Sportsbook | 24 | tablet, mobile, desktop | Bet slip collapsed; Bet slip collapsed - Settings; Bet slip collapsed - Color change; right sidepanel / betslip; right sidepanel / betslip ALT; sportsbook 768 top matches band [Frame 632 708x244] … | done/partial | [11109-81960](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11109-81960&m=dev) |
 | Casino > Sample game | 15 | desktop, tablet, mobile | - | done/partial | [4723-52636](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4723-52636&m=dev) |
 | Casino | 13 | tablet, mobile, desktop | 768 casino nav search box [Frame 405 140x32]; 768 casino Top bets table [Main container 708x478]; Top bets row 6 player mark (Printers Gold) [images/circle 24x24]; Play > Casino 768 / Featured games (Main container) [Main container 708x644]; Play > Casino 768 / Featured header Frame 186 (renders 1x1, paints nothing) [Frame 186 380x34]; Play > Casino 768 heading + banner (3-mark carousel, one slide) [Frame 1000003844 708x288] … | done/partial | [11066-23332](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11066-23332&m=dev) |
-| Sportsbook > Soccer > AVL CHE | 12 | tablet, mobile, desktop | Game view expanded; Game view expanded - Pinned; Game view collapsed - Pinned; Game view collapsed; Search expanded | done/partial | [11127-106812](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11127-106812&m=dev) |
+| Sportsbook > Soccer > AVL CHE | 12 | tablet, mobile, desktop | Game view expanded; Game view expanded - Pinned; Game view collapsed - Pinned; Game view collapsed; Search expanded | done | [11127-106812](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11127-106812&m=dev) |
 | (section root) | 9 | desktop, tablet, mobile | - | done/partial | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
-| Resume play | 7 | tablet, mobile, desktop | Search bar expanded | partial/done | [10940-216537](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10940-216537&m=dev) |
+| Resume play | 7 | tablet, mobile, desktop | Search bar expanded | done | [10940-216537](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10940-216537&m=dev) |
 | Casino > Mines | 7 | desktop, tablet, mobile | picture-in-picture; picture-in-picture > live chat icon position; modal version / live chat icon position | unknown | [14072-43159](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=14072-43159&m=dev) |
 | Casino > Bookie | 6 | tablet, mobile, desktop | referral; tiers | partial/done | [11017-157523](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11017-157523&m=dev) |
 | Sportsbook > Side panel | 5 | tablet, mobile, desktop | Lawn tennis | done | [11132-173793](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11132-173793&m=dev) |
 | Sportsbook > Starting soon | 4 | tablet, desktop, mobile | Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64] | done | [11131-161786](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-161786&m=dev) |
 | Sportsbook > My bets | 4 | tablet, desktop, mobile | with values; empty | done/partial | [11131-119167](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-119167&m=dev) |
 | Casino > New games | 4 | tablet, mobile, desktop | Play > Casino > New games 768 [Frame 1000003833 708x1709] | done | [11084-63426](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-63426&m=dev) |
-| Casino > Trending games | 4 | tablet, mobile, desktop | 768 Trending games collection screen [Frame 1000003833 708x1709] | done/partial | [11084-64943](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-64943&m=dev) |
-| Favourites | 4 | tablet, mobile | - | done/partial | [10949-219911](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10949-219911&m=dev) |
-| Casino > Live RTP | 4 | desktop, tablet, mobile | return to player; return to player - dropdown collapsed | partial/done | [4792-31202](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4792-31202&m=dev) |
+| Casino > Trending games | 4 | tablet, mobile, desktop | 768 Trending games collection screen [Frame 1000003833 708x1709] | done | [11084-64943](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-64943&m=dev) |
+| Favourites | 4 | tablet, mobile | - | done | [10949-219911](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10949-219911&m=dev) |
+| Casino > Live RTP | 4 | desktop, tablet, mobile | return to player; return to player - dropdown collapsed | done | [4792-31202](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4792-31202&m=dev) |
 | Casino > Sample game ALT | 4 | tablet | - | done | [11086-66338](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11086-66338&m=dev) |
 | Sportsbook > Soccer > AVL CHE > Player props | 3 | tablet, mobile, desktop | - | done | [11129-114910](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11129-114910&m=dev) |
 | ALT | 3 | mobile, desktop | - | partial | [10932-125492](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10932-125492&m=dev) |
@@ -425,7 +425,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | unsupported region ALT | 3 | desktop, tablet, mobile | - | frame-defect | [10183-270971](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10183-270971&m=dev) |
 | Sportsbook > Quick bet ON | 2 | tablet, mobile | - | partial | [11216-146306](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11216-146306&m=dev) |
 | Sportsbook > Quick bet OFF | 2 | tablet, mobile | high number of bets | partial | [11216-149350](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11216-149350&m=dev) |
-| Sportsbook > Bet notification | 2 | mobile, tablet | - | done/partial | [11220-168059](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11220-168059&m=dev) |
+| Sportsbook > Bet notification | 2 | mobile, tablet | - | done | [11220-168059](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11220-168059&m=dev) |
 | dropdown | 2 | desktop | - | done/partial | [4765-64029](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4765-64029&m=dev) |
 | Favorite games | 2 | desktop | - | done | [4689-45587](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4689-45587&m=dev) |
 | Casino > Sample game > More info | 2 | tablet, mobile | - | done | [11097-109504](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11097-109504&m=dev) |
@@ -637,7 +637,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Starbound | 38 | tablet, desktop, mobile | Load screen - desktop; Load screen > Start game - desktop; Load screen > home - desktop; Load screen > home >combo > combo end frame - desktop; Load screen > home >combo > combo end frame > menu - desktop; Load screen > home > combo - desktop … | done/partial/not-started | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
+| Casino > Starbound | 38 | tablet, desktop, mobile | Load screen - desktop; Load screen > Start game - desktop; Load screen > home - desktop; Load screen > home >combo > combo end frame - desktop; Load screen > home >combo > combo end frame > menu - desktop; Load screen > home > combo - desktop … | done/not-started | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
 
 ## Coinflip
 
