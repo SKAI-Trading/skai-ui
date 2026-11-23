@@ -23,6 +23,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   FigmaPointsIcon,
+  FigmaRankStarIcon,
   FigmaSolanaIcon,
   FigmaSocialBubbleIcon,
 } from "../figma-icons";
@@ -48,10 +49,19 @@ function collect(root: Element) {
   return { svgs, refs, ids };
 }
 
+// The rank star paints through four servers (shadow, outside mask, two
+// gradients), and a leaderboard draws it on every row.
+const GoldRankStar = () => <FigmaRankStarIcon tier="gold" />;
+const SilverRankStar = () => <FigmaRankStarIcon tier="silver" />;
+const BronzeRankStar = () => <FigmaRankStarIcon tier="bronze" />;
+
 const CASES = [
   ["FigmaPointsIcon", FigmaPointsIcon],
   ["FigmaSolanaIcon", FigmaSolanaIcon],
   ["FigmaSocialBubbleIcon", FigmaSocialBubbleIcon],
+  ["FigmaRankStarIcon gold", GoldRankStar],
+  ["FigmaRankStarIcon silver", SilverRankStar],
+  ["FigmaRankStarIcon bronze", BronzeRankStar],
 ] as const;
 
 describe.each(CASES)("%s — paint-server ids are per instance", (_name, Icon) => {
