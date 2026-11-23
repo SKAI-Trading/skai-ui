@@ -114,6 +114,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	10199-104647	ui	On phone the featured market card has no two-team header above its chart, and a selected market card does not yet show its highlighted outline.	431183abd940	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10201-106723	ui	The three-way match card is built, but no soccer match is listed right now, so it has not yet been compared live with the design.	4406f7e4cdf4	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	10202-110892	ui	On phone three-way match cards are built and appear when the next soccer round lists; until then they cannot be compared live with the design.	67a515df6f40	2026-11-22
+3sSzw1KewMtUbeLAv7uW0r	10215-137653	ui	The message menu's Forward, Copy, Reply and Delete rows show stand-in icons where the design draws its own; the menu's size, rows and colours match.	45bfd29a95e2	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	10216-182394	ui	At 1440 the right-click menu on a conversation is built, but its row icons are stand-ins until the design's icons are checked, and Mark as unread and Pin conversation are greyed out as neither is available yet.	c9a814ad6f83	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	10230-15664	ui	The pinned tile shows the market's own artwork once a picture is uploaded for that market; until then it shows the market's mark instead.	cbdafa20dd85	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	10232-201644	backend	Waiting on backend work.	42752fb00cc9	2026-11-17
@@ -152,6 +153,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	10657-234836	ui	At 768 the open orders list stays empty where the design draws a list of orders, and the Decreased and Removed reward entries the design shows are not built yet.	30b4f56b1c8f	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10710-132119	ui	At 768 the hero shows a gradient where the board has a photograph, and the newsletter sign-up card and the live social feed the board draws are not shown.	fd91fb18e623	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11017-157523	ui	On tablet the earnings band has no All time control, the chart total lacks its link icon and the chart line has no glow. Amounts show in SKAI rather than dollars, and Claim is shown disabled.	dcd3e853c1e9	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11021-198296	ui	On phone the earnings band has no All time control, the chart total lacks its link icon, the line has no glow, and Claim shows disabled.	52a337800022	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	11086-65313	ui	At 768 the game title sits inside the game card with its buttons moved to a strip under it and no practice mode toggle, and the bet panel follows the newer game design rather than this earlier one.	e01251e6b0fa	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	11087-66851	ui	At 768 the More games cards are larger and lack the line under each, Bets reads Recent 10 where the design draws My bets and All time, sections sit 40px apart not 32, and the About rows are taller than drawn.	6f878be8f3cf	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	11092-71996	ui	At 768 the game title sits inside the game card with its buttons moved to a strip under it and no practice mode toggle, and the bet panel follows the newer game design rather than this earlier one.	abf7ff8b4831	2026-11-22
@@ -258,6 +260,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11529-293522	ui	On phone the Gift streamer panel shows the streamer's initial instead of a photo, with no handle or chain badge, no Gift tier link, no coin image and no goal card glow. Sending is off until donations are live.	fc3083070dc3	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11530-303043	ui	Report user is built and turns on once the reports update goes live and reports are switched on.	c351eb773d9f	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11530-303066	ui	Report user is built and turns on once the reports update goes live and reports are switched on.	aa6522df48c0	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	11530-303337	ui	The message menu's Forward, Copy, Reply and Delete rows show stand-in icons where the design draws its own; the menu's size, rows and colours match.	6925a6f2e30f	2026-11-22
+3sSzw1KewMtUbeLAv7uW0r	11530-303366	ui	The message menu's Forward, Copy, Reply and Delete rows show stand-in icons where the design draws its own; the menu's size, rows and colours match.	264854b2d5c7	2026-11-22
 3sSzw1KewMtUbeLAv7uW0r	11664-305643	ui	Participants, eligible members, the snapshot date and the snapshot list are built; they fill once a test snapshot is published.	b4d83b0e59e3	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11667-309312	ui	Participants, eligible members, the snapshot date and the snapshot list are built; they fill once a test snapshot is published.	ba87864f85a9	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11667-309576	ui	On phone the banner art has a fade on its right edge that the design does not draw, and the stat tiles follow the tablet design, since the phone design repeats one tile. The snapshot list and participant counts show no data yet.	443331a3f7e8	2026-11-14
