@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-23T19:43:04.534Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
+_Generated 2026-11-24T12:19:27.388Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,7 +10,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 243 | 126 | 3 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 244 | 125 | 3 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 152 | 55 | 31 | 0 | 201 |
 | trade | ✅ | 477 | 263 | 214 | 47 | 178 | 57 | 0 | 7 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 103 | 87 | 10 | 0 | 76 |
@@ -56,7 +56,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **5155** | **2563** | | | **1677** | **705** | **64** | **117** | **1032** |
+| **all** | | **5155** | **2563** | | | **1678** | **704** | **64** | **117** | **1032** |
 
 ### Drift against live Figma
 
@@ -115,7 +115,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Governance > Proposals | 6 | desktop, tablet, mobile | - | done | [5371-63275](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5371-63275&m=dev) |
 | Governance > Proposals > Financials | 6 | desktop, tablet, mobile | - | frame-defect/blocked-on-backend | [5387-76925](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5387-76925&m=dev) |
 | Governance > Proposals > Staking | 6 | desktop, tablet, mobile | - | done | [5376-71276](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5376-71276&m=dev) |
-| Earn > Faucet | 6 | desktop, tablet, mobile | - | done/partial | [5280-87638](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5280-87638&m=dev) |
+| Earn > Faucet | 6 | desktop, tablet, mobile | - | done | [5280-87638](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5280-87638&m=dev) |
 | Account > Account settings > Private key | 6 | desktop, mobile, tablet | step 2 | done | [5529-73867](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5529-73867&m=dev) |
 | Learn > Skai university > Sample course | 5 | desktop, tablet, mobile | - | done | [5442-42904](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5442-42904&m=dev) |
 | Earn > Vaults | 5 | desktop, tablet, mobile | House; ALT; Trading | partial | [5259-80297](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5259-80297&m=dev) |

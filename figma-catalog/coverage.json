@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23T21:13:45.938Z",
+  "generated": "2026-11-24T12:19:30.307Z",
   "harvestedAt": "2026-11-23",
   "rollup": {
     "pages": 40,
@@ -20,9 +20,9 @@
     "genuineWithFrameDefects": 3607,
     "frameDefectUncited": [],
     "matched": 3232,
-    "done": 2451,
-    "verified": 2181,
-    "visuallyDowngraded": 109,
+    "done": 2452,
+    "verified": 2182,
+    "visuallyDowngraded": 108,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 628,
+    "partial": 627,
     "notStarted": 2,
     "blocked": 146,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 27
   },
   "doneRows": {
-    "total": 5176,
-    "withBreakpointProvenance": 2946,
-    "namingANodeId": 4951,
+    "total": 5177,
+    "withBreakpointProvenance": 2947,
+    "namingANodeId": 4952,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 27091,
+    "total": 27093,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 93166
+    "unrecognisedTokens": 93179
   },
   "statusFiles": [
     {
@@ -7731,6 +7731,12 @@
       "ids": 3
     },
     {
+      "file": "status.wave81.b185.b7catalog.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
       "file": "status.wave82.HARV.tsv",
       "rows": 2,
       "withLiveId": 0,
@@ -8985,11 +8991,11 @@
       "defaultNamed": 38,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 404,
-      "visuallyDowngraded": 1,
+      "verified": 405,
+      "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 411,
-        "partial": 144,
+        "done": 412,
+        "partial": 143,
         "blocked-on-backend": 23
       },
       "liveOnly": []
@@ -28587,9 +28593,9 @@
       "id": "12261-474854",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "match"
     },
     {
       "id": "12225-458404",
