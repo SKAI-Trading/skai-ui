@@ -380,12 +380,17 @@ export function EmailVerificationModal({
                    15455:44118): the stroke is 1.5 inside, not 1, with the
                    Input hint (dark) shadow, 0 4 12 black at 24%, under it,
                    the same state the Sign up field draws (auth-modal.tsx).
-                   The extra half pixel is an inset ring inside the 1px
-                   border, as auth-modal does it, because a 1.5px border is
-                   floored to 1 on a 1x screen. No 768 or 375 board records
-                   that state's width or shadow, so those keep the 1px. */
+                   The cell keeps its 1px border and the extra half pixel is
+                   a 0.5px inset box-shadow drawn inside it, because a 1.5px
+                   border is floored to 1 on a 1x screen. (auth-modal's field
+                   has no border at all: its whole stroke is an inset ring,
+                   1px at rest and 1.5px focused.) No 768 or 375 board
+                   records that state's width or shadow, so those keep the
+                   1px. The border colour and the shadow share one
+                   transition, so the ring and its shadow arrive with the
+                   green stroke rather than ahead of it. */
                 className={cn(
-                  "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-xl border bg-green-coal transition-colors md:h-[76px] lg:h-[78px] lg:rounded-2xl",
+                  "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-xl border bg-green-coal transition-[border-color,box-shadow] md:h-[76px] lg:h-[78px] lg:rounded-2xl",
                   localError
                     ? "border-[#FF4444]"
                     : "border-green-coal-100 focus-within:border-skai-green lg:focus-within:shadow-[inset_0_0_0_0.5px_#17F9B4,0px_4px_12px_rgba(0,0,0,0.24)]"

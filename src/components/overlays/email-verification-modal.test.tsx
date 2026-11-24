@@ -182,6 +182,15 @@ describe("email verification modal, Collectables boards at 1440", () => {
     }
   });
 
+  it("moves the border colour and the Active ring on one transition", () => {
+    renderModal();
+    for (let i = 1; i <= 6; i += 1) {
+      const cell = classesOf(cellOf(i));
+      expect(cell).toContain("transition-[border-color,box-shadow]");
+      expect(cell.filter((c) => /^transition(-colors|-shadow)?$/.test(c))).toEqual([]);
+    }
+  });
+
   it("drops the Active ring with the rest of the focus styling when the code is refused", () => {
     const props = { isOpen: true, onClose: vi.fn(), onBack: vi.fn(), email: "david@skai.trade", onVerify: vi.fn() };
     const { rerender } = render(<EmailVerificationModal {...props} />);
