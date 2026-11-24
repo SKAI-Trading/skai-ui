@@ -340,8 +340,12 @@ export function EmailVerificationModal({
             18 at 375 and Manrope's natural 18.048 at 768, which is why the
             frame's two-line box reads 36 at one width and 37 at the other.
             The address keeps the line's Gray 100: every board sets it Bold
-            but not white (2598:3052, 11229:188039, 10734:78604). */}
-        <p className="font-manrope mb-5 text-center text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] lg:text-[18px] lg:leading-[24px]">
+            but not white (2598:3052, 11229:188039, 10734:78604).
+
+            The -4% holds at 1440 too, so the 18 there tracks -0.72, not the
+            -0.56 of the 14: both runs of 15455:42242 on the Collectables
+            verification board (kaUn) are Manrope 18/24 at -4%. */}
+        <p className="font-manrope mb-5 text-center text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
           Enter the verification code sent to <br />
           <span className="font-bold">{email}</span>
         </p>
@@ -369,12 +373,22 @@ export function EmailVerificationModal({
                    2598:4532, 11225:180028 and 11229:188907 the five filled
                    cells keep Green Coal 100 and only the focused sixth one
                    turns App/Green 300. Filled cells used to go #2DEDAD, the
-                   retired Alien Green that no board draws. */
+                   retired Alien Green that no board draws.
+
+                   At 1440 that focused cell is input/primary-inputs
+                   State=Active (15455:45216 on the Collectables board
+                   15455:44118): the stroke is 1.5 inside, not 1, with the
+                   Input hint (dark) shadow, 0 4 12 black at 24%, under it,
+                   the same state the Sign up field draws (auth-modal.tsx).
+                   The extra half pixel is an inset ring inside the 1px
+                   border, as auth-modal does it, because a 1.5px border is
+                   floored to 1 on a 1x screen. No 768 or 375 board records
+                   that state's width or shadow, so those keep the 1px. */
                 className={cn(
                   "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-xl border bg-green-coal transition-colors md:h-[76px] lg:h-[78px] lg:rounded-2xl",
                   localError
                     ? "border-[#FF4444]"
-                    : "border-green-coal-100 focus-within:border-skai-green"
+                    : "border-green-coal-100 focus-within:border-skai-green lg:focus-within:shadow-[inset_0_0_0_0.5px_#17F9B4,0px_4px_12px_rgba(0,0,0,0.24)]"
                 )}
               >
                 <input

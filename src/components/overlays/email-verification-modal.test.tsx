@@ -147,3 +147,47 @@ describe("email verification modal, Temporary landing boards", () => {
     expect(classesOf(label)).not.toContain("font-normal");
   });
 });
+
+/**
+ * The Collectables sign-in boards at 1440 (Skai-Web-App-3, kaUn): 15455:41152
+ * (modal 15455:42233) and 15455:44118 with the code typed, read by L247
+ * (wave 90). Everything else on them matches the terms above; these are the
+ * two the onboarding boards left unrecorded.
+ */
+describe("email verification modal, Collectables boards at 1440", () => {
+  const ACTIVE_RING = "lg:focus-within:shadow-[inset_0_0_0_0.5px_#17F9B4,0px_4px_12px_rgba(0,0,0,0.24)]";
+
+  it("tracks the 18/24 description at -4% of 18 from lg, and keeps -0.56 on the 14 below it", () => {
+    renderModal();
+    const line = classesOf(screen.getByText("david@skai.trade").parentElement);
+    expect(line).toEqual(
+      expect.arrayContaining(["tracking-[-0.56px]", "lg:text-[18px]", "lg:leading-[24px]", "lg:tracking-[-0.72px]"]),
+    );
+  });
+
+  it("gives the focused cell the State=Active 1.5 stroke and Input hint shadow from lg, on every cell and only there", async () => {
+    const user = userEvent.setup();
+    renderModal();
+    for (const [i, d] of ["1", "5", "7", "4", "1", "9"].entries()) {
+      await user.type(screen.getByLabelText(`Digit ${i + 1}`), d);
+    }
+    // The sixth digit leaves focus on the sixth cell, which is the one the
+    // board draws Active.
+    expect(document.activeElement).toBe(screen.getByLabelText("Digit 6"));
+    for (let i = 1; i <= 6; i += 1) {
+      const cell = classesOf(cellOf(i));
+      expect(cell).toContain(ACTIVE_RING);
+      expect(cell).toContain("border");
+      expect(cell.filter((c) => /^(focus-within:)?shadow-/.test(c))).toEqual([]);
+    }
+  });
+
+  it("drops the Active ring with the rest of the focus styling when the code is refused", () => {
+    const props = { isOpen: true, onClose: vi.fn(), onBack: vi.fn(), email: "david@skai.trade", onVerify: vi.fn() };
+    const { rerender } = render(<EmailVerificationModal {...props} />);
+    rerender(<EmailVerificationModal {...props} error="Invalid code" />);
+    for (let i = 1; i <= 6; i += 1) {
+      expect(classesOf(cellOf(i))).not.toContain(ACTIVE_RING);
+    }
+  });
+});
