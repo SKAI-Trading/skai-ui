@@ -10,6 +10,8 @@
  *  - EXPORTS: each instance's SVG export, pasted as the read returned it
  *    (lanes/L220/figma/<tag>-result.txt or lanes/L223/figma/r1-result.txt,
  *    the lines named beside each).
+ * Enter came later, from the Gaming cap field's read (HQ-695, 2026-11-25): its
+ * opening and export are that read's exportAsync of I14422:79646;976:361.
  * The star's export was cut after its filter box, so its oracle is the path,
  * the paints and the effect the same log records for it.
  */
@@ -24,6 +26,7 @@ import {
   FigmaActionCopyIcon,
   FigmaActionDeleteIcon,
   FigmaActionEditIcon,
+  FigmaActionEnterIcon,
   FigmaActionForwardIcon,
   FigmaActionPinIcon,
   FigmaActionRerunIcon,
@@ -46,6 +49,7 @@ const GLYPHS = {
   FigmaActionArrowUpIcon,
   FigmaActionRightChevronIcon,
   FigmaActionEditIcon,
+  FigmaActionEnterIcon,
   FigmaMessageDotsIcon,
   FigmaMessageBarIcon,
   FigmaWarningsInfoIcon,
@@ -64,6 +68,7 @@ const OPENINGS: Record<GlyphName, string[]> = {
   FigmaActionArrowUpIcon: ["M4 10"],
   FigmaActionRightChevronIcon: ["M11.4141 8"],
   FigmaActionEditIcon: ["M12.3096 1.5"],
+  FigmaActionEnterIcon: ["M14.1674 2.66699"],
   FigmaMessageDotsIcon: ["M9.28906 0.831055"],
   FigmaMessageBarIcon: ["M9.28906 0.831055", "M5 6.5"],
   FigmaWarningsInfoIcon: ["M8 0"],
@@ -125,6 +130,10 @@ const EXPORTS: Record<GlyphName, string> = {
 <rect width="16" height="16" fill="white"/>
 </clipPath>
 </defs>
+</svg>`,
+  // HQ-695 read, 2026-11-25: exportAsync({ format: "SVG_STRING" }) of I14422:79646;976:361
+  FigmaActionEnterIcon: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.1674 2.66699C14.3 2.66699 14.4272 2.71967 14.5209 2.81344C14.6147 2.90721 14.6674 3.03438 14.6674 3.16699V7.50033C14.6674 8.16337 14.404 8.79925 13.9352 9.26809C13.4663 9.73693 12.8304 10.0003 12.1674 10.0003H3.05872L5.53872 12.4803C5.6233 12.5651 5.67466 12.6773 5.68347 12.7968C5.69228 12.9162 5.65795 13.0348 5.58672 13.131L5.53872 13.187C5.45402 13.2718 5.34165 13.3234 5.2221 13.3324C5.10254 13.3413 4.98375 13.307 4.88738 13.2357L4.83138 13.187L1.49805 9.85366C1.41337 9.769 1.36189 9.65676 1.35296 9.53736C1.34402 9.41795 1.37824 9.29931 1.44938 9.20299L1.49805 9.14699L4.83138 5.81366C4.92072 5.72502 5.04019 5.67333 5.16596 5.6689C5.29173 5.66447 5.41454 5.70763 5.50989 5.78977C5.60523 5.8719 5.6661 5.98697 5.68034 6.11201C5.69458 6.23704 5.66115 6.36285 5.58672 6.46433L5.53872 6.52033L3.05872 9.00033H12.1687C12.5487 9.0002 12.9145 8.85588 13.1921 8.59652C13.4698 8.33715 13.6387 7.98207 13.6647 7.60299L13.6687 7.50033V3.16699C13.6687 3.03438 13.7214 2.90721 13.8152 2.81344C13.9089 2.71967 14.0361 2.66699 14.1687 2.66699" fill="white"/>
 </svg>`,
 };
 
