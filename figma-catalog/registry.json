@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-28T01:22:07.512Z",
+  "generated": "2026-11-28T03:07:21.710Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -1566,6 +1566,134 @@
       {
         "page": "🎧 Sounds - Skai Originals",
         "live": 0
+      },
+      {
+        "page": "Play > Casino > Provider sections",
+        "live": 3
+      },
+      {
+        "page": "Casino > Hacksaw > Hand of Anubis",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > RIP City",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Duel at Dawn",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Template",
+        "live": 8
+      },
+      {
+        "page": "Casino > Hacksaw > Le Fisherman",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le King",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Cowboy",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Pharaoh",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > 2 Wild 2 Die",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Stormforged",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Wanted Dead or a Wild",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Fist of Destruction",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Slayers Inc",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Bandit",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Hot Ross",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > FRKN Bananas",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > SixSixSix",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > The Luxe H.V.",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Prechaun",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Power of Ten",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Miami Mayhem",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Cloud Princess",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Age Of Seth",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Zeus",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Xmas Drop",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Rotten",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Rainbow Princess",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Life and Death",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Ze Zeus",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Max Win Machine",
+        "live": 7
+      },
+      {
+        "page": "Casino > Hacksaw > Le Vampire",
+        "live": 7
       }
     ],
     "outOfScopePages": [
@@ -101907,7 +102035,7 @@
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "fileName": "Skai-Web-App",
       "node": "11942-143538",
-      "title": "Skai > Learn > Skai university > Create course  (375 x 812px)",
+      "title": "Skai > Learn > Skai university > Create course (375 x 812px)",
       "page": "✅ Governance and Utilities",
       "readiness": "ready",
       "screen": "Learn > Skai university > Create course",
@@ -102264,7 +102392,7 @@
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "fileName": "Skai-Web-App",
       "node": "12141-455088",
-      "title": "Skai > Learn > Skai university > Articles  (375 x 812px)",
+      "title": "Skai > Learn > Skai university > Articles (375 x 812px)",
       "page": "✅ Governance and Utilities",
       "readiness": "ready",
       "screen": "Learn > Skai university > Articles",
@@ -104466,7 +104594,7 @@
       "vh": null,
       "kind": "screen",
       "family": "Account > Account settings > Preferences",
-      "measuredViewport": "375x1235",
+      "measuredViewport": "375x1421",
       "citedByFiles": [],
       "implFiles": [
         "src/components/account/SettingsTab.tsx",
@@ -104907,7 +105035,7 @@
       "vh": null,
       "kind": "screen",
       "family": "Account > Account settings > Preferences",
-      "measuredViewport": "768x1404",
+      "measuredViewport": "768x1593",
       "citedByFiles": [],
       "implFiles": [
         "src/components/account/SettingsTab.tsx",

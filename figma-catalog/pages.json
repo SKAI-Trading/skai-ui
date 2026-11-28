@@ -605,6 +605,262 @@
    "readiness": "ready",
    "liveChildren": 442,
    "sections": []
+  },
+  {
+   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+   "pageId": "14417:2",
+   "pageName": "Play > Casino > Provider sections",
+   "readiness": "unknown",
+   "liveChildren": 3,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:15",
+   "pageName": "Casino > Hacksaw > Hand of Anubis",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:18",
+   "pageName": "Casino > Hacksaw > RIP City",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:21",
+   "pageName": "Casino > Hacksaw > Duel at Dawn",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:3",
+   "pageName": "Casino > Hacksaw > Template",
+   "readiness": "unknown",
+   "liveChildren": 8,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:30",
+   "pageName": "Casino > Hacksaw > Le Fisherman",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:33",
+   "pageName": "Casino > Hacksaw > Le King",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:36",
+   "pageName": "Casino > Hacksaw > Le Cowboy",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:39",
+   "pageName": "Casino > Hacksaw > Le Pharaoh",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:45",
+   "pageName": "Casino > Hacksaw > 2 Wild 2 Die",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:48",
+   "pageName": "Casino > Hacksaw > Stormforged",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:6",
+   "pageName": "Casino > Hacksaw > Wanted Dead or a Wild",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:60",
+   "pageName": "Casino > Hacksaw > Fist of Destruction",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:63",
+   "pageName": "Casino > Hacksaw > Slayers Inc",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12953:9",
+   "pageName": "Casino > Hacksaw > Le Bandit",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:11",
+   "pageName": "Casino > Hacksaw > Hot Ross",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:14",
+   "pageName": "Casino > Hacksaw > FRKN Bananas",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:17",
+   "pageName": "Casino > Hacksaw > SixSixSix",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:2",
+   "pageName": "Casino > Hacksaw > The Luxe H.V.",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:20",
+   "pageName": "Casino > Hacksaw > Le Prechaun",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:23",
+   "pageName": "Casino > Hacksaw > Power of Ten",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:26",
+   "pageName": "Casino > Hacksaw > Miami Mayhem",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:29",
+   "pageName": "Casino > Hacksaw > Cloud Princess",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:32",
+   "pageName": "Casino > Hacksaw > Age Of Seth",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:35",
+   "pageName": "Casino > Hacksaw > Le Zeus",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:38",
+   "pageName": "Casino > Hacksaw > Xmas Drop",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:41",
+   "pageName": "Casino > Hacksaw > Rotten",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:44",
+   "pageName": "Casino > Hacksaw > Rainbow Princess",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:5",
+   "pageName": "Casino > Hacksaw > Life and Death",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12954:8",
+   "pageName": "Casino > Hacksaw > Ze Zeus",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12977:2363",
+   "pageName": "Casino > Hacksaw > Max Win Machine",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
+  },
+  {
+   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+   "pageId": "12978:1233",
+   "pageName": "Casino > Hacksaw > Le Vampire",
+   "readiness": "unknown",
+   "liveChildren": 7,
+   "sections": []
   }
  ],
  "figmaChangeLog": {
@@ -957,7 +1213,73 @@
    "harvest.mjs verify-ingest: kaUnLTKalFjyyNzlKxPQkX 3 page(s) hashed equal to live/ and stamped harvested; 1 changed page(s) left for ingest.",
    "harvest.mjs ingest:",
    "kaUnLTKalFjyyNzlKxPQkX 15355:72871: page renamed \"🚧 Collectibles\" -> \"🚧 Collectables\"",
-   "kaUnLTKalFjyyNzlKxPQkX 15355:72871 🚧 Collectables: 44 -> 134 top-level children (+91 / -1)"
+   "kaUnLTKalFjyyNzlKxPQkX 15355:72871 🚧 Collectables: 44 -> 134 top-level children (+91 / -1)",
+   "harvest.mjs ingest:",
+   "3sSzw1KewMtUbeLAv7uW0r 14417:2 Play > Casino > Provider sections: NEW page, 3 top-level children, scope wip pending a ruling",
+   "3sSzw1KewMtUbeLAv7uW0r 14417:2 Play > Casino > Provider sections: 0 -> 3 top-level children (+3 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:15 Casino > Hacksaw > Hand of Anubis: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:15 Casino > Hacksaw > Hand of Anubis: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:18 Casino > Hacksaw > RIP City: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:18 Casino > Hacksaw > RIP City: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:21 Casino > Hacksaw > Duel at Dawn: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:21 Casino > Hacksaw > Duel at Dawn: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:3 Casino > Hacksaw > Template: NEW page, 8 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:3 Casino > Hacksaw > Template: 0 -> 8 top-level children (+8 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:30 Casino > Hacksaw > Le Fisherman: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:30 Casino > Hacksaw > Le Fisherman: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:33 Casino > Hacksaw > Le King: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:33 Casino > Hacksaw > Le King: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:36 Casino > Hacksaw > Le Cowboy: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:36 Casino > Hacksaw > Le Cowboy: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:39 Casino > Hacksaw > Le Pharaoh: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:39 Casino > Hacksaw > Le Pharaoh: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:45 Casino > Hacksaw > 2 Wild 2 Die: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:45 Casino > Hacksaw > 2 Wild 2 Die: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:48 Casino > Hacksaw > Stormforged: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:48 Casino > Hacksaw > Stormforged: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:6 Casino > Hacksaw > Wanted Dead or a Wild: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:6 Casino > Hacksaw > Wanted Dead or a Wild: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:60 Casino > Hacksaw > Fist of Destruction: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:60 Casino > Hacksaw > Fist of Destruction: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:63 Casino > Hacksaw > Slayers Inc: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:63 Casino > Hacksaw > Slayers Inc: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12953:9 Casino > Hacksaw > Le Bandit: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12953:9 Casino > Hacksaw > Le Bandit: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:11 Casino > Hacksaw > Hot Ross: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:11 Casino > Hacksaw > Hot Ross: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:14 Casino > Hacksaw > FRKN Bananas: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:14 Casino > Hacksaw > FRKN Bananas: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:17 Casino > Hacksaw > SixSixSix: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:17 Casino > Hacksaw > SixSixSix: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:2 Casino > Hacksaw > The Luxe H.V.: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:2 Casino > Hacksaw > The Luxe H.V.: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:20 Casino > Hacksaw > Le Prechaun: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:20 Casino > Hacksaw > Le Prechaun: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:23 Casino > Hacksaw > Power of Ten: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:23 Casino > Hacksaw > Power of Ten: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:26 Casino > Hacksaw > Miami Mayhem: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:26 Casino > Hacksaw > Miami Mayhem: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:29 Casino > Hacksaw > Cloud Princess: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:29 Casino > Hacksaw > Cloud Princess: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:32 Casino > Hacksaw > Age Of Seth: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:32 Casino > Hacksaw > Age Of Seth: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:35 Casino > Hacksaw > Le Zeus: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:35 Casino > Hacksaw > Le Zeus: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:38 Casino > Hacksaw > Xmas Drop: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:38 Casino > Hacksaw > Xmas Drop: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:41 Casino > Hacksaw > Rotten: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:41 Casino > Hacksaw > Rotten: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:44 Casino > Hacksaw > Rainbow Princess: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:44 Casino > Hacksaw > Rainbow Princess: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:5 Casino > Hacksaw > Life and Death: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:5 Casino > Hacksaw > Life and Death: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12954:8 Casino > Hacksaw > Ze Zeus: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12954:8 Casino > Hacksaw > Ze Zeus: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12977:2363 Casino > Hacksaw > Max Win Machine: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12977:2363 Casino > Hacksaw > Max Win Machine: 0 -> 7 top-level children (+7 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 12978:1233 Casino > Hacksaw > Le Vampire: NEW page, 7 top-level children, scope wip pending a ruling",
+   "M6r9FEn042UWTQD1zvy6GM 12978:1233 Casino > Hacksaw > Le Vampire: 0 -> 7 top-level children (+7 / -0)",
+   "harvest.mjs verify-ingest: 3sSzw1KewMtUbeLAv7uW0r 15 page(s), mhF3BkzlTaGiLzJ7kvpmVc 8 page(s), M6r9FEn042UWTQD1zvy6GM 63 page(s), kaUnLTKalFjyyNzlKxPQkX 4 page(s) hashed equal to live/ and stamped harvested."
   ]
  },
  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.\n\n2026-09-06 - PARTIAL fold-in of the wave-21 harvest: 27 of 33 sections, +519 registry frames (3776 -> 4295). The top-level `harvested` field deliberately STAYS at 2026-08-18 per the convention above - this was not a full sweep.\n\nSIX SECTIONS WERE REFUSED and still carry their 2026-08-18 ids: towers (75% of catalogued ids absent from the capture), wallet 51%, trade 49%, home 38%, keno 33%, hilo 30%. Those are SHORT HARVESTS, not deletions. `get_metadata` does not descend into every frame and says nothing about having stopped, so wave 21's `liveChildCount` was a second read of the SAME lossy instrument and agreed with its node list exactly - the completeness check passed while being entirely defeated. Wave 23 measured the gap directly: 1,914 of a towers page's 2,011 real descendants.\n\nFolding those six in would have DELETED 407 trade ids, 183 wallet, 136 home, 88 trade-2 and 54 towers, taking the hand-set implFiles/status/notes keyed to each one with them. snapshot-to-nodes.mjs now refuses any section whose capture is missing more than 25% of its catalogued ids, because a design file does not shed a quarter of a section in nineteen days - a short capture looks exactly like that and passes every count-based check.\n\nTo close the six: re-harvest via the Plugin API (use_figma), which is the only instrument that enumerates a page completely.\n\n2026-09-06 - page-list verification across all three files via figma.root.children, diffed against this file by pageId. All 50 pages match: 0 new, 0 absent. The list was already current; the 08-18 stamp was a stale LABEL on live data, and a stamp that reads nineteen days old is itself a defect because it invites a re-harvest nobody needs. WATCH OUT: children.length reads 0 for any page the session has not loaded, so a page-list pass cannot also collect live counts - Play returned 0 here and 345 when loaded. This pass certifies the page SET only.\n\n2026-09-15 - verify pass on all three files (46 of 51 pages hash-equal to live/ and stamped); the five slots pages re-ingested after their rename to Untamed / Starbound / Vegas fortune / Sugar Rush / Hooked and their promotion to ready. The six-section refusal recorded above (2026-09-06) is CLOSED: the 09-11 and 09-15 verify passes hash every one of those pages equal to live/, so towers, wallet, trade, home, keno and hilo carry current top-level lists. What a top-level harvest still cannot see is a nested frame; 130 such ids were attached today by probe (see figmaChangeLog).",

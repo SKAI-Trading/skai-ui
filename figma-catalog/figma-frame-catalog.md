@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-28T01:22:07.512Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
+_Generated 2026-11-28T03:07:21.710Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -87,6 +87,38 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Page | Top-level nodes |
 |------|----------------:|
 | 🎧 Sounds - Skai Originals | 0 |
+| Play > Casino > Provider sections | 3 |
+| Casino > Hacksaw > Hand of Anubis | 7 |
+| Casino > Hacksaw > RIP City | 7 |
+| Casino > Hacksaw > Duel at Dawn | 7 |
+| Casino > Hacksaw > Template | 8 |
+| Casino > Hacksaw > Le Fisherman | 7 |
+| Casino > Hacksaw > Le King | 7 |
+| Casino > Hacksaw > Le Cowboy | 7 |
+| Casino > Hacksaw > Le Pharaoh | 7 |
+| Casino > Hacksaw > 2 Wild 2 Die | 7 |
+| Casino > Hacksaw > Stormforged | 7 |
+| Casino > Hacksaw > Wanted Dead or a Wild | 7 |
+| Casino > Hacksaw > Fist of Destruction | 7 |
+| Casino > Hacksaw > Slayers Inc | 7 |
+| Casino > Hacksaw > Le Bandit | 7 |
+| Casino > Hacksaw > Hot Ross | 7 |
+| Casino > Hacksaw > FRKN Bananas | 7 |
+| Casino > Hacksaw > SixSixSix | 7 |
+| Casino > Hacksaw > The Luxe H.V. | 7 |
+| Casino > Hacksaw > Le Prechaun | 7 |
+| Casino > Hacksaw > Power of Ten | 7 |
+| Casino > Hacksaw > Miami Mayhem | 7 |
+| Casino > Hacksaw > Cloud Princess | 7 |
+| Casino > Hacksaw > Age Of Seth | 7 |
+| Casino > Hacksaw > Le Zeus | 7 |
+| Casino > Hacksaw > Xmas Drop | 7 |
+| Casino > Hacksaw > Rotten | 7 |
+| Casino > Hacksaw > Rainbow Princess | 7 |
+| Casino > Hacksaw > Life and Death | 7 |
+| Casino > Hacksaw > Ze Zeus | 7 |
+| Casino > Hacksaw > Max Win Machine | 7 |
+| Casino > Hacksaw > Le Vampire | 7 |
 
 
 ## Governance

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-28T01:22:15.828Z",
-  "harvestedAt": "2026-11-23",
+  "generated": "2026-11-28T03:07:24.448Z",
+  "harvestedAt": "2026-11-28",
   "rollup": {
     "pages": 40,
     "live": 4913,
@@ -7794,7 +7794,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -7829,7 +7829,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 46,
       "furniture": 1,
       "furnitureWhy": {
@@ -8174,7 +8174,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 1157,
       "furniture": 1156,
       "furnitureWhy": {
@@ -8212,7 +8212,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -8261,7 +8261,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built).",
       "live": 151,
       "furniture": 27,
@@ -8329,7 +8329,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 10,
       "furniture": 4,
       "furnitureWhy": {
@@ -8360,7 +8360,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 20,
       "furniture": 20,
       "furnitureWhy": {
@@ -8391,7 +8391,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 13,
       "furniture": 13,
       "furnitureWhy": {
@@ -8421,7 +8421,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 154,
       "furniture": 37,
       "furnitureWhy": {
@@ -8471,7 +8471,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 284,
       "furniture": 30,
       "furnitureWhy": {
@@ -8572,7 +8572,7 @@
       "n": 441,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 441,
       "furniture": 78,
       "furnitureWhy": {
@@ -8770,7 +8770,7 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 442,
       "furniture": 41,
       "furnitureWhy": {
@@ -8885,7 +8885,7 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -9008,7 +9008,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -9038,7 +9038,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 286,
@@ -9129,7 +9129,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 270,
@@ -9189,7 +9189,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 178,
       "furniture": 11,
@@ -9239,7 +9239,7 @@
       "n": 210,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 210,
       "furniture": 23,
       "furnitureWhy": {
@@ -9420,7 +9420,7 @@
       "n": 442,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 442,
       "furniture": 60,
@@ -9590,7 +9590,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -9718,7 +9718,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -9753,7 +9753,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -9800,7 +9800,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -9835,7 +9835,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 36,
       "furniture": 13,
       "furnitureWhy": {
@@ -9874,7 +9874,7 @@
       "n": 28,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 28,
       "furniture": 16,
       "furnitureWhy": {
@@ -9936,7 +9936,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 23,
       "furniture": 9,
       "furnitureWhy": {
@@ -9972,7 +9972,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 20,
       "furniture": 7,
       "furnitureWhy": {
@@ -10004,7 +10004,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 19,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 0,
       "scope": "in-scope",
       "live": 19,
@@ -10039,7 +10039,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 3,
       "scope": "in-scope",
       "live": 46,
@@ -10080,7 +10080,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -10117,7 +10117,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 31,
       "furniture": 16,
       "furnitureWhy": {
@@ -10154,7 +10154,7 @@
       "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 15,
       "furniture": 9,
       "furnitureWhy": {
@@ -10186,7 +10186,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 31,
       "furniture": 17,
       "furnitureWhy": {
@@ -10221,7 +10221,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 27,
       "furniture": 11,
       "furnitureWhy": {
@@ -10255,7 +10255,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 25,
       "furniture": 14,
       "furnitureWhy": {
@@ -10290,7 +10290,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -10331,7 +10331,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 17,
       "furniture": 6,
       "furnitureWhy": {
@@ -10370,7 +10370,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 21,
       "furniture": 11,
       "furnitureWhy": {
@@ -10407,7 +10407,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -10449,7 +10449,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -10481,7 +10481,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 24,
       "furniture": 8,
       "furnitureWhy": {
@@ -10517,7 +10517,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 18,
       "furniture": 6,
       "furnitureWhy": {
@@ -10553,7 +10553,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 20,
       "furniture": 13,
       "furnitureWhy": {
@@ -10589,7 +10589,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 30,
       "furniture": 15,
       "furnitureWhy": {
@@ -10629,7 +10629,7 @@
       "n": 53,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed.",
       "live": 53,
       "furniture": 43,
@@ -10732,7 +10732,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
@@ -10757,7 +10757,7 @@
       "pageName": "✅ Untamed - Skai originals",
       "readiness": "ready",
       "n": 72,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -10804,7 +10804,7 @@
       "pageName": "✅ Starbound - Skai originals",
       "readiness": "ready",
       "n": 62,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2.",
@@ -10840,7 +10840,7 @@
       "pageName": "✅ Vegas fortune - Skai originals",
       "readiness": "ready",
       "n": 96,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 1,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -10893,7 +10893,7 @@
       "pageName": "✅ Sugar Rush - Skai originals",
       "readiness": "ready",
       "n": 66,
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -10941,7 +10941,7 @@
       "n": 79,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page.",
       "live": 79,
       "furniture": 32,
@@ -10987,7 +10987,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Added by harvest.mjs ingest 2026-10-09. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 0,
       "furniture": 0,
@@ -11015,7 +11015,7 @@
       "n": 9,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 9,
       "furniture": 0,
@@ -11107,7 +11107,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 1,
       "furniture": 0,
@@ -12356,6 +12356,2481 @@
         "furniture": 1
       },
       "liveOnly": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "14417:2",
+      "pageName": "Play > Casino > Provider sections",
+      "readiness": "unknown",
+      "n": 3,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 3,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 3,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "14417-299",
+          "name": "Skai > Play > Casino > Provider sections (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 4255
+        },
+        {
+          "id": "14417-1745",
+          "name": "Skai > Play > Casino > Provider sections (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 4626
+        },
+        {
+          "id": "14417-3329",
+          "name": "Skai > Play > Casino > Provider sections (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 5329
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:15",
+      "pageName": "Casino > Hacksaw > Hand of Anubis",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-16",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Hand of Anubis",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-5306",
+          "name": "Skai > Play > Casino > Hand of Anubis (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-6132",
+          "name": "Skai > Play > Casino > Hand of Anubis (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-6453",
+          "name": "Skai > Play > Casino > Hand of Anubis (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-7004",
+          "name": "Hand of Anubis - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-7013",
+          "name": "Hand of Anubis - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-7023",
+          "name": "Hand of Anubis - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:18",
+      "pageName": "Casino > Hacksaw > RIP City",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-19",
+          "name": "PLACEHOLDER art - replace with Gosh asset / RIP City",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-5306",
+          "name": "Skai > Play > Casino > RIP City (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-6132",
+          "name": "Skai > Play > Casino > RIP City (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-6453",
+          "name": "Skai > Play > Casino > RIP City (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-7004",
+          "name": "RIP City - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-7013",
+          "name": "RIP City - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-7023",
+          "name": "RIP City - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:21",
+      "pageName": "Casino > Hacksaw > Duel at Dawn",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-22",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Duel at Dawn",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-3579",
+          "name": "Skai > Play > Casino > Duel at Dawn (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-4405",
+          "name": "Skai > Play > Casino > Duel at Dawn (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-4726",
+          "name": "Skai > Play > Casino > Duel at Dawn (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-5277",
+          "name": "Duel at Dawn - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-5286",
+          "name": "Duel at Dawn - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-5296",
+          "name": "Duel at Dawn - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:3",
+      "pageName": "Casino > Hacksaw > Template",
+      "readiness": "unknown",
+      "n": 8,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 8,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 8,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-4",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Game name",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12955-2",
+          "name": "Skai > Play > Casino > Hacksaw slot template (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12956-288",
+          "name": "Skai > Play > Casino > Hacksaw slot template (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12956-1003",
+          "name": "Skai > Play > Casino > Hacksaw slot template (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12956-1864",
+          "name": "Game name - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12956-1871",
+          "name": "Game name - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12956-1879",
+          "name": "Game name - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "12957-1230",
+          "name": "Hacksaw canvas state",
+          "type": "COMPONENT_SET",
+          "w": 2641,
+          "h": 6400
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:30",
+      "pageName": "Casino > Hacksaw > Le Fisherman",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-31",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Fisherman",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12959-5252",
+          "name": "Skai > Play > Casino > Le Fisherman (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12959-6072",
+          "name": "Skai > Play > Casino > Le Fisherman (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12959-6390",
+          "name": "Skai > Play > Casino > Le Fisherman (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12959-6935",
+          "name": "Le Fisherman - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12959-6943",
+          "name": "Le Fisherman - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12959-6952",
+          "name": "Le Fisherman - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:33",
+      "pageName": "Casino > Hacksaw > Le King",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-34",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le King",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-1852",
+          "name": "Skai > Play > Casino > Le King (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-2678",
+          "name": "Skai > Play > Casino > Le King (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-2999",
+          "name": "Skai > Play > Casino > Le King (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-3550",
+          "name": "Le King - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-3559",
+          "name": "Le King - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-3569",
+          "name": "Le King - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:36",
+      "pageName": "Casino > Hacksaw > Le Cowboy",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-37",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Cowboy",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-8760",
+          "name": "Skai > Play > Casino > Le Cowboy (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-9586",
+          "name": "Skai > Play > Casino > Le Cowboy (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-9907",
+          "name": "Skai > Play > Casino > Le Cowboy (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-10458",
+          "name": "Le Cowboy - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-10467",
+          "name": "Le Cowboy - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-10477",
+          "name": "Le Cowboy - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:39",
+      "pageName": "Casino > Hacksaw > Le Pharaoh",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-40",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Pharaoh",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-3",
+          "name": "Skai > Play > Casino > Le Pharaoh (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-864",
+          "name": "Skai > Play > Casino > Le Pharaoh (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-1230",
+          "name": "Skai > Play > Casino > Le Pharaoh (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-1824",
+          "name": "Le Pharaoh - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-1833",
+          "name": "Le Pharaoh - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-1843",
+          "name": "Le Pharaoh - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:45",
+      "pageName": "Casino > Hacksaw > 2 Wild 2 Die",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-46",
+          "name": "PLACEHOLDER art - replace with Gosh asset / 2 Wild 2 Die",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-3579",
+          "name": "Skai > Play > Casino > 2 Wild 2 Die (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-4405",
+          "name": "Skai > Play > Casino > 2 Wild 2 Die (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-4726",
+          "name": "Skai > Play > Casino > 2 Wild 2 Die (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-5277",
+          "name": "2 Wild 2 Die - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-5286",
+          "name": "2 Wild 2 Die - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-5296",
+          "name": "2 Wild 2 Die - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:48",
+      "pageName": "Casino > Hacksaw > Stormforged",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-49",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Stormforged",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-3579",
+          "name": "Skai > Play > Casino > Stormforged (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-4405",
+          "name": "Skai > Play > Casino > Stormforged (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-4726",
+          "name": "Skai > Play > Casino > Stormforged (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-5277",
+          "name": "Stormforged - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-5286",
+          "name": "Stormforged - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-5296",
+          "name": "Stormforged - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:6",
+      "pageName": "Casino > Hacksaw > Wanted Dead or a Wild",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-7",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Wanted Dead or a Wild",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12959-1834",
+          "name": "Skai > Play > Casino > Wanted Dead or a Wild (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12959-2654",
+          "name": "Skai > Play > Casino > Wanted Dead or a Wild (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12959-2972",
+          "name": "Skai > Play > Casino > Wanted Dead or a Wild (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12959-3517",
+          "name": "Wanted Dead or a Wild - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12959-3525",
+          "name": "Wanted Dead or a Wild - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12959-3534",
+          "name": "Wanted Dead or a Wild - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:60",
+      "pageName": "Casino > Hacksaw > Fist of Destruction",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-61",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Fist of Destruction",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-2",
+          "name": "Skai > Play > Casino > Fist of Destruction (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-863",
+          "name": "Skai > Play > Casino > Fist of Destruction (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-1229",
+          "name": "Skai > Play > Casino > Fist of Destruction (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-1823",
+          "name": "Fist of Destruction - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-1832",
+          "name": "Fist of Destruction - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-1842",
+          "name": "Fist of Destruction - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:63",
+      "pageName": "Casino > Hacksaw > Slayers Inc",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-64",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Slayers Inc",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-8760",
+          "name": "Skai > Play > Casino > Slayers Inc (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-9586",
+          "name": "Skai > Play > Casino > Slayers Inc (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-9907",
+          "name": "Skai > Play > Casino > Slayers Inc (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-10458",
+          "name": "Slayers Inc - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-10467",
+          "name": "Slayers Inc - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-10477",
+          "name": "Slayers Inc - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12953:9",
+      "pageName": "Casino > Hacksaw > Le Bandit",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12953-10",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Bandit",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12959-3543",
+          "name": "Skai > Play > Casino > Le Bandit (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12959-4363",
+          "name": "Skai > Play > Casino > Le Bandit (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12959-4681",
+          "name": "Skai > Play > Casino > Le Bandit (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12959-5226",
+          "name": "Le Bandit - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12959-5234",
+          "name": "Le Bandit - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12959-5243",
+          "name": "Le Bandit - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:11",
+      "pageName": "Casino > Hacksaw > Hot Ross",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-12",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Hot Ross",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-1853",
+          "name": "Skai > Play > Casino > Hot Ross (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-2679",
+          "name": "Skai > Play > Casino > Hot Ross (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-3000",
+          "name": "Skai > Play > Casino > Hot Ross (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-3551",
+          "name": "Hot Ross - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-3560",
+          "name": "Hot Ross - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-3570",
+          "name": "Hot Ross - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:14",
+      "pageName": "Casino > Hacksaw > FRKN Bananas",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-15",
+          "name": "PLACEHOLDER art - replace with Gosh asset / FRKN Bananas",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-3580",
+          "name": "Skai > Play > Casino > FRKN Bananas (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-4406",
+          "name": "Skai > Play > Casino > FRKN Bananas (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-4727",
+          "name": "Skai > Play > Casino > FRKN Bananas (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-5278",
+          "name": "FRKN Bananas - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-5287",
+          "name": "FRKN Bananas - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-5297",
+          "name": "FRKN Bananas - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:17",
+      "pageName": "Casino > Hacksaw > SixSixSix",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-18",
+          "name": "PLACEHOLDER art - replace with Gosh asset / SixSixSix",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-5307",
+          "name": "Skai > Play > Casino > SixSixSix (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-6133",
+          "name": "Skai > Play > Casino > SixSixSix (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-6454",
+          "name": "Skai > Play > Casino > SixSixSix (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-7005",
+          "name": "SixSixSix - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-7014",
+          "name": "SixSixSix - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-7024",
+          "name": "SixSixSix - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:2",
+      "pageName": "Casino > Hacksaw > The Luxe H.V.",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-3",
+          "name": "PLACEHOLDER art - replace with Gosh asset / The Luxe H.V.",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12959-2",
+          "name": "Skai > Play > Casino > The Luxe H.V. (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12959-857",
+          "name": "Skai > Play > Casino > The Luxe H.V. (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12959-1220",
+          "name": "Skai > Play > Casino > The Luxe H.V. (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12959-1808",
+          "name": "The Luxe H.V. - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12959-1816",
+          "name": "The Luxe H.V. - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12959-1825",
+          "name": "The Luxe H.V. - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:20",
+      "pageName": "Casino > Hacksaw > Le Prechaun",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-21",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Prechaun",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-7034",
+          "name": "Skai > Play > Casino > Le Prechaun (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-7860",
+          "name": "Skai > Play > Casino > Le Prechaun (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-8181",
+          "name": "Skai > Play > Casino > Le Prechaun (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-8732",
+          "name": "Le Prechaun - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-8741",
+          "name": "Le Prechaun - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-8751",
+          "name": "Le Prechaun - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:23",
+      "pageName": "Casino > Hacksaw > Power of Ten",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-24",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Power of Ten",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12962-8761",
+          "name": "Skai > Play > Casino > Power of Ten (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12962-9587",
+          "name": "Skai > Play > Casino > Power of Ten (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12962-9908",
+          "name": "Skai > Play > Casino > Power of Ten (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12962-10459",
+          "name": "Power of Ten - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12962-10468",
+          "name": "Power of Ten - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12962-10478",
+          "name": "Power of Ten - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:26",
+      "pageName": "Casino > Hacksaw > Miami Mayhem",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-27",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Miami Mayhem",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-2",
+          "name": "Skai > Play > Casino > Miami Mayhem (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-863",
+          "name": "Skai > Play > Casino > Miami Mayhem (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-1229",
+          "name": "Skai > Play > Casino > Miami Mayhem (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-1823",
+          "name": "Miami Mayhem - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-1832",
+          "name": "Miami Mayhem - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-1842",
+          "name": "Miami Mayhem - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:29",
+      "pageName": "Casino > Hacksaw > Cloud Princess",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-30",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Cloud Princess",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-7033",
+          "name": "Skai > Play > Casino > Cloud Princess (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-7859",
+          "name": "Skai > Play > Casino > Cloud Princess (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-8180",
+          "name": "Skai > Play > Casino > Cloud Princess (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-8731",
+          "name": "Cloud Princess - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-8740",
+          "name": "Cloud Princess - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-8750",
+          "name": "Cloud Princess - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:32",
+      "pageName": "Casino > Hacksaw > Age Of Seth",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-33",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Age Of Seth",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12963-8760",
+          "name": "Skai > Play > Casino > Age Of Seth (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12963-9586",
+          "name": "Skai > Play > Casino > Age Of Seth (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12963-9907",
+          "name": "Skai > Play > Casino > Age Of Seth (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12963-10458",
+          "name": "Age Of Seth - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12963-10467",
+          "name": "Age Of Seth - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12963-10477",
+          "name": "Age Of Seth - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:35",
+      "pageName": "Casino > Hacksaw > Le Zeus",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-36",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Zeus",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-2",
+          "name": "Skai > Play > Casino > Le Zeus (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-863",
+          "name": "Skai > Play > Casino > Le Zeus (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-1229",
+          "name": "Skai > Play > Casino > Le Zeus (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-1823",
+          "name": "Le Zeus - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-1832",
+          "name": "Le Zeus - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-1842",
+          "name": "Le Zeus - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:38",
+      "pageName": "Casino > Hacksaw > Xmas Drop",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-39",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Xmas Drop",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-1852",
+          "name": "Skai > Play > Casino > Xmas Drop (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-2678",
+          "name": "Skai > Play > Casino > Xmas Drop (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-2999",
+          "name": "Skai > Play > Casino > Xmas Drop (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-3550",
+          "name": "Xmas Drop - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-3559",
+          "name": "Xmas Drop - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-3569",
+          "name": "Xmas Drop - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:41",
+      "pageName": "Casino > Hacksaw > Rotten",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-42",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Rotten",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-5306",
+          "name": "Skai > Play > Casino > Rotten (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-6132",
+          "name": "Skai > Play > Casino > Rotten (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-6453",
+          "name": "Skai > Play > Casino > Rotten (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-7004",
+          "name": "Rotten - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-7013",
+          "name": "Rotten - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-7023",
+          "name": "Rotten - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:44",
+      "pageName": "Casino > Hacksaw > Rainbow Princess",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-45",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Rainbow Princess",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12964-7033",
+          "name": "Skai > Play > Casino > Rainbow Princess (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12964-7859",
+          "name": "Skai > Play > Casino > Rainbow Princess (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12964-8180",
+          "name": "Skai > Play > Casino > Rainbow Princess (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12964-8731",
+          "name": "Rainbow Princess - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12964-8740",
+          "name": "Rainbow Princess - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12964-8750",
+          "name": "Rainbow Princess - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:5",
+      "pageName": "Casino > Hacksaw > Life and Death",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-6",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Life and Death",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-1852",
+          "name": "Skai > Play > Casino > Life and Death (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-2678",
+          "name": "Skai > Play > Casino > Life and Death (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-2999",
+          "name": "Skai > Play > Casino > Life and Death (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-3550",
+          "name": "Life and Death - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-3559",
+          "name": "Life and Death - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-3569",
+          "name": "Life and Death - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12954:8",
+      "pageName": "Casino > Hacksaw > Ze Zeus",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12954-9",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Ze Zeus",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12961-7033",
+          "name": "Skai > Play > Casino > Ze Zeus (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12961-7859",
+          "name": "Skai > Play > Casino > Ze Zeus (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12961-8180",
+          "name": "Skai > Play > Casino > Ze Zeus (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12961-8731",
+          "name": "Ze Zeus - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12961-8740",
+          "name": "Ze Zeus - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12961-8750",
+          "name": "Ze Zeus - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12977:2363",
+      "pageName": "Casino > Hacksaw > Max Win Machine",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12977-2364",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Max Win Machine",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12977-2366",
+          "name": "Skai > Play > Casino > Max Win Machine (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12977-2929",
+          "name": "Skai > Play > Casino > Max Win Machine (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12977-3105",
+          "name": "Skai > Play > Casino > Max Win Machine (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12977-3473",
+          "name": "Max Win Machine - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12977-3479",
+          "name": "Max Win Machine - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12977-3486",
+          "name": "Max Win Machine - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "12978:1233",
+      "pageName": "Casino > Hacksaw > Le Vampire",
+      "readiness": "unknown",
+      "n": 7,
+      "openReports": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-11-28",
+      "note": "Added by harvest.mjs ingest 2026-11-28. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
+      "live": 7,
+      "furniture": 0,
+      "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 7,
+      "matched": 0,
+      "rollupOnly": 0,
+      "defaultNamed": 0,
+      "ambiguous": 0,
+      "conflicts": 0,
+      "verified": 0,
+      "visuallyDowngraded": 0,
+      "byStatus": {},
+      "liveOnly": [
+        {
+          "id": "12978-1234",
+          "name": "PLACEHOLDER art - replace with Gosh asset / Le Vampire",
+          "type": "COMPONENT",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "12978-1236",
+          "name": "Skai > Play > Casino > Le Vampire (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "12978-1799",
+          "name": "Skai > Play > Casino > Le Vampire (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1654
+        },
+        {
+          "id": "12978-1975",
+          "name": "Skai > Play > Casino > Le Vampire (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2638
+        },
+        {
+          "id": "12978-2343",
+          "name": "Le Vampire - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "12978-2349",
+          "name": "Le Vampire - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "12978-2356",
+          "name": "Le Vampire - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        }
+      ]
     }
   ],
   "catalogOnly": [
