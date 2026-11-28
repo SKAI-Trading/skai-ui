@@ -864,7 +864,9 @@ function cmdInstall(args) {
   // credential manager; the clone does the same.
   run(gitBin, ["-C", CLONE, "config", "--local", "--replace-all", "credential.https://github.com.helper", ""]);
   run(gitBin, ["-C", CLONE, "config", "--local", "--add", "credential.https://github.com.helper", "manager"]);
-  const probe = run(gitBin, ["-C", CLONE, "push", "--dry-run", "-q", "origin", "HEAD:main"], { env: { ...process.env, GIT_TERMINAL_PROMPT: "0" } });
+  // A dry-run push to a ref that does not exist proves the credential without
+  // caring whether the clone is behind main, and creates nothing.
+  const probe = run(gitBin, ["-C", CLONE, "push", "--dry-run", "-q", "origin", "HEAD:refs/heads/figma-watch-auth-probe"], { env: { ...process.env, GIT_TERMINAL_PROMPT: "0" } });
   if (probe.status !== 0) {
     console.error(`install: the clone cannot push without a prompt: ${probe.stderr.trim()}`);
     return 1;
