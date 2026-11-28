@@ -132,50 +132,22 @@ The loop, per Figma file:
 `harvest.mjs --self-test` and `pipeline.mjs --self-test` cover the reconciliation and
 comparison rules without touching Figma.
 
-### The watch: the loop above, on a schedule
+### On a schedule: HQ's nightly refresh
 
-Since 2026-11-28 nobody has to run the loop when the designer adds screens (Casey,
-2026-11-27: "make sure the figma catalog picks up on figma changes and updates like this
-from now on"). `watch.mjs` runs it every six hours from the Windows task **SKAI Figma
-watch**, in its own clone at `~/skai-orch/figma-watch/skai-ui`, never the shared tree:
+SKAI HQ runs this loop as its `figma-harvest` routine (skai-hq-main `engine/routines/jobs/figma-harvest.ts`;
+Casey's picks of 2026-11-13 and 11-15): at 04:30 it reads Figma through fenced Claude runs, refreshes the catalog
+on a `figma/catalog-<date>` branch of its own and raises one item to land it through this repo's gate; it never
+pushes main. Casey confirmed it on 2026-11-27 as the one way the catalog keeps up with Figma, over a 6-hourly
+watch that pushed main directly (built and retired the same night; its two real passes are skai-ui `31c42b1` and the
+logs under `~/skai-orch/figma-watch/`). Before folding a designer drop by hand, look for that night's branch and
+item. Two things the watch's passes found that a fold, by hand or by HQ, has to respect:
 
-- **Steps 0-6 run in code.** A headless `claude -p` on a small model only executes the
-  read-only scripts `harvest.mjs` prints. Its results are read from the run's
-  transcript, never retyped, and count only when the code that ran is byte for byte the
-  code it was handed. A changed page's rows must re-hash to the step-0 hash, or the next
-  pass reads it again.
-- **It folds on its own** only what needs no judgment: `ADDED`, `RETITLED` (a designer
-  rename), and `REMOVED` of an id the probe certified gone. It folds just the sections
-  whose pages changed (`snapshot-to-nodes.mjs --only`), records the gone ids, gives
-  each new open frame a plain default gap line, regenerates, re-runs drift, and needs
-  `pipeline.mjs --check` to pass. It refuses to commit if any surviving frame's status,
-  implFiles, notes, verifiedAt, route or citations moved.
-- **It hands to Casey's HQ inbox** (`hq block`, as `Figma-watch`) everything else: a
-  `REMOVED-WITH-WORK`, a `RETARGET`, a new page (scope ruling), a page that vanished, a
-  change to a tombstone copy, a refused capture, or three failed passes in a row. That
-  section stays unfolded; its live read is committed and `figma-todo.live.tsv` lists
-  the rows.
-- **It publishes** by pushing skai-ui `main`, which is how skai.trade/status updates
-  (a `gaps.tsv` or `coverage.json` change starts the landing deploy). Each fold gets an
-  HQ item, closed with its commit. An unchanged pass commits nothing, except once a week
-  to stamp the pages and flush its Figma calls into `figma/ledger/calls.jsonl`.
-- **It stays out of the way.** A pass is skipped while the shared tree has uncommitted or
-  unpushed catalog work, while fewer than 25 of the day's Figma calls would be left, or
-  while `~/skai-orch/figma-watch/paused` exists. A pass costs 5 Figma calls and about a
-  cent when nothing moved.
-
-```sh
-node figma-catalog/watch.mjs status            # last pass, pending calls, open hand-offs, next run
-node figma-catalog/watch.mjs pause "<reason>"  # before a long hand fold, then: resume
-node figma-catalog/watch.mjs run --dry         # a pass that commits nothing (in the clone)
-node figma-catalog/watch.mjs install           # clone + task; re-run after moving node or claude
-node figma-catalog/watch.mjs --self-test
-```
-
-What it does not do: write status rows or visual verdicts (a new frame enters `unknown`
-until a lane measures it), rule on a page's scope, or notice an edit inside an existing
-board (step 0 hashes top-level rows; see the next paragraph). Logs and each pass's
-transcripts are under `~/skai-orch/figma-watch/` (`logs/`, `runs/`, kept 30 days).
+- Fold only the sections whose pages changed: `snapshot-to-nodes.mjs <snapshot> --only <section,...>`. A full
+  fold rewrites every section and drops the gone ids some keep on purpose (two Play mode-card rows and four
+  Games covers wait for a human to move their work; see `bugref-aliases.tsv`).
+- A harvest read folds runs of whitespace in names, so the first re-read of a page harvested before that rule
+  changes titles by whitespace only (Governance, 2026-11-28). `figma-drift.mjs` ignores that; a title check
+  should too.
 
 **Edits inside a board.** Step 0 hashes each page's top-level rows only, so a row rebuilt
 inside an existing board changes nothing it sees (the 375 Play mode cards, 2026-10-27).

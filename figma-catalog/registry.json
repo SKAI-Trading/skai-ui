@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-28T03:07:21.710Z",
+  "generated": "2026-11-28T05:17:32.586Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -1566,134 +1566,6 @@
       {
         "page": "🎧 Sounds - Skai Originals",
         "live": 0
-      },
-      {
-        "page": "Play > Casino > Provider sections",
-        "live": 3
-      },
-      {
-        "page": "Casino > Hacksaw > Hand of Anubis",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > RIP City",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Duel at Dawn",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Template",
-        "live": 8
-      },
-      {
-        "page": "Casino > Hacksaw > Le Fisherman",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le King",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Cowboy",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Pharaoh",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > 2 Wild 2 Die",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Stormforged",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Wanted Dead or a Wild",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Fist of Destruction",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Slayers Inc",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Bandit",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Hot Ross",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > FRKN Bananas",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > SixSixSix",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > The Luxe H.V.",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Prechaun",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Power of Ten",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Miami Mayhem",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Cloud Princess",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Age Of Seth",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Zeus",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Xmas Drop",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Rotten",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Rainbow Princess",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Life and Death",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Ze Zeus",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Max Win Machine",
-        "live": 7
-      },
-      {
-        "page": "Casino > Hacksaw > Le Vampire",
-        "live": 7
       }
     ],
     "outOfScopePages": [
@@ -1721,6 +1593,166 @@
         "page": "✅ Social (18 Sept, 2026)",
         "live": 442,
         "reason": "2026-11-23: a COPY of Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562) inside Skai-Web-App-3 (kaUnLTKalFjyyNzlKxPQkX), same page id and node ids. All 442 top-level rows equal the Skai-Web-App page row for row and the page hashes match (437bd160). Its frames are catalogued once, under section `social` on the Skai-Web-App page; a section here would count them twice and split their code citations between two files. Scope `tombstone` in live/_pages.json (Casey, round 184). Re-check if its hash ever differs from the Skai-Web-App page: that means the copy is being edited."
+      },
+      {
+        "page": "Play > Casino > Provider sections",
+        "live": 3,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Hand of Anubis",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > RIP City",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Duel at Dawn",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Template",
+        "live": 8,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Fisherman",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le King",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Cowboy",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Pharaoh",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > 2 Wild 2 Die",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Stormforged",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Wanted Dead or a Wild",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Fist of Destruction",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Slayers Inc",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Bandit",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Hot Ross",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > FRKN Bananas",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > SixSixSix",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > The Luxe H.V.",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Prechaun",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Power of Ten",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Miami Mayhem",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Cloud Princess",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Age Of Seth",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Zeus",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Xmas Drop",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Rotten",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Rainbow Princess",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Life and Death",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Ze Zeus",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Max Win Machine",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
+      },
+      {
+        "page": "Casino > Hacksaw > Le Vampire",
+        "live": 7,
+        "reason": "wip until Hacksaw launches (Casey, 2026-11-27 popup, HQ-760): reported, not counted, until HACKSAW_GAMES is switched on, then in scope with a section of its own. No section yet, so the registry carries none of its frames; coverage reports the page from live/."
       }
     ],
     "driftingPages": []
