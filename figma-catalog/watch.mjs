@@ -357,7 +357,9 @@ function run(cmd, args, opts = {}) {
   const r = spawnSync(cmd, args, { encoding: "utf8", maxBuffer: 512 * 1024 * 1024, windowsHide: true, ...opts });
   return { status: r.status ?? (r.error ? -1 : 0), stdout: r.stdout || "", stderr: (r.stderr || "") + (r.error ? String(r.error) : "") };
 }
-const git = (...args) => run(tool("git", "git"), ["-C", UI, ...args]);
+// No terminal is attached under the scheduler: a credential problem has to
+// fail the command, not wait on a prompt nobody will answer.
+const git = (...args) => run(tool("git", "git"), ["-C", UI, ...args], { env: { ...process.env, GIT_TERMINAL_PROMPT: "0" } });
 const nodeScript = (script, args = [], opts = {}) => run(tool("node", process.execPath), [path.join(DIR, script), ...args], { cwd: UI, ...opts });
 
 let LOG_FILE = null;
@@ -855,6 +857,17 @@ function cmdInstall(args) {
       console.error(`install: clone failed: ${c.stderr}`);
       return 1;
     }
+  }
+  // The global helper for github.com is `gh auth git-credential`, which fails
+  // with no terminal attached (the first scheduled pass, 2026-11-28: "could not
+  // read Password"). The shared tree's skai-ui pushes through the Windows
+  // credential manager; the clone does the same.
+  run(gitBin, ["-C", CLONE, "config", "--local", "--replace-all", "credential.https://github.com.helper", ""]);
+  run(gitBin, ["-C", CLONE, "config", "--local", "--add", "credential.https://github.com.helper", "manager"]);
+  const probe = run(gitBin, ["-C", CLONE, "push", "--dry-run", "-q", "origin", "HEAD:main"], { env: { ...process.env, GIT_TERMINAL_PROMPT: "0" } });
+  if (probe.status !== 0) {
+    console.error(`install: the clone cannot push without a prompt: ${probe.stderr.trim()}`);
+    return 1;
   }
   const hqBin = path.join(os.homedir(), "Desktop", "skai-hq-main", "hq.cmd");
   writeJson(CONFIG, { node: process.execPath, git: gitBin, claude, hq: fs.existsSync(hqBin) ? hqBin : null });
