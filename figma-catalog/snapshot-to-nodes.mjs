@@ -46,10 +46,16 @@ import path from "node:path";
 
 const args = process.argv.slice(2);
 const write = args.includes("--write");
-const files = args.filter((a) => !a.startsWith("--"));
+// --only a,b folds just those sections. A full fold also rewrites every other
+// section from the snapshot, which drops the gone ids some sections keep on
+// purpose (a retired frame's work waiting for a human to move it, see
+// bugref-aliases.tsv); watch.mjs folds only the sections whose pages changed.
+const onlyAt = args.indexOf("--only");
+const only = onlyAt >= 0 ? new Set(String(args[onlyAt + 1] ?? "").split(",").map((s) => s.trim()).filter(Boolean)) : null;
+const files = args.filter((a, i) => !a.startsWith("--") && !(onlyAt >= 0 && i === onlyAt + 1));
 
-if (files.length === 0) {
-  console.error("usage: node snapshot-to-nodes.mjs <snapshot.json> [--write]");
+if (files.length === 0 || (only && only.size === 0)) {
+  console.error("usage: node snapshot-to-nodes.mjs <snapshot.json> [--only <section,...>] [--write]");
   process.exit(1);
 }
 
@@ -68,7 +74,15 @@ const warnings = [];
 
 for (const file of files) {
   const doc = JSON.parse(fs.readFileSync(file, "utf8"));
+  if (only) {
+    const missing = [...only].filter((s) => !(s in doc));
+    if (missing.length) {
+      console.error(`snapshot-to-nodes: --only names section(s) the snapshot does not hold: ${missing.join(", ")}`);
+      process.exit(1);
+    }
+  }
   for (const [section, v] of Object.entries(doc)) {
+    if (only && !only.has(section)) continue;
     const nodes = Array.isArray(v?.nodes) ? v.nodes : null;
     if (!nodes) {
       refused.push({ section, why: "no `nodes` array" });
