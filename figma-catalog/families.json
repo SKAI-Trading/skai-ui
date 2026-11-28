@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T12:19:18.851Z",
+  "generated": "2026-11-28T01:21:42.785Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -14149,7 +14149,7 @@
     "collectibles/Collectables > Home": {
       "section": "collectibles",
       "family": "Collectables > Home",
-      "frameCount": 9,
+      "frameCount": 10,
       "frames": [
         "kaUnLTKalFjyyNzlKxPQkX:15375-78805",
         "kaUnLTKalFjyyNzlKxPQkX:15455-35100",
@@ -14159,7 +14159,8 @@
         "kaUnLTKalFjyyNzlKxPQkX:15455-50249",
         "kaUnLTKalFjyyNzlKxPQkX:15455-51754",
         "kaUnLTKalFjyyNzlKxPQkX:15455-41152",
-        "kaUnLTKalFjyyNzlKxPQkX:15455-44118"
+        "kaUnLTKalFjyyNzlKxPQkX:15455-44118",
+        "kaUnLTKalFjyyNzlKxPQkX:15529-112964"
       ],
       "devices": [
         "desktop"
@@ -14184,6 +14185,103 @@
       "frameCount": 1,
       "frames": [
         "kaUnLTKalFjyyNzlKxPQkX:15450-23474"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15534-115878"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > Start a battle": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > Start a battle",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15535-120817",
+        "kaUnLTKalFjyyNzlKxPQkX:15536-125503"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > Start a battle > Make deposit": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > Start a battle > Make deposit",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15538-128107"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > Start a battle > anyone in te lobby": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > Start a battle > anyone in te lobby",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15536-124565"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > history": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > history",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15535-119948"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > created": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > created",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15535-119076"
       ],
       "devices": [
         "desktop"
@@ -14233,11 +14331,360 @@
     "collectibles/Collectables > Markets": {
       "section": "collectibles",
       "family": "Collectables > Markets",
-      "frameCount": 3,
+      "frameCount": 5,
       "frames": [
         "kaUnLTKalFjyyNzlKxPQkX:15456-56373",
-        "kaUnLTKalFjyyNzlKxPQkX:15457-72495",
+        "kaUnLTKalFjyyNzlKxPQkX:15509-16513",
+        "kaUnLTKalFjyyNzlKxPQkX:15509-8793",
+        "kaUnLTKalFjyyNzlKxPQkX:15491-6618",
         "kaUnLTKalFjyyNzlKxPQkX:15456-57424"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "with card behaviour (hover on price area)",
+        "with sidebar open",
+        "with sidebar open / halfway"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product",
+      "frameCount": 3,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15512-19207",
+        "kaUnLTKalFjyyNzlKxPQkX:15519-43988",
+        "kaUnLTKalFjyyNzlKxPQkX:15512-33316"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > maximise": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > maximise",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15529-109838"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Make offer": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Make offer",
+      "frameCount": 5,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15515-40352",
+        "kaUnLTKalFjyyNzlKxPQkX:15515-36319",
+        "kaUnLTKalFjyyNzlKxPQkX:15515-37252",
+        "kaUnLTKalFjyyNzlKxPQkX:15515-38251",
+        "kaUnLTKalFjyyNzlKxPQkX:15515-39187"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "new user",
+        "new user > email verification",
+        "new user > email verification > auto wallet creation"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Buy now": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Buy now",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15519-103712"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Inspect": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Inspect",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15529-112090"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Make offer > Confirm offer": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Make offer > Confirm offer",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15516-41849"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Make offer > Confirm offer > Offer submitted": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Make offer > Confirm offer > Offer submitted",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15516-42948"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Buy now > Buy with fiat": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Buy now > Buy with fiat",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15529-107431",
+        "kaUnLTKalFjyyNzlKxPQkX:15529-108716"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "select currency"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > Message owner": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > Message owner",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15519-44914"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Markets > Sample product > search similar": {
+      "section": "collectibles",
+      "family": "Collectables > Markets > Sample product > search similar",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15529-110705"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > My cards": {
+      "section": "collectibles",
+      "family": "Collectables > Home > My cards",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15547-146029"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > My cards > My offer": {
+      "section": "collectibles",
+      "family": "Collectables > Home > My cards > My offer",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15550-149345"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > My cards > Favorites": {
+      "section": "collectibles",
+      "family": "Collectables > Home > My cards > Favorites",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15551-152418",
+        "kaUnLTKalFjyyNzlKxPQkX:15551-154002"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > My cards > My offer > View offer": {
+      "section": "collectibles",
+      "family": "Collectables > Home > My cards > My offer > View offer",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15551-151536"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Open packs": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Open packs",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15529-114415",
+        "kaUnLTKalFjyyNzlKxPQkX:15543-135201"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Leaderboard > Battles > Sample battle": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Leaderboard > Battles > Sample battle",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15539-132712",
+        "kaUnLTKalFjyyNzlKxPQkX:15540-134397"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "messaging"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Open packs > Sample product": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Open packs > Sample product",
+      "frameCount": 3,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15544-138726",
+        "kaUnLTKalFjyyNzlKxPQkX:15544-139649",
+        "kaUnLTKalFjyyNzlKxPQkX:15545-142108"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "multiple content pack"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Open packs > Sample product > Open pack": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Open packs > Sample product > Open pack",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15546-143874"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Open packs > Sample product > Open pack > run process": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Open packs > Sample product > Open pack > run process",
+      "frameCount": 2,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15546-143000",
+        "kaUnLTKalFjyyNzlKxPQkX:15546-144901"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "collectibles/Collectables > Home > Open packs > Sample product > Open pack > run process 2": {
+      "section": "collectibles",
+      "family": "Collectables > Home > Open packs > Sample product > Open pack > run process 2",
+      "frameCount": 1,
+      "frames": [
+        "kaUnLTKalFjyyNzlKxPQkX:15546-145541"
       ],
       "devices": [
         "desktop"

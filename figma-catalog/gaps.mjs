@@ -396,7 +396,7 @@ function fold(args) {
     console.error(`gaps.mjs fold: --at must be YYYY-MM-DD, got ${JSON.stringify(at)}`);
     process.exit(1);
   }
-  const files = args.filter((a, i) => a !== "--write" && a !== "--at" && i !== atFlag + 1);
+  const files = args.filter((a, i) => a !== "--write" && a !== "--at" && (atFlag < 0 || i !== atFlag + 1));
   if (!files.length) {
     console.error("gaps.mjs fold: name at least one JSON file of lines");
     process.exit(1);

@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-23T19:37:34.605Z",
+  "generated": "2026-11-28T00:18:12.909Z",
   "sections": {
     "home": {
-      "status": "drift",
-      "catalogued": 290,
+      "status": "clean",
+      "catalogued": 296,
       "live": 281,
       "nestedAlive": 15,
-      "added": 6,
+      "added": 0,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -26,11 +26,11 @@
       "retargets": []
     },
     "trade": {
-      "status": "drift",
-      "catalogued": 476,
+      "status": "clean",
+      "catalogued": 477,
       "live": 442,
       "nestedAlive": 35,
-      "added": 1,
+      "added": 0,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -302,11 +302,11 @@
       "retargets": []
     },
     "wallet-2": {
-      "status": "drift",
-      "catalogued": 195,
+      "status": "clean",
+      "catalogued": 214,
       "live": 210,
       "nestedAlive": 4,
-      "added": 19,
+      "added": 0,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -505,17 +505,42 @@
       "retargeted": 0,
       "retargets": []
     },
+    "collectibles": {
+      "status": "drift",
+      "catalogued": 44,
+      "live": 134,
+      "nestedAlive": 0,
+      "added": 91,
+      "removed": 1,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "15457-72495",
+          "title": "Skai > Trade > Collectables > Markets 1VH (1440 x 900px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "social-v2": {
+      "status": "clean",
+      "catalogued": 127,
+      "live": 127,
+      "nestedAlive": 0,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
     "missing-play-images": {
       "status": "emptied",
       "live": 0
-    },
-    "social-v2": {
-      "status": "new-section",
-      "live": 127
-    },
-    "collectibles": {
-      "status": "new-section",
-      "live": 44
     }
   }
 }

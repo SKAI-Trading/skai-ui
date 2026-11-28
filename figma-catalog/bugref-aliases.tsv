@@ -916,3 +916,6 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 9351-3413	-	gone	0	0	-
 10296-3772	-	gone	0	0	-
 10296-3777	-	gone	0	0	-
+# 2026-11-28 (HQ-760): Skai-Web-App-3 Collectables page, 44 to 134. The second Collectables Markets 1VH board
+# 15457-72495 is gone (getNodeByIdAsync null after loading every page). It had no implFiles and no status row.
+15457-72495	-	gone	0	0	-

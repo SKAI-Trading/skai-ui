@@ -746,7 +746,7 @@
       "n": 127,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "WIP from 2026-11-23 (Casey, round 184 chose WIP over excluded): catalogued and reported as in progress, not counted. Round 46's \"Build nothing from these boards\" for the Social v2 layout tests (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) and Casey's 2026-11-03 keep-today's-menus ruling (no second left column) still hold until a final design. The page also holds two later layout tests (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide. Section `social-v2`."
     },
     {
@@ -757,19 +757,19 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Added 2026-11-23 with Skai-Web-App-3 (the catalog's fourth file). The file's cover thumbnail, one 1600x960 board; never a build target."
     },
     {
       "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
       "pageId": "15355:72871",
-      "pageName": "🚧 Collectibles",
+      "pageName": "🚧 Collectables",
       "readiness": "wip",
-      "n": 44,
+      "n": 134,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
-      "note": "In scope from 2026-11-23 (Casey, round 184): counted from today. Markets is still moving, so it is built last; Home, sign-in and sign-up, and Leaderboard go first. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`."
+      "harvestedAt": "2026-11-28",
+      "note": "In scope from 2026-11-23 (Casey, round 184). The designer's status, 2026-11-27: the 45 new desktop screens \"technically cover the remaining parts of Collectables\", meeting that week's target: Battles (leaderboard, joining and creating battles, card acquisition to user rankings, the game lobby, all and created battles, start a battle, a pack battle), Markets (the marketplace, every filter sidebar state, a sample card with contract info, details, offers and item activity; buy, make offer, message the owner, buy with fiat, inspect), Packs (open packs, shop and save, odds, open a pack in USD or fiat) and My cards (overview with inventory and quick claim, my offers, the accept or decline dialog, favorites; Shipments carries an asterisk and has no board of its own). Harvested 2026-11-28: 44 to 134 top-level nodes, +91 (44 screen boards: Battles 9, Markets 20, My cards 5, Open packs 9, an updated Home 1; and 47 side panels, filter sidebars, menus, notes and canvas furniture) and -1 (the second Markets 1VH board, deleted upstream, recorded gone). Round 188 held the Markets lane until the designer marks it ready; the designer's 11-27 note reads as that mark but has not been ruled on. Every screen board is still 1440 wide (the designer will cycle back for other sizes) and the page name keeps the under-construction marker. Section `collectibles`."
     },
     {
       "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
@@ -779,7 +779,7 @@
       "n": 442,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "A COPY, not new design: tombstone from 2026-11-23 (Casey, round 184), counted once, on Skai-Web-App's original. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). It has no section (pages.json outOfScope). If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it."
     }
   ]

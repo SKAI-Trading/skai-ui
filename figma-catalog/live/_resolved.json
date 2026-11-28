@@ -1,5 +1,5 @@
 {
-  "resolvedAt": "2026-11-23",
+  "resolvedAt": "2026-11-28",
   "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
   "candidatesChecked": 666,
   "filesChecked": [
@@ -8,7 +8,7 @@
     "M6r9FEn042UWTQD1zvy6GM"
   ],
   "foundCount": 616,
-  "notFoundCount": 57,
+  "notFoundCount": 58,
   "foundPerFile": {
     "3sSzw1KewMtUbeLAv7uW0r": 202,
     "mhF3BkzlTaGiLzJ7kvpmVc": 175,
@@ -6130,6 +6130,10 @@
     "10296-3777": {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "probedAt": "2026-11-11"
+    },
+    "15457-72495": {
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "probedAt": "2026-11-28"
     }
   },
   "probes": [
@@ -6294,6 +6298,12 @@
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "checked": 89,
       "found": 89
+    },
+    {
+      "at": "2026-11-28",
+      "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
+      "checked": 1,
+      "found": 0
     }
   ]
 }

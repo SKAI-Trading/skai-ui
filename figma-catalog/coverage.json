@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-24T12:19:30.307Z",
+  "generated": "2026-11-28T01:22:15.828Z",
   "harvestedAt": "2026-11-23",
   "rollup": {
     "pages": 40,
-    "live": 4823,
-    "furniture": 869,
-    "genuine": 3301,
+    "live": 4913,
+    "furniture": 893,
+    "genuine": 3367,
     "ruledOut": 347,
-    "genuineWithRuledOut": 3648,
+    "genuineWithRuledOut": 3714,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -17,7 +17,7 @@
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
     "frameDefectsOut": 306,
-    "genuineWithFrameDefects": 3607,
+    "genuineWithFrameDefects": 3673,
     "frameDefectUncited": [],
     "matched": 3232,
     "done": 2452,
@@ -49,7 +49,7 @@
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 69,
+    "liveOnly": 135,
     "rollupOnly": 1,
     "defaultNamed": 145,
     "ambiguous": 399,
@@ -11143,7 +11143,7 @@
       "n": 127,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "WIP from 2026-11-23 (Casey, round 184 chose WIP over excluded): catalogued and reported as in progress, not counted. Round 46's \"Build nothing from these boards\" for the Social v2 layout tests (ALT 2 15309:68566, ALT 3 15309:69900, ALT 3B 15309:75287, ALT 4 15309:74004) and Casey's 2026-11-03 keep-today's-menus ruling (no second left column) still hold until a final design. The page also holds two later layout tests (ALT 5a 15350:11878, ALT 5b 15350:13670) and the wider Social v2 work dated from 2026-09-18 (ALT 1 and ALT 2 home, discover, messages, create post); every screen board is 1440 wide. Section `social-v2`.",
       "live": 127,
       "furniture": 62,
@@ -11630,7 +11630,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "Added 2026-11-23 with Skai-Web-App-3 (the catalog's fourth file). The file's cover thumbnail, one 1600x960 board; never a build target.",
       "live": 1,
       "furniture": 0,
@@ -11661,23 +11661,23 @@
     {
       "fileKey": "kaUnLTKalFjyyNzlKxPQkX",
       "pageId": "15355:72871",
-      "pageName": "🚧 Collectibles",
+      "pageName": "🚧 Collectables",
       "readiness": "wip",
-      "n": 44,
+      "n": 134,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-23",
-      "note": "In scope from 2026-11-23 (Casey, round 184): counted from today. Markets is still moving, so it is built last; Home, sign-in and sign-up, and Leaderboard go first. The designer's status, 2026-11-23: this week is \"FULL focus\" on Collectables; the page holds Collectables \"Home\" and related screens (logged-in and logged-out views and the flow), the Collectables Leaderboard (tied to the main leaderboard), and the Marketplace \"Markets\", which is \"still largely in progress\". Every screen board on the page is 1440 wide (no 768 or 375 board yet); the page name still carries the 🚧 under-construction marker. Section `collectibles`.",
-      "live": 44,
-      "furniture": 22,
+      "harvestedAt": "2026-11-28",
+      "note": "In scope from 2026-11-23 (Casey, round 184). The designer's status, 2026-11-27: the 45 new desktop screens \"technically cover the remaining parts of Collectables\", meeting that week's target: Battles (leaderboard, joining and creating battles, card acquisition to user rankings, the game lobby, all and created battles, start a battle, a pack battle), Markets (the marketplace, every filter sidebar state, a sample card with contract info, details, offers and item activity; buy, make offer, message the owner, buy with fiat, inspect), Packs (open packs, shop and save, odds, open a pack in USD or fiat) and My cards (overview with inventory and quick claim, my offers, the accept or decline dialog, favorites; Shipments carries an asterisk and has no board of its own). Harvested 2026-11-28: 44 to 134 top-level nodes, +91 (44 screen boards: Battles 9, Markets 20, My cards 5, Open packs 9, an updated Home 1; and 47 side panels, filter sidebars, menus, notes and canvas furniture) and -1 (the second Markets 1VH board, deleted upstream, recorded gone). Round 188 held the Markets lane until the designer marks it ready; the designer's 11-27 note reads as that mark but has not been ruled on. Every screen board is still 1440 wide (the designer will cycle back for other sizes) and the page name keeps the under-construction marker. Section `collectibles`.",
+      "live": 134,
+      "furniture": 46,
       "furnitureWhy": {
-        "canvas-chrome": 22
+        "canvas-chrome": 46
       },
       "ruledOut": 0,
       "ruledOutIds": [],
       "frameDefects": 0,
       "frameDefectIds": [],
-      "genuine": 22,
+      "genuine": 88,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
@@ -11727,7 +11727,63 @@
           "name": "Skai > Trade > Collectables > Home > Leaderboard 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
-          "h": 1616
+          "h": 1988
+        },
+        {
+          "id": "15534-115878",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2101
+        },
+        {
+          "id": "15535-120817",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Start a battle 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15538-128107",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Start a battle > Make deposit 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15537-128022",
+          "name": "Start a battle - challenge a friend",
+          "type": "FRAME",
+          "w": 564,
+          "h": 738
+        },
+        {
+          "id": "15536-125503",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Start a battle 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15536-124565",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Start a battle > anyone in te lobby 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15535-119948",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > history 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2101
+        },
+        {
+          "id": "15535-119076",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > created 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2101
         },
         {
           "id": "15450-23903",
@@ -11821,11 +11877,179 @@
           "h": 900
         },
         {
-          "id": "15457-72495",
-          "name": "Skai > Trade > Collectables > Markets 1VH (1440 x 900px)",
+          "id": "15509-16513",
+          "name": "Skai > Trade > Collectables > Markets - with card behaviour (hover on price area) 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
+        },
+        {
+          "id": "15512-19207",
+          "name": "Skai > Trade > Collectables > Markets > Sample product 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-109838",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > maximise 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15515-40352",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15519-103712",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Buy now 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15528-107274",
+          "name": "Right menu - buy now - card option",
+          "type": "FRAME",
+          "w": 442,
+          "h": 884
+        },
+        {
+          "id": "15519-43988",
+          "name": "Skai > Trade > Collectables > Markets > Sample product 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-112090",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Inspect 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15516-41849",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer > Confirm offer 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15516-41550",
+          "name": "Right menu - make offer - set expiry",
+          "type": "FRAME",
+          "w": 442,
+          "h": 884
+        },
+        {
+          "id": "15516-41715",
+          "name": "Right menu - make offer - set expiry",
+          "type": "FRAME",
+          "w": 442,
+          "h": 884
+        },
+        {
+          "id": "15515-36319",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer - new user 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15515-37252",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer - new user > email verification 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15515-38251",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer - new user > email verification > auto wallet creation 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15515-39187",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer - new user > email verification 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15516-42948",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Make offer > Confirm offer > Offer submitted 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-107431",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Buy now > Buy with fiat 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-108716",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Buy now > Buy with fiat - select currency 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15512-33316",
+          "name": "Skai > Trade > Collectables > Markets > Sample product (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2865
+        },
+        {
+          "id": "15518-43820",
+          "name": "Offers - my offer (in platform)",
+          "type": "FRAME",
+          "w": 738,
+          "h": 298
+        },
+        {
+          "id": "15513-35466",
+          "name": "Offers - no-offers",
+          "type": "FRAME",
+          "w": 738,
+          "h": 355
+        },
+        {
+          "id": "15512-34613",
+          "name": "Buy now - active",
+          "type": "FRAME",
+          "w": 738,
+          "h": 288
+        },
+        {
+          "id": "15513-35692",
+          "name": "Buy now - with bundles (packs)",
+          "type": "FRAME",
+          "w": 738,
+          "h": 574
+        },
+        {
+          "id": "15509-8793",
+          "name": "Skai > Trade > Collectables > Markets - with sidebar open 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15491-6618",
+          "name": "Skai > Trade > Collectables > Markets - with sidebar open / halfway (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 1507
         },
         {
           "id": "15456-57424",
@@ -11840,6 +12064,244 @@
           "type": "SECTION",
           "w": 803,
           "h": 547
+        },
+        {
+          "id": "15511-17732",
+          "name": "Active cards - card behaviour",
+          "type": "SECTION",
+          "w": 433,
+          "h": 547
+        },
+        {
+          "id": "15467-73722",
+          "name": "sidebar - open - collectables > Grading company",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-74880",
+          "name": "sidebar - open - collectables > Type",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-76205",
+          "name": "sidebar - open - collectables > Price range",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-76543",
+          "name": "sidebar - open - collectables > Year",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-76822",
+          "name": "sidebar - open - collectables > No filter",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-75776",
+          "name": "sidebar - open - collectables > Categories",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15470-75324",
+          "name": "sidebar - open - collectables > Grade",
+          "type": "FRAME",
+          "w": 248,
+          "h": 1366
+        },
+        {
+          "id": "15467-73882",
+          "name": "sidebar - open - collectables",
+          "type": "FRAME",
+          "w": 248,
+          "h": 844
+        },
+        {
+          "id": "15509-16488",
+          "name": "dropdown-sort",
+          "type": "FRAME",
+          "w": 163,
+          "h": 312
+        },
+        {
+          "id": "15519-44914",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > Message owner 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15519-45625",
+          "name": "sidebar - open - predict",
+          "type": "FRAME",
+          "w": 248,
+          "h": 844
+        },
+        {
+          "id": "15529-110705",
+          "name": "Skai > Trade > Collectables > Markets > Sample product > search similar 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-112964",
+          "name": "Skai > Trade > Collectables > Home 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15547-146029",
+          "name": "Skai > Trade > Collectables > Home > My cards 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15550-149345",
+          "name": "Skai > Trade > Collectables > Home > My cards > My offer 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15551-152418",
+          "name": "Skai > Trade > Collectables > Home > My cards > Favorites 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15551-154002",
+          "name": "Skai > Trade > Collectables > Home > My cards > Favorites 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15551-151536",
+          "name": "Skai > Trade > Collectables > Home > My cards > My offer > View offer 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15529-114415",
+          "name": "Skai > Trade > Collectables > Home > Open packs 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15539-132712",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Sample battle (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2073
+        },
+        {
+          "id": "15547-147450",
+          "name": "1/1 card packs",
+          "type": "FRAME",
+          "w": 954,
+          "h": 621
+        },
+        {
+          "id": "15540-134397",
+          "name": "Skai > Trade > Collectables > Home > Leaderboard > Battles > Sample battle - messaging 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15539-134041",
+          "name": "Left panel - Battle card",
+          "type": "FRAME",
+          "w": 356,
+          "h": 621
+        },
+        {
+          "id": "15543-135201",
+          "name": "Skai > Trade > Collectables > Home > Open packs (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2204
+        },
+        {
+          "id": "15544-138618",
+          "name": "dropdown-sort",
+          "type": "FRAME",
+          "w": 163,
+          "h": 198
+        },
+        {
+          "id": "15544-138726",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15546-143874",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product > Open pack 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15546-143000",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product > Open pack > run process 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15546-145541",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product > Open pack > run process 2 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15546-144901",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product > Open pack > run process 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "15544-139649",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 1873
+        },
+        {
+          "id": "15545-142108",
+          "name": "Skai > Trade > Collectables > Home > Open packs > Sample product - multiple content pack (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 1873
+        },
+        {
+          "id": "15551-150345",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 250,
+          "h": 130
         }
       ]
     },
@@ -11851,7 +12313,7 @@
       "n": 442,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-11-23",
+      "harvestedAt": "2026-11-28",
       "note": "A COPY, not new design: tombstone from 2026-11-23 (Casey, round 184), counted once, on Skai-Web-App's original. Harvested 2026-11-23: all 442 top-level rows (ids, names, types, sizes, visibility) equal Skai-Web-App's ✅ Social page (3sSzw1KewMtUbeLAv7uW0r 4914:113562, section `social`, in-scope) row for row, and the two page hashes are the same (437bd160). It has no section (pages.json outOfScope). If a later hash differs from the Skai-Web-App page, the designer has started editing the copy; diff the two before anything is built from it.",
       "live": 442,
       "furniture": 40,

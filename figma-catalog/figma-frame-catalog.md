@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-24T12:19:27.388Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
+_Generated 2026-11-28T01:22:07.512Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`, Skai-Web-App-3 `kaUnLTKalFjyyNzlKxPQkX`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -50,13 +50,13 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
+| collectibles | 🚧 | 134 | 60 | 74 | 32 | 0 | 0 | 0 | 60 | 0 |
 | social-v2 | 🚧 | 127 | 51 | 76 | 34 | 0 | 0 | 0 | 51 | 0 |
-| collectibles | 🚧 | 44 | 17 | 27 | 6 | 0 | 0 | 0 | 17 | 0 |
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **5155** | **2563** | | | **1678** | **704** | **64** | **117** | **1032** |
+| **all** | | **5245** | **2606** | | | **1678** | **704** | **64** | **160** | **1032** |
 
 ### Drift against live Figma
 
@@ -787,6 +787,43 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 _No titled screens yet._
 
 
+## Collectibles
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Collectables > Home | 10 | desktop | not signed in; not signed in > Login; not signed in > Sign up; not signed in > Sign up - referral open; not signed in > Sign up - referral open > with external wallet - Phantom; not signed in > Login > Email verification … | unknown | [15375-78805](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15375-78805&m=dev) |
+| Collectables > Markets | 5 | desktop | with card behaviour (hover on price area); with sidebar open; with sidebar open / halfway | unknown | [15456-56373](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15456-56373&m=dev) |
+| Collectables > Markets > Sample product > Make offer | 5 | desktop | new user; new user > email verification; new user > email verification > auto wallet creation | unknown | [15515-40352](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15515-40352&m=dev) |
+| Collectables > Markets > Sample product | 3 | desktop | - | unknown | [15512-19207](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15512-19207&m=dev) |
+| Collectables > Home > Open packs > Sample product | 3 | desktop | multiple content pack | unknown | [15544-138726](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15544-138726&m=dev) |
+| Collectables > Home > Leaderboard > Battles > Start a battle | 2 | desktop | - | unknown | [15535-120817](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15535-120817&m=dev) |
+| Collectables > Home > Signed in | 2 | desktop | old user; new user | unknown | [15455-53373](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15455-53373&m=dev) |
+| Collectables > Markets > Sample product > Buy now > Buy with fiat | 2 | desktop | select currency | unknown | [15529-107431](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15529-107431&m=dev) |
+| Collectables > Home > My cards > Favorites | 2 | desktop | - | unknown | [15551-152418](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15551-152418&m=dev) |
+| Collectables > Home > Open packs | 2 | desktop | - | unknown | [15529-114415](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15529-114415&m=dev) |
+| Collectables > Home > Leaderboard > Battles > Sample battle | 2 | desktop | messaging | unknown | [15539-132712](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15539-132712&m=dev) |
+| Collectables > Home > Open packs > Sample product > Open pack > run process | 2 | desktop | - | unknown | [15546-143000](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15546-143000&m=dev) |
+| Collectables | 1 | desktop | - | unknown | [15368-72983](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15368-72983&m=dev) |
+| Collectables > Home > Leaderboard | 1 | desktop | - | unknown | [15450-23474](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15450-23474&m=dev) |
+| Collectables > Home > Leaderboard > Battles | 1 | desktop | - | unknown | [15534-115878](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15534-115878&m=dev) |
+| Collectables > Home > Leaderboard > Battles > Start a battle > Make deposit | 1 | desktop | - | unknown | [15538-128107](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15538-128107&m=dev) |
+| Collectables > Home > Leaderboard > Battles > Start a battle > anyone in te lobby | 1 | desktop | - | unknown | [15536-124565](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15536-124565&m=dev) |
+| Collectables > Home > Leaderboard > Battles > history | 1 | desktop | - | unknown | [15535-119948](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15535-119948&m=dev) |
+| Collectables > Home > Leaderboard > Battles > created | 1 | desktop | - | unknown | [15535-119076](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15535-119076&m=dev) |
+| Collectables > Home > Leaderboard > Share position | 1 | desktop | - | unknown | [15450-23922](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15450-23922&m=dev) |
+| Collectables > Markets > Sample product > maximise | 1 | desktop | - | unknown | [15529-109838](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15529-109838&m=dev) |
+| Collectables > Markets > Sample product > Buy now | 1 | desktop | - | unknown | [15519-103712](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15519-103712&m=dev) |
+| Collectables > Markets > Sample product > Inspect | 1 | desktop | - | unknown | [15529-112090](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15529-112090&m=dev) |
+| Collectables > Markets > Sample product > Make offer > Confirm offer | 1 | desktop | - | unknown | [15516-41849](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15516-41849&m=dev) |
+| Collectables > Markets > Sample product > Make offer > Confirm offer > Offer submitted | 1 | desktop | - | unknown | [15516-42948](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15516-42948&m=dev) |
+| Collectables > Markets > Sample product > Message owner | 1 | desktop | - | unknown | [15519-44914](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15519-44914&m=dev) |
+| Collectables > Markets > Sample product > search similar | 1 | desktop | - | unknown | [15529-110705](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15529-110705&m=dev) |
+| Collectables > Home > My cards | 1 | desktop | - | unknown | [15547-146029](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15547-146029&m=dev) |
+| Collectables > Home > My cards > My offer | 1 | desktop | - | unknown | [15550-149345](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15550-149345&m=dev) |
+| Collectables > Home > My cards > My offer > View offer | 1 | desktop | - | unknown | [15551-151536](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15551-151536&m=dev) |
+| Collectables > Home > Open packs > Sample product > Open pack | 1 | desktop | - | unknown | [15546-143874](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15546-143874&m=dev) |
+| Collectables > Home > Open packs > Sample product > Open pack > run process 2 | 1 | desktop | - | unknown | [15546-145541](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15546-145541&m=dev) |
+
 ## Social-v2
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
@@ -825,17 +862,6 @@ _No titled screens yet._
 | Social v2 ALT 5b | 1 | desktop | - | unknown | [15350-13670](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15350-13670&m=dev) |
 | Social v2 ALT 3B | 1 | desktop | - | unknown | [15309-75287](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15309-75287&m=dev) |
 | Social v2 ALT 4 | 1 | desktop | - | unknown | [15309-74004](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15309-74004&m=dev) |
-
-## Collectibles
-
-| Family | Frames | Devices | Variants | Impl / status | Example |
-|--------|-------:|---------|----------|---------------|---------|
-| Collectables > Home | 9 | desktop | not signed in; not signed in > Login; not signed in > Sign up; not signed in > Sign up - referral open; not signed in > Sign up - referral open > with external wallet - Phantom; not signed in > Login > Email verification … | unknown | [15375-78805](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15375-78805&m=dev) |
-| Collectables > Markets | 3 | desktop | - | unknown | [15456-56373](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15456-56373&m=dev) |
-| Collectables > Home > Signed in | 2 | desktop | old user; new user | unknown | [15455-53373](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15455-53373&m=dev) |
-| Collectables | 1 | desktop | - | unknown | [15368-72983](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15368-72983&m=dev) |
-| Collectables > Home > Leaderboard | 1 | desktop | - | unknown | [15450-23474](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15450-23474&m=dev) |
-| Collectables > Home > Leaderboard > Share position | 1 | desktop | - | unknown | [15450-23922](https://www.figma.com/design/kaUnLTKalFjyyNzlKxPQkX/Skai-Web-App-3?node-id=15450-23922&m=dev) |
 
 ## User-flow
 
